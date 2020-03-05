@@ -6,6 +6,7 @@ json.posts do
 end
 end
 
+
 json.comments do
       @post.comments.each do |comment|
           json.set! comment.id do

@@ -4,9 +4,11 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = ({ currentUser, logout }) => {
     const sessionLinks = () => (
-     <div>
-        
-     </div>
+        <nav className="login-signup">
+            <Link to="/login">Login</Link>
+            &nbsp;or&nbsp;
+        <Link to="/signup">Sign up!</Link>
+        </nav>
     );
 
     const personalGreeting = () => (

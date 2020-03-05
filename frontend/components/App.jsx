@@ -9,7 +9,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
     <div>
         <header>
-            <h1>Facebook</h1>
+            <Link to="/" className="">
+                <h1>Facebook</h1>
+            </Link>
             <NavbarContainer />
         </header>
         <Switch>

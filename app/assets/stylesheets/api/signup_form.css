@@ -134,7 +134,10 @@ h3 {
     margin: 1em 0;
 }
 
-.info a:link {
-  color: blue;
-  text-decoration: underline;
+p a {
+    text-decoration: none;
+    color: #385898;
+}
+p a:hover {
+    text-decoration: underline;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const Navbar = ({ currentUser, logout }) => {
@@ -8,15 +8,16 @@ const Navbar = ({ currentUser, logout }) => {
         
      </div>
     );
+
     const personalGreeting = () => (
         <hgroup className="header-group">
             <h2 className="header-name">{currentUser.firstName}</h2> 
-            {/* should be a link to a personal profile page */}
-            <h2>Create a Post</h2>
-            <h2>Home</h2>
-            {/* goes to currentUser's wall */}
-            <h2>Friends</h2>
-            {/* goes to currentUser friends page */}
+            <NavLink to="/" className="header-link">Create a Post</NavLink>
+            <br/>
+            <NavLink to="/" className="header-link">Home</NavLink>
+            <br />
+            <NavLink to="/" className="header-link">Friends</NavLink>
+            <br />
             <button className="header-button" onClick={logout}>Log Out</button>
         </hgroup>
     );

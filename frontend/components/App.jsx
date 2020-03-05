@@ -12,7 +12,6 @@ const App = () => (
             <h1>Facebook</h1>
             <NavbarContainer />
         </header>
-
         <Switch>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />

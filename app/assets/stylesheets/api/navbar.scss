@@ -1,0 +1,33 @@
+.header-button {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 28px;
+    font-size: 12px;
+    text-align: start;
+    letter-spacing: normal;
+    background-color: #4267b2;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0 12px 1px;
+    margin: 5px;
+}
+
+.header-button:hover {
+    background-color: darkblue;
+    border-color: #dddddd;
+}
+
+.header-name, .header-link {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 28px;
+    font-size: 12px;
+    text-align: start;
+    letter-spacing: normal;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0 12px 1px;
+    margin: 5px;
+}
+
+.header-group {
+    background-color: #4267b2;
+}

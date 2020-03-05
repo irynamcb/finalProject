@@ -56,3 +56,16 @@
     background-color: #4267b8;
     border-color: #dddddd;
 }
+
+.create-account {
+    background-color: #42b72a;
+    border-color: #42b72a;
+    color: #ffffff;
+    border: 1px solid;
+    border-radius: 2px;
+    box-sizing: content-box;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    margin: 5px;
+}

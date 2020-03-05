@@ -65,12 +65,8 @@ class LoginForm extends React.Component {
                         <br />
                         <input className="login-submit" type="submit" value={this.props.formType} />
                         <br/>
-                        <span>
-                            before
-                            "or"
-                            after
-                                                 
-                            </span>
+                        <input className="create-account" type="submit" value="Create New Account"/>
+                        <br/>
                     </div>
                 </form>
             </div>

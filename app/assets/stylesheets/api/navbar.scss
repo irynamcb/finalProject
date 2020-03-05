@@ -28,6 +28,11 @@
     margin: 5px;
 }
 
-.header-group {
+.header-group, .login-signup {
     background-color: #4267b2;
+    margin: 0 auto;
+    padding-top: 13px;
+    height: 82px;
+    min-width: 980px;
+    display: block;
 }

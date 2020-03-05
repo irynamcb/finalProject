@@ -1,14 +1,15 @@
 
 .signup-form-container {
     display:block;
-    background: #ebedf0;
-    height:100%
+    background: #edf0f5;
+    height:100%;
 }
 
 .signup-form-box {
    margin: 0 auto 30px auto;
    padding: 0 20px 0 0;
    width: 400px; 
+   justify-content: center;
 }
 
 .pvl{
@@ -27,12 +28,12 @@
 }
 
 .pvl h2 {
-color: #4b4f56;
-letter-spacing: normal;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 22px;
-font-weight: normal;
-line-height: 28px;
+    color: #4b4f56;
+    letter-spacing: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 28px;
 }
 
 .signup-form {
@@ -133,7 +134,7 @@ h3 {
     width: 316px;
     letter-spacing: normal;
     text-align: start;
-    line-height: 14.74px;
+    /* line-height: 14.74px; */
     margin: 1em 0;
 }
 
@@ -141,12 +142,12 @@ p a {
     text-decoration: none;
     color: #385898;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: normal;
     line-height: 16px;
 }
 p a:hover {
     text-decoration: underline;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 11px;
 }

@@ -6,5 +6,4 @@ const mSTP = (state) => {
         return {loggedIn}
 }
 
-
 export default connect(mSTP)(Splash);

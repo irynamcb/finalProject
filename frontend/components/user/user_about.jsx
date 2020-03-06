@@ -1,4 +1,6 @@
 import React from 'react';
+import { faClock, faHome, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class UserAbout extends React.Component {
 
@@ -31,23 +33,28 @@ componentDidMount() {
         return (
             <div className="user-about">
                 <ul className="user-details">
-                    <li className="user-detail">
+                    <li className="user-fullname">
                         {firstName} {lastName}     
                     </li>
+                    <br/>
                     <li className="user-detail">
 
                         {(location !== null) ? `Lives in ${location}` : ` `}
                     
                     </li>
+                    
                     <li className="user-detail">
                         {(location !== null) ? `From ${location}` : ` `}
                     </li>
+                    
                     <li className="user-detail">
-                        Joined on {joinedOn}
+                        <FontAwesomeIcon icon={faHome} /> Joined on {joinedOn}
                     </li>
+                  
                     <li className="user-detail">
                         {(education !== null) ? `Studied at ${education}` : ` `}
                     </li>
+                 
                     <li className="user-detail">
                         {(about !== null) ? `About Info: ${about}` : ` `}
                     </li>

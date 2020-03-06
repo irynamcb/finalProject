@@ -1,0 +1,11 @@
+.user-about {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.user-fullname {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}

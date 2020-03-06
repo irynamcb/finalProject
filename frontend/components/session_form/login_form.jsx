@@ -22,6 +22,11 @@ class LoginForm extends React.Component {
         this.props.processForm(user);
     }
 
+    signUp() {
+        event.preventDefault()
+        this.props.history.push("/signup")
+    }
+
     renderErrors() {
         return (
             <ul>
@@ -69,7 +74,7 @@ class LoginForm extends React.Component {
                         <p><a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login" target="_blank">Forgot account?</a></p>
                         &nbsp;or&nbsp;
                         <br/>
-                        <input className="create-account" type="submit" value="Create New Account"/>
+                        <input className="create-account" type="submit" value="Create New Account" onClick={() => this.signUp()}/>
                         <br/>
                     </div>
                 </form>

@@ -3,10 +3,12 @@ import React from 'react';
 import { signup } from '../../actions/session_actions';
 import SignupForm from '../session_form/signup_form';
 
-const mSTP = ({ errors }) => {
+
+const mSTP = ({ errors, ownProps }) => {
     return {
         errors: errors.session,
         formType: 'Sign Up',
+        title: 'Create a New Account'
     };
 };
 

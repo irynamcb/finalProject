@@ -189,7 +189,7 @@ var App = function App() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/",
     className: ""
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Fcbck")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Fcbk")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/",
     component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_6__["default"]
@@ -267,81 +267,81 @@ var Footer = /*#__PURE__*/function (_React$Component) {
         to: "/login",
         className: "f"
       }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.messenger.com/",
+        to: "/",
         className: "f"
       }, "Messenger"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/lite/",
+        to: "/",
         className: "f"
       }, "Facebook Lite"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Watch"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "People"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/directory/pages/",
+        to: "/",
         className: "f"
       }, "Pages"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/pages/category/",
+        to: "/",
         className: "f"
       }, "Page Categoties"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/places/",
+        to: "/",
         className: "f"
       }, "Places"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Games"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/directory/places/",
+        to: "/",
         className: "f"
       }, "Locations"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Marketplace"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Groups"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Instagram"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Local"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Fundraisers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Services"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Create Ad"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Create Page"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Developers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Careers"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Privacy"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Cookies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Terms"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "https://www.facebook.com/watch/",
+        to: "/",
         className: "f"
       }, "Help"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         className: "copyright"
-      }, "Fcbck \xA9 2020"));
+      }, "Fcbk \xA9 2020"));
     }
   }]);
 
@@ -541,6 +541,12 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       this.props.processForm(user);
     }
   }, {
+    key: "signUp",
+    value: function signUp() {
+      event.preventDefault();
+      this.props.history.push("/signup");
+    }
+  }, {
     key: "renderErrors",
     value: function renderErrors() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
@@ -552,6 +558,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -583,7 +591,10 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       }, "Forgot account?")), "\xA0or\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "create-account",
         type: "submit",
-        value: "Create New Account"
+        value: "Create New Account",
+        onClick: function onClick() {
+          return _this3.signUp();
+        }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
     }
   }]);
@@ -702,7 +713,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user); // set state to be a blank form
+      this.props.processForm(user);
     }
   }, {
     key: "renderErrors",
@@ -723,7 +734,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         className: "signup-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pvl"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Create a New Account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "It's quick and easy."), this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "It's quick and easy."), this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -759,7 +770,8 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         value: "female",
         onChange: this.update('gender'),
         className: "signup-input",
-        id: "female"
+        id: "female",
+        name: "radio"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "female",
         className: "signup-input-4"
@@ -768,7 +780,8 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         value: "male",
         onChange: this.update('gender'),
         className: "signup-input",
-        id: "male"
+        id: "male",
+        name: "radio"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "male",
         className: "signup-input-4"
@@ -777,7 +790,8 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         value: "custom",
         onChange: this.update('gender'),
         className: "signup-input",
-        id: "custom"
+        id: "custom",
+        name: "radio"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "custom",
         className: "signup-input-4"
@@ -828,10 +842,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(_ref) {
-  var errors = _ref.errors;
+  var errors = _ref.errors,
+      ownProps = _ref.ownProps;
   return {
     errors: errors.session,
-    formType: 'Sign Up'
+    formType: 'Sign Up',
+    title: 'Create a New Account'
   };
 };
 

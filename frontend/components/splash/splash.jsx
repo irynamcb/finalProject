@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUpContainer from '../session_form/signup_form_container';
+import SignUpFormContainer from '../session_form/signup_form_container';
 import { faFileAlt, faStarHalf, faCaretSquareUp } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -34,7 +34,7 @@ export default class Splash extends React.Component {
                     </div>
                 </div>
                 <div className="e">
-                    <SignUpContainer />
+                    <SignUpFormContainer/>
                 </div>
             </div>
         ) 

@@ -9,7 +9,8 @@ class SignupForm extends React.Component {
             email: '',
             password: '',
             birthday: '',
-            gender: ''
+            gender: '',
+
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -24,7 +25,6 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        // set state to be a blank form
     }
 
     renderErrors() {
@@ -44,7 +44,7 @@ class SignupForm extends React.Component {
         <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <div className="pvl">
-                        <h1>Create a New Account</h1>
+                        <h1>{this.props.title}</h1>
                         <br />
                         <h2>It's quick and easy.</h2>
                         {this.renderErrors()}
@@ -100,11 +100,11 @@ class SignupForm extends React.Component {
                         <br />
 
                         <label><h3>Gender</h3>
-              <input type="radio" value="female" onChange={this.update('gender')} className="signup-input" id="female" />
+              <input type="radio" value="female" onChange={this.update('gender')} className="signup-input" id="female" name="radio"/>
               <label htmlFor="female" className="signup-input-4">Female</label>
-              <input type="radio" value="male" onChange={this.update('gender')} className="signup-input" id="male"/>
+              <input type="radio" value="male" onChange={this.update('gender')} className="signup-input" id="male" name="radio"/>
               <label htmlFor="male" className="signup-input-4">Male</label>
-              <input type="radio" value="custom" onChange={this.update('gender')} className="signup-input" id="custom"/>
+              <input type="radio" value="custom" onChange={this.update('gender')} className="signup-input" id="custom" name="radio"/>
               <label htmlFor="custom" className="signup-input-4">Custom</label>
               {/* need to change radio button selections */}
                         </label>

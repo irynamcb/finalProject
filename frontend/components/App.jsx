@@ -13,7 +13,7 @@ const App = () => (
     <div id="main-div">
         <header>
             <Link to="/" className="">
-                <h1>Fcbck</h1>
+                <h1>Fcbk</h1>
             </Link>
             <NavbarContainer />
         </header>

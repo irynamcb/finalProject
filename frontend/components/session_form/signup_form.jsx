@@ -100,13 +100,12 @@ class SignupForm extends React.Component {
                         <br />
 
                         <label><h3>Gender</h3>
-              <input type="radio" value="female" onChange={this.update('gender')} className="signup-input" id="female" name="radio"/>
+              <input type="radio" value="female" onChange={this.update('gender')} className="signup-input" id="female" name="gender"/>
               <label htmlFor="female" className="signup-input-4">Female</label>
-              <input type="radio" value="male" onChange={this.update('gender')} className="signup-input" id="male" name="radio"/>
+              <input type="radio" value="male" onChange={this.update('gender')} className="signup-input" id="male" name="gender"/>
               <label htmlFor="male" className="signup-input-4">Male</label>
-              <input type="radio" value="custom" onChange={this.update('gender')} className="signup-input" id="custom" name="radio"/>
+              <input type="radio" value="custom" onChange={this.update('gender')} className="signup-input" id="custom" name="gender"/>
               <label htmlFor="custom" className="signup-input-4">Custom</label>
-              {/* need to change radio button selections */}
                         </label>
                         <br />
                         <p 

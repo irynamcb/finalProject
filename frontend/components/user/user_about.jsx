@@ -6,32 +6,44 @@ export default class UserAbout extends React.Component {
         super(props);
     }
 
+    componentDidUpdate(prevProps){
+        if(this.props.match.params.userId !== prevProps.match.params.userId){
+            this.props.fetchUser(Number(this.props.match.params.userId))
+        }
+    }
+
 componentDidMount() {
-this.props.fetchUser(this.props.currentUser.id)
-// not sure
+    this.props.fetchUser(Number(this.props.match.params.userId))
 }
 
     render () {
+        if (this.props.user === undefined) {
+            return null;
+        }
+        
+        const { firstName, lastName, location, createdAt, education, about } = this.props.user;
+   
         return (
             <div className="user-about">
                 <ul className="user-details">
                     <li className="user-detail">
-                        {`${this.props.currentUser.firstName} ${this.props.currentUser.lastName}`}
+                        {firstName} {lastName}
+                      
                     </li>
                     <li className="user-detail">
-                        {`Lives in ${this.props.currentUser.location}`}
+                        Lives in {location}
                     </li>
                     <li className="user-detail">
-                        {`From ${this.props.currentUser.location}`}
+                        From {location}
                     </li>
                     <li className="user-detail">
-                        {`Joined on ${this.props.currentUser.created_at}`}
+                        Joined on {createdAt}
                     </li>
                     <li className="user-detail">
-                        {`Studied at ${this.props.currentUser.education}`}
+                        Studied at {education}
                     </li>
                     <li className="user-detail">
-                        {`About Info: ${this.props.currentUser.about}`}
+                        About Info: {about}
                     </li>
                 </ul>
             </div>

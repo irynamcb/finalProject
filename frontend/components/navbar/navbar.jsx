@@ -7,21 +7,28 @@ const Navbar = ({ currentUser, logout }) => {
         <nav className="login-signup">
             <Link to="/login">Login</Link>
             &nbsp;or&nbsp;
-        <Link to="/signup">Sign up!</Link>
+            <Link to="/signup">Sign up!</Link>
         </nav>
     );
 
     const personalGreeting = () => (
-        <hgroup className="header-group">
-            <h2 className="header-name">{currentUser.firstName}</h2> 
-            <NavLink to="/" className="header-link">Create a Post</NavLink>
-            <br/>
-            <NavLink to="/" className="header-link">Home</NavLink>
-            <br />
-            <NavLink to="/" className="header-link">Friends</NavLink>
-            <br />
-            <button className="header-button" onClick={logout}>Log Out</button>
-        </hgroup>
+        <div className="header-group">
+            <div className="nav">
+                <Link to={`/users/${currentUser.id}`} className="header-name">{currentUser.firstName}</Link>
+            </div>
+            <div className="nav">
+                <NavLink to="/" className="header-link">Create a Post</NavLink>
+            </div>
+            <div className="nav">
+                <NavLink to="/" className="header-link">Home</NavLink>
+            </div>
+            <div className="nav">
+                <NavLink to="/" className="header-link">Friends</NavLink>
+            </div>
+            <div className="nav">
+                <button className="header-button" onClick={logout}>Log Out</button>
+            </div>
+        </div>
     );
 
     return currentUser ? personalGreeting() : sessionLinks();

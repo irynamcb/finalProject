@@ -34,5 +34,10 @@
     padding-top: 13px;
     height: 82px;
     min-width: 980px;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav {
+
 }

@@ -8,7 +8,7 @@ import SplashContainer from './splash/splash_container';
 
 
 const App = () => (
-    <div>
+    <div id="main-div">
         <header>
             <Link to="/" className="">
                 <h1>Facebook</h1>

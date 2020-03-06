@@ -1,12 +1,25 @@
-
+html, body, #root, #main-div {
+    height: 100%;
+}
 
 .login-form-container {
+    /* display: block; */
+    background: #edf0f5;
+    height:100%;
+    /* padding-top: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-box {
    margin: auto;
    padding: 22px 108px 26px;
    width: 396px; 
    background-color: #fff;
    border: 1px solid #dddfe2;
    border-radius: 3px;
+    
 }
 
 .kb h1 {
@@ -26,7 +39,6 @@
     border-radius: 1px;
     margin: 5px;
     width: 377px;
-    background-color: transparent;
     position: relative;
 }
 
@@ -34,9 +46,8 @@
     background-color: #4267b2;
     border-color: #4267b2;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
     font-size: 14px;
-    width: 252px;
     line-height: 42px;
     padding: 0 24px;
     border: 1px solid;
@@ -50,6 +61,7 @@
     vertical-align: middle;
     margin: 5px;
     color: #fff;
+    width: 352px;
 }
 
 .login-submit:hover {
@@ -73,6 +85,7 @@
     line-height: 42px;
     font-size: 14px;
     letter-spacing: normal;
+    display: flex;
 }
 
 p a {

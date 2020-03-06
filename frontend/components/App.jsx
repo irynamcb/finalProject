@@ -17,12 +17,12 @@ const App = () => (
             </Link>
             <NavbarContainer />
         </header>
-        {/* <Switch> */}
+        <Switch>
             <ProtectedRoute path="/users/:userId" component={UserAboutContainer} />
-            <AuthRoute exact path="/login" component={LogInFormContainer} />``
+            <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <Route exact path="/" component={SplashContainer} />
-        {/* </Switch> */}
+        </Switch>
         <footer>
             <Footer/>
         </footer>

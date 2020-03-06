@@ -222,14 +222,14 @@ var App = function App() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/",
     className: ""
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Fcbk")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Fcbk")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     path: "/users/:userId",
     component: _user_user_about_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
     exact: true,
     path: "/login",
     component: _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), "``", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
     exact: true,
     path: "/signup",
     component: _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -237,7 +237,7 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"], null)));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -1101,6 +1101,11 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
           createdAt = _this$props$user.createdAt,
           education = _this$props$user.education,
           about = _this$props$user.about;
+      var cdate = new Date(createdAt);
+      var joinedOn = new Intl.DateTimeFormat("en-GB", {
+        year: "numeric",
+        month: "long"
+      }).format(cdate);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -1109,15 +1114,15 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         className: "user-detail"
       }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
-      }, "Lives in ", location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, location !== null ? "Lives in ".concat(location) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
-      }, "From ", location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, location !== null ? "From ".concat(location) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
-      }, "Joined on ", createdAt), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Joined on ", joinedOn), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
-      }, "Studied at ", education), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, education !== null ? "Studied at ".concat(education) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
-      }, "About Info: ", about)));
+      }, about !== null ? "About Info: ".concat(about) : " ")));
     }
   }]);
 
@@ -1125,6 +1130,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
+;
 
 /***/ }),
 

@@ -22,31 +22,37 @@ componentDidMount() {
         }
         
         const { firstName, lastName, location, createdAt, education, about } = this.props.user;
+        let cdate = new Date(createdAt);
+        let joinedOn = new Intl.DateTimeFormat("en-GB", {
+            year: "numeric",
+            month: "long"
+        }).format(cdate);
    
         return (
             <div className="user-about">
                 <ul className="user-details">
                     <li className="user-detail">
-                        {firstName} {lastName}
-                      
+                        {firstName} {lastName}     
                     </li>
                     <li className="user-detail">
-                        Lives in {location}
+
+                        {(location !== null) ? `Lives in ${location}` : ` `}
+                    
                     </li>
                     <li className="user-detail">
-                        From {location}
+                        {(location !== null) ? `From ${location}` : ` `}
                     </li>
                     <li className="user-detail">
-                        Joined on {createdAt}
+                        Joined on {joinedOn}
                     </li>
                     <li className="user-detail">
-                        Studied at {education}
+                        {(education !== null) ? `Studied at ${education}` : ` `}
                     </li>
                     <li className="user-detail">
-                        About Info: {about}
+                        {(about !== null) ? `About Info: ${about}` : ` `}
                     </li>
                 </ul>
             </div>
         )
     }
-}
+};

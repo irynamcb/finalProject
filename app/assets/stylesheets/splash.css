@@ -25,12 +25,13 @@
     margin-right: 16px;
     vertical-align: top;
     width: 40%;
+    margin-left: 20px;
 }
 
 .d {
     display:flex;
     justify-content: space-between;
-    background-color: #edf0f5;
+    background-color: #edf0f5; 
 }
 
 .e {

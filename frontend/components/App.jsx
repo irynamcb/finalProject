@@ -5,6 +5,8 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
+import UserAbout from './user/user_about';
+import Footer from './footer/footer'
 
 
 const App = () => (
@@ -17,9 +19,13 @@ const App = () => (
         </header>
         <Switch>
             <Route exact path="/" component={SplashContainer} />
+            <Route exact path="/users/:id" component={UserAbout} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         </Switch>
+        <footer>
+            <Footer/>
+        </footer>
     </div>
 );
 

@@ -3,10 +3,8 @@ html, body, #root, #main-div {
 }
 
 .login-form-container {
-    /* display: block; */
     background: #edf0f5;
     height:100%;
-    /* padding-top: 20px; */
     display: flex;
     justify-content: center;
     align-items: center;

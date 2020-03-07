@@ -959,7 +959,8 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       var iconStyle = {
         width: '56px',
         height: '56px',
-        color: 'lightblue'
+        color: 'purple',
+        marginRight: '16px'
       };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "d"
@@ -967,7 +968,9 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "splash-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Not logged In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ma3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Connect with friends and the world around you on Facebook.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "ma3"
+      }, "Connect with friends and the world around you on Facebook.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faFileAlt"],

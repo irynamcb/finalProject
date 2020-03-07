@@ -26,7 +26,7 @@ export default class Splash extends React.Component {
                         <h1 className="ma3">Connect with friends and the world around you on Facebook.</h1>
                     </div>
                     <div>
-                        <h2 className="ess8"><FontAwesomeIcon icon={faFileAlt} style={iconStyle} /> See photos and updates from friends in News Feed.</h2>
+                        <h2 className="ess8" ><FontAwesomeIcon icon={faFileAlt} style={iconStyle} /> See photos and updates from friends in News Feed. </h2>
                         <br/>
                         <h2 className="ess8"><FontAwesomeIcon icon={faStarHalf} style={iconStyle} /> Share what's new in your life on your Timeline.</h2>
                         <br/>

@@ -975,7 +975,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faFileAlt"],
         style: iconStyle
-      }), " See photos and updates from friends in News Feed."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }), " See photos and updates from friends in News Feed. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faStarHalf"],

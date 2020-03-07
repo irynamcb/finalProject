@@ -72,7 +72,6 @@ class LoginForm extends React.Component {
                         <input className="login-submit" type="submit" value={this.props.formType} />
                         <br/>
                         <p><a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login" target="_blank">Forgot account?</a></p>
-                        &nbsp;or&nbsp;
                         <br/>
                         <input className="create-account" type="submit" value="Create New Account" onClick={() => this.signUp()}/>
                         <br/>

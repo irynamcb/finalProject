@@ -631,7 +631,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login",
         target: "_blank"
-      }, "Forgot account?")), "\xA0or\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Forgot account?")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "create-account",
         type: "submit",
         value: "Create New Account",
@@ -838,7 +838,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "custom",
         className: "signup-input-4"
-      }, "Custom")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, "Custom")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "info"
       }, "By clicking Sign Up, you agree to our ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.facebook.com/legal/terms/update",
@@ -959,7 +959,8 @@ var Splash = /*#__PURE__*/function (_React$Component) {
       var iconStyle = {
         width: '56px',
         height: '56px',
-        color: 'lightblue'
+        color: 'purple',
+        marginRight: '16px'
       };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "d"
@@ -967,12 +968,14 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "splash-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Not logged In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ma3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Connect with friends and the world around you on Facebook.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "ma3"
+      }, "Connect with friends and the world around you on Facebook.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faFileAlt"],
         style: iconStyle
-      }), " See photos and updates from friends in News Feed."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }), " See photos and updates from friends in News Feed. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faStarHalf"],

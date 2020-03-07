@@ -14,7 +14,8 @@ export default class Splash extends React.Component {
         let iconStyle = {
             width: '56px',
             height: '56px',
-            color: 'lightblue'
+            color: 'purple',
+            marginRight: '16px'
         }
 
         return (
@@ -22,10 +23,10 @@ export default class Splash extends React.Component {
                 <div className="splash-info">
                     <h1>Not logged In</h1>
                     <div className="ma3">
-                        <h1>Connect with friends and the world around you on Facebook.</h1>
+                        <h1 className="ma3">Connect with friends and the world around you on Facebook.</h1>
                     </div>
                     <div>
-                        <h2 className="ess8"><FontAwesomeIcon icon={faFileAlt} style={iconStyle} /> See photos and updates from friends in News Feed.</h2>
+                        <h2 className="ess8" ><FontAwesomeIcon icon={faFileAlt} style={iconStyle} /> See photos and updates from friends in News Feed. </h2>
                         <br/>
                         <h2 className="ess8"><FontAwesomeIcon icon={faStarHalf} style={iconStyle} /> Share what's new in your life on your Timeline.</h2>
                         <br/>

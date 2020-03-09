@@ -23,12 +23,19 @@ componentDidMount() {
             return null;
         }
         
-        const { firstName, lastName, location, createdAt, education, about } = this.props.user;
+        const { firstName, lastName, location, createdAt, education, about, birthday } = this.props.user;
         let cdate = new Date(createdAt);
-        let joinedOn = new Intl.DateTimeFormat("en-GB", {
+        let joinedOn = new Intl.DateTimeFormat("en-US", {
             year: "numeric",
             month: "long"
         }).format(cdate);
+
+        let bday = new Date(birthday);
+        let bornOn = new Intl.DateTimeFormat("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        }).format(bday);
    
         return (
             <div className="user-about">
@@ -59,6 +66,9 @@ componentDidMount() {
                         {(about !== null) ? `About Info: ${about}` : ` `}
                     </li>
                 </ul>
+                <div className="bodn-on">
+                    Born on {bornOn}
+                </div>
             </div>
         )
     }

@@ -35,7 +35,9 @@
     height: 82px;
     min-width: 980px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
 }
 
 .nav {

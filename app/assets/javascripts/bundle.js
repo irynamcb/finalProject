@@ -450,9 +450,9 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, "FriendsBook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/users/".concat(currentUser.id),
+        to: "/users/".concat(this.props.currentUser.id),
         className: "header-name"
-      }, currentUser.firstName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.currentUser.firstName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
         to: "/",
@@ -1145,12 +1145,19 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
           location = _this$props$user.location,
           createdAt = _this$props$user.createdAt,
           education = _this$props$user.education,
-          about = _this$props$user.about;
+          about = _this$props$user.about,
+          birthday = _this$props$user.birthday;
       var cdate = new Date(createdAt);
-      var joinedOn = new Intl.DateTimeFormat("en-GB", {
+      var joinedOn = new Intl.DateTimeFormat("en-US", {
         year: "numeric",
         month: "long"
       }).format(cdate);
+      var bday = new Date(birthday);
+      var bornOn = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      }).format(bday);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -1169,7 +1176,9 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         className: "user-detail"
       }, education !== null ? "Studied at ".concat(education) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
-      }, about !== null ? "About Info: ".concat(about) : " ")));
+      }, about !== null ? "About Info: ".concat(about) : " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bodn-on"
+      }, "Born on ", bornOn));
     }
   }]);
 

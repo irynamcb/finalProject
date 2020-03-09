@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Navbar from './navbar';
 
-const mSTP = ({ session, entities: { users } }) => {
+const mSTP = ({ session, entities: { users } }, ownProps) => {
     return {
         currentUser: users[session.id]
     };

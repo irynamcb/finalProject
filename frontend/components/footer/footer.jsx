@@ -36,7 +36,7 @@ export default class Footer extends React.Component {
                 <br/>
                 <br />
                 <br />
-                <Link to="/" className="copyright">Fcbk &#169; 2020</Link>
+                <Link to="/" className="copyright">FriendsBook &#169; 2020</Link>
             </div>
         )
     }

@@ -12,9 +12,9 @@ import Footer from './footer/footer'
 const App = () => (
     <div id="main-div">
         <header>
-            <Link to="/" className="">
-                <h1>Fcbk</h1>
-            </Link>
+            {/* <Link to="/" className="">
+                <h1>FriendsBook</h1>
+            </Link> */}
             <NavbarContainer />
         </header>
         <Switch>

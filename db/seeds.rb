@@ -15,8 +15,8 @@ u6 = User.create(first_name: 'Sara', last_name: 'S', email: 'sara@gmail.com', ge
 
 
 Post.destroy_all
-Post.create(author_id: u4.id, body: "Hey Sara! How are you?", parent_id: u6.id)
-Post.create(author_id: u6.id, body: "I am doing good, how are you?", parent_id: u4.id)
-Post.create(author_id: u5.id, body: "I am here!", parent_id: u5.id)
-Post.create(author_id: u1.id, body: "Let's grab a beer soon!", parent_id: u4.id)
-Post.create(author_id: u3.id, body: "Don't forget about homework!", parent_id: u4.id)
+p1 = Post.create(author_id: u4.id, body: "Hey Sara! How are you?", parent_id: u6.id)
+p2 = Post.create(author_id: u6.id, body: "I am doing good, how are you?", parent_id: u4.id)
+p3 = Post.create(author_id: u5.id, body: "I am here!", parent_id: u5.id)
+p4 = Post.create(author_id: u1.id, body: "Let's grab a beer soon!", parent_id: u4.id)
+p5 = Post.create(author_id: u3.id, body: "Don't forget about homework!", parent_id: u4.id)

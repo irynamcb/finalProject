@@ -697,7 +697,9 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         className: "login-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "kb"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Log Into Facebook")), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Log Into Facebook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-errors"
+      }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",

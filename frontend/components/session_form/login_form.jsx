@@ -48,7 +48,9 @@ class LoginForm extends React.Component {
                     <div className="kb">
                         <h1>Log Into Facebook</h1>
                     </div>
+                    <div className="login-errors">
                     {this.renderErrors()}
+                    </div>
                     <div className="login-form">
                         <br />
                         <label>

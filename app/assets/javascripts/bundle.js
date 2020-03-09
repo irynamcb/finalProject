@@ -86,6 +86,55 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/post_actions.js":
+/*!******************************************!*\
+  !*** ./frontend/actions/post_actions.js ***!
+  \******************************************/
+/*! exports provided: CREATE_POST, REMOVE_POST, createPost, deletePost */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_POST", function() { return CREATE_POST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_POST", function() { return REMOVE_POST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
+/* harmony import */ var _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/post_api_util */ "./frontend/util/post_api_util.js");
+
+var CREATE_POST = 'CREATE_POST';
+var REMOVE_POST = 'REMOVE_POST';
+
+var createSinglePost = function createSinglePost(post) {
+  return {
+    type: CREATE_POST,
+    post: post
+  };
+};
+
+var removePost = function removePost(postId) {
+  return {
+    type: REMOVE_POST,
+    postId: postId
+  };
+};
+
+var createPost = function createPost(post) {
+  return function (dispatch) {
+    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["createPost"](post).then(function (post) {
+      return dispatch(createSinglePost(post));
+    });
+  };
+};
+var deletePost = function deletePost(postId) {
+  return function (dispatch) {
+    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["deletePost"](postId).then(function () {
+      return dispatch(removePost(postId));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -1327,6 +1376,8 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/post_actions */ "./frontend/actions/post_actions.js");
+
 
 
 
@@ -1342,6 +1393,13 @@ var postsReducer = function postsReducer() {
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER"]:
       return Object.assign(newState, action.user.posts);
+
+    case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["CREATE_POST"]:
+      return Object.assign(nextState, action.user.posts);
+
+    case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_POST"]:
+      delete nextState[Object.keys(action.user.posts)[0]];
+      return nextState;
 
     default:
       return state;
@@ -1518,6 +1576,35 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/post_api_util.js":
+/*!****************************************!*\
+  !*** ./frontend/util/post_api_util.js ***!
+  \****************************************/
+/*! exports provided: createPost, deletePost */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
+var createPost = function createPost(post) {
+  return $.ajax({
+    url: "api/posts/",
+    method: 'POST',
+    data: {
+      post: post
+    }
+  });
+};
+var deletePost = function deletePost(postId) {
+  return $.ajax({
+    url: "/api/posts/".concat(postId, "/"),
+    method: 'DELETE'
+  });
+};
 
 /***/ }),
 

@@ -40,6 +40,7 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        // debugger
         return (
             <div className="login-form-container">
                 
@@ -48,9 +49,11 @@ class LoginForm extends React.Component {
                     <div className="kb">
                         <h1>Log Into Facebook</h1>
                     </div>
-                    <div className="login-errors">
-                    {this.renderErrors()}
-                    </div>
+                    {this.props.errors.length > 0 ?  
+                        <div className="login-errors">
+                            {this.renderErrors()}
+                        </div>
+                    : ""}
                     <div className="login-form">
                         <br />
                         <label>

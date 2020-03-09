@@ -1,5 +1,5 @@
 import React from 'react';
-import { faClock, faHome, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faHome, faMapMarkerAlt, faDragon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class UserAbout extends React.Component {
@@ -66,7 +66,9 @@ componentDidMount() {
                         {(about !== null) ? `About Info: ${about}` : ` `}
                     </li>
                 </ul>
-                <div className="bodn-on">
+                <div className="born-on">
+                    <FontAwesomeIcon icon={faDragon} /> 
+                    <br/>
                     Born on {bornOn}
                 </div>
             </div>

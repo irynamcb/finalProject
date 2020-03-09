@@ -1,0 +1,28 @@
+.born-on {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  min-height: 253px;
+  min-width: 514px;
+  letter-spacing: normal;
+  background-color: #fff;
+  color: #1d2129;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+
+}
+
+.user-details {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  min-height: 390px;
+  min-width: 321px;
+  letter-spacing: normal;
+  background-color: #fff;
+  color: #1d2129;
+  text-align: left;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}

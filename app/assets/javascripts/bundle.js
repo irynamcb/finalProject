@@ -867,9 +867,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         className: "signup-form-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pvl"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "It's quick and easy."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "signup-errors"
-      }, this.renderErrors())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.props.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "It's quick and easy.")), this.props.errors.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-errors"
+      }, this.renderErrors()) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -1231,8 +1231,10 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
       }, education !== null ? "Studied at ".concat(education) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
       }, about !== null ? "About Info: ".concat(about) : " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bodn-on"
-      }, "Born on ", bornOn));
+        className: "born-on"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faDragon"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Born on ", bornOn));
     }
   }]);
 

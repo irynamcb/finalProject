@@ -47,10 +47,12 @@ class SignupForm extends React.Component {
                         <h1>{this.props.title}</h1>
                         <br />
                         <h2>It's quick and easy.</h2>
-                        <div className="signup-errors">
+                    </div>
+                    {this.props.errors.length > 0 ?
+                        <div className="login-errors">
                             {this.renderErrors()}
                         </div>
-                    </div>
+                        : ""}
                     <div className="signup-form">
                         <br />
                         <label>

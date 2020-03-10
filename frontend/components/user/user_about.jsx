@@ -56,7 +56,7 @@ componentDidMount() {
                     </li>
                     
                     <li className="user-detail">
-                        <FontAwesomeIcon icon={faHome} /> Joined on {joinedOn}
+                        Joined on {joinedOn}
                     </li>
                   
                     <li className="user-detail">

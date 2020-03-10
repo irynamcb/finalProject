@@ -17,6 +17,9 @@ export default class PostList extends React.Component {
     return (
     <div>
         <ul>
+            
+        <p>Posts</p>
+           
         {
         Object.keys(this.props.posts).map(postId => (
         <PostItem

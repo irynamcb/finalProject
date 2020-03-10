@@ -27,6 +27,10 @@ class LoginForm extends React.Component {
         this.props.history.push("/signup")
     }
 
+    componentWillUnmount () {
+        this.props.clearErrors();
+    }
+
     renderErrors() {
         return (
             <ul>

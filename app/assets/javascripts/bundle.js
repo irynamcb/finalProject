@@ -889,6 +889,13 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this3.signUp();
         }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "create-account",
+        type: "submit",
+        value: "Demo User",
+        onClick: function onClick() {
+          return _this3.props.demoLogin();
+        }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
     }
   }]);

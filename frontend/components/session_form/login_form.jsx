@@ -83,6 +83,7 @@ class LoginForm extends React.Component {
                         <p><a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login" target="_blank">Forgot account?</a></p>
                         <br/>
                         <input className="create-account" type="submit" value="Create New Account" onClick={() => this.signUp()}/>
+                        <input className="create-account" type="submit" value="Demo User" onClick={() => this.props.demoLogin()} />
                         <br/>
                     </div>
                 </form>

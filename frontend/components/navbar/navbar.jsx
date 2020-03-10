@@ -22,7 +22,7 @@ export default class Navbar extends React.Component {
     personalGreeting() {
         return (
             <div className="header-group">
-                <Link to="/" className="home">FriendsBook</Link>
+                <Link to="/" className="home">Friendsbook</Link>
                 <div className="nav">
                     <Link to={`/users/${this.props.currentUser.id}`} className="header-name">{this.props.currentUser.firstName}</Link>
                 </div>

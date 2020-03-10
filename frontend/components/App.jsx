@@ -9,6 +9,12 @@ import UserAboutContainer from './user/user_about_container';
 import Footer from './footer/footer'
 
 
+const NoMatchPage = () => {
+    return (
+        <h3>404 - Not found</h3>
+    );
+};
+
 const App = () => (
     <div id="main-div">
         <header>
@@ -21,7 +27,8 @@ const App = () => (
             <ProtectedRoute path="/users/:userId" component={UserAboutContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <Route path="/" component={SplashContainer} />
+            <Route exact path="/" component={SplashContainer} />
+            <Route component={NoMatchPage} />
         </Switch>
         <footer>
             <Footer/>

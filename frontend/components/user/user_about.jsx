@@ -1,6 +1,7 @@
 import React from 'react';
 import { faClock, faHome, faMapMarkerAlt, faDragon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PostList from "../post/posts";
 
 export default class UserAbout extends React.Component {
 
@@ -70,6 +71,9 @@ componentDidMount() {
                     <FontAwesomeIcon icon={faDragon} /> 
                     <br/>
                     Born on {bornOn}
+                </div>
+                <div className="user-post">
+                    <PostList posts={this.props.posts}/>
                 </div>
             </div>
         )

@@ -10,11 +10,11 @@ const postsReducer = (state = {}, action) => {
         return Object.assign(newState, action.currentUser.posts);
         case RECEIVE_USER:
             return Object.assign(newState, action.user.posts);
-        case CREATE_POST:
-            return Object.assign(nextState, action.user.posts);
-        case REMOVE_POST:
-            delete nextState[Object.keys(action.user.posts)[0]];
-            return nextState;
+        // case CREATE_POST:
+        //     return Object.assign(nextState, action.user.posts);
+        // case REMOVE_POST:
+        //     delete nextState[Object.keys(action.user.posts)[0]];
+        //     return nextState;
         default:
             return state;
     }

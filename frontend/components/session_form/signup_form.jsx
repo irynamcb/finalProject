@@ -40,11 +40,20 @@ class SignupForm extends React.Component {
     }
 
     render() {
+
+        let title;
+
+        if (this.props.location.pathname === '/signup') {
+            title = "Create A New Account"
+        } else {
+            title = "Sign Up"
+        }
+
         return (
         <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <div className="pvl">
-                        <h1>{this.props.title}</h1>
+                    <h1>{title}</h1>
                         <br />
                         <h2>It's quick and easy.</h2>
                     </div>
@@ -94,7 +103,7 @@ class SignupForm extends React.Component {
                         </label>
                         <br />
 
-                        <label><h3>Birthday</h3>
+                        <label className="birthday"><h3>Birthday</h3>
               <input type="date"
                                 value={this.state.birthday}
                                 onChange={this.update('birthday')}
@@ -103,7 +112,7 @@ class SignupForm extends React.Component {
                         </label>
                         <br />
 
-                        <label><h3>Gender</h3>
+                        <label className="gender"><h3>Gender</h3>
               <input type="radio" value="female" onChange={this.update('gender')} className="signup-input" id="female" name="gender"/>
               <label htmlFor="female" className="signup-input-4">Female</label>
               <input type="radio" value="male" onChange={this.update('gender')} className="signup-input" id="male" name="gender"/>

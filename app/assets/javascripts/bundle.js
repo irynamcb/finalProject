@@ -1599,7 +1599,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
 var createPost = function createPost(post) {
   return $.ajax({
-    url: "api/posts/",
+    url: "/api/posts/",
     method: 'POST',
     data: {
       post: post

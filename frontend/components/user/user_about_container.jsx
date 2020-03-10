@@ -5,7 +5,7 @@ import {fetchUser} from '../../actions/user_actions';
 import UserAbout from './user_about';
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     return ({
     user: state.entities.users[Number(ownProps.match.params.userId)],
     posts: state.entities.posts

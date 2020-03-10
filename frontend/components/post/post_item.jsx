@@ -9,7 +9,7 @@ export default class PostItem extends React.Component {
         return (
             <div>
                 <div>
-                    {this.props.body}
+                    {this.props.post.body}
                 </div>
                 
             </div>

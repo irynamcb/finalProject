@@ -18,10 +18,10 @@ export default class PostList extends React.Component {
             <div>
                  <ul>
                         {
-                            this.props.posts.map(post => (
+                            Object.keys(this.props.posts).map(postId => (
                                 <PostItem
-                                    post={post}
-                                    key={post.id}
+                                    post={this.props.posts[postId]}
+                                    key={postId}
                                 />
                             ))
                         }

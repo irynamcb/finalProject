@@ -11,7 +11,7 @@ export default class Navbar extends React.Component {
     sessionLinks () {
         return (
         <nav className="login-signup">
-            <Link to="/" className="home">FriendsBook</Link>
+            <Link to="/" className="home">Friendsbook</Link>
             <div className="signup-button">
                 <Link to="/signup" className="signup-btn">Sign Up</Link>
             </div>

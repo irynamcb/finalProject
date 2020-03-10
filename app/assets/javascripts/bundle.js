@@ -419,7 +419,7 @@ var Footer = /*#__PURE__*/function (_React$Component) {
       }, "Help"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         className: "copyright"
-      }, "FriendsBook \xA9 2020"));
+      }, "Friendsbook \xA9 2020"));
     }
   }]);
 
@@ -481,7 +481,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         className: "home"
-      }, "FriendsBook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Friendsbook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup",
@@ -1049,42 +1049,42 @@ var Splash = /*#__PURE__*/function (_React$Component) {
     key: "notLoggedInRender",
     value: function notLoggedInRender() {
       var iconStyle = {
-        width: '56px',
-        height: '56px',
-        color: 'purple',
+        width: '46px',
+        height: '46px',
+        color: '#666',
         marginRight: '16px'
       };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "d"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Not logged In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ma3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "ma3"
-      }, "Connect with friends and the world around you on Facebook.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }, "Connect with friends and the world around you on Friendsbook.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faFileAlt"],
         style: iconStyle
-      }), " See photos and updates from friends in News Feed. "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "See photos and updates"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "from friends in News Feed.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faStarHalf"],
         style: iconStyle
-      }), " Share what's new in your life on your Timeline."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Share what's new "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "in your life on your Timeline.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faCaretSquareUp"],
         style: iconStyle
-      }), " Find more of what you're looking for with Facebook Search."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Find more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "of what you're looking for with Friendsbook Search.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "e"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
     }
   }, {
     key: "loggedInRender",
     value: function loggedInRender() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Logged In"));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null));
     }
   }, {
     key: "render",

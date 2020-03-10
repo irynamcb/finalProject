@@ -12,27 +12,29 @@ export default class Splash extends React.Component {
     notLoggedInRender() {
 
         let iconStyle = {
-            width: '56px',
-            height: '56px',
-            color: 'purple',
+            width: '46px',
+            height: '46px',
+            color: '#666',
             marginRight: '16px'
         }
 
         return (
             <div className="d">    
                 <div className="splash-info">
-                    <h1>Not logged In</h1>
+                    {/* <img src={window.homepage} alt=""/> */}
+                    <h1></h1> 
+                    
                     <div className="ma3">
-                        <h1 className="ma3">Connect with friends and the world around you on Facebook.</h1>
+                        <h1 className="ma3">Connect with friends and the world around you on Friendsbook.</h1>
                     </div>
                     <div>
-                        <h2 className="ess8" ><FontAwesomeIcon icon={faFileAlt} style={iconStyle} /> See photos and updates from friends in News Feed. </h2>
+                        <div className="ess8" ><FontAwesomeIcon icon={faFileAlt} style={iconStyle}/> <h2>See photos and updates</h2><h3>from friends in News Feed.</h3></div> 
                         <br/>
-                        <h2 className="ess8"><FontAwesomeIcon icon={faStarHalf} style={iconStyle} /> Share what's new in your life on your Timeline.</h2>
+                        <div className="ess8"><FontAwesomeIcon icon={faStarHalf} style={iconStyle}/> <h2>Share what's new </h2><h3>in your life on your Timeline.</h3></div>
                         <br/>
-                        <h2 className="ess8"><FontAwesomeIcon icon={faCaretSquareUp} style={iconStyle} /> Find more of what you're looking for with Facebook Search.</h2>
-                        <br/>
-                    </div>
+                        <div className="ess8"><FontAwesomeIcon icon={faCaretSquareUp} style={iconStyle}/> <h2>Find more</h2><h3>of what you're looking for with Friendsbook Search.</h3></div>
+                        <br/> 
+                     </div> 
                 </div>
                 <div className="e">
                     <SignUpFormContainer/>
@@ -47,7 +49,7 @@ export default class Splash extends React.Component {
 
         return(
             <div>
-                <h1>Logged In</h1>
+                <h1></h1>
             </div>
         )
     }

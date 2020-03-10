@@ -18,6 +18,17 @@ export default class Navbar extends React.Component {
         </nav>
         )
     }
+
+    sessionLinksLogin() {
+        return (
+            <nav className="login-signup">
+                <Link to="/" className="home">Friendsbook</Link>
+                <div className="signup-button">
+                    <Link to="/login" className="signup-btn">Log In</Link>
+                </div>
+            </nav>
+        )
+    }
        
     personalGreeting() {
         return (
@@ -44,7 +55,15 @@ export default class Navbar extends React.Component {
 
 
     render() {
-        return this.props.currentUser ? this.personalGreeting() : this.sessionLinks();
+    
+        if (this.props.currentUser) {
+            return this.personalGreeting();
+        } else if (this.props.location.pathname === "/login") {
+            return this.sessionLinks();
+        } else {
+            return this.sessionLinksLogin();
+        }
+       
     }
  
 };

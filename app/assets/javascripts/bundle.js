@@ -641,7 +641,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
   _createClass(PostItem, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.post.body));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.post.authorId));
     }
   }]);
 
@@ -1433,7 +1433,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  // debugger
   return {
     user: state.entities.users[Number(ownProps.match.params.userId)],
     posts: state.entities.posts

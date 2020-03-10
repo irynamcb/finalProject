@@ -5,14 +5,16 @@ export default class PostItem extends React.Component {
         super(props)
     }
 
-    render() {
-        return (
-            <div>
-                <div>
-                    {this.props.post.body}
-                </div>
-                
-            </div>
+render() {
+    return (
+        <div>
+            <p>
+                {this.props.post.body}
+            </p>
+            <p>
+                {this.props.post.authorId}
+            </p> 
+        </div>
         )
     }
 };

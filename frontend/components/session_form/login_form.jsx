@@ -27,6 +27,11 @@ class LoginForm extends React.Component {
         this.props.history.push("/signup")
     }
 
+    demo() {
+        event.preventDefault();
+        this.props.demoLogin();
+    }
+
     componentWillUnmount () {
         this.props.clearErrors();
     }
@@ -83,7 +88,7 @@ class LoginForm extends React.Component {
                         <p><a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login" target="_blank">Forgot account?</a></p>
                         <br/>
                         <input className="create-account" type="submit" value="Create New Account" onClick={() => this.signUp()}/>
-                        <input className="create-account" type="submit" value="Demo User" onClick={() => this.props.demoLogin()} />
+                        <input className="create-account" type="submit" value="Demo User" onClick={() => this.demo()} />
                         <br/>
                     </div>
                 </form>

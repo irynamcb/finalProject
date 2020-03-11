@@ -840,6 +840,12 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       this.props.history.push("/signup");
     }
   }, {
+    key: "demo",
+    value: function demo() {
+      event.preventDefault();
+      this.props.demoLogin();
+    }
+  }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       this.props.clearErrors();
@@ -901,7 +907,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         type: "submit",
         value: "Demo User",
         onClick: function onClick() {
-          return _this3.props.demoLogin();
+          return _this3.demo();
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
     }

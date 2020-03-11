@@ -1,0 +1,89 @@
+.createpost-container {
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  font-size: 12px;
+  border: 1px solid #e9ebee;
+  position: relative;
+  min-width: 516px;
+  min-height: 165px;
+}
+
+.createpost-btn {
+  font-size: 12px;
+  line-height: 22px;
+  background-color: #4267b2;
+  border-color: #4267b2;
+  color: #fff;
+  box-sizing: border-box;
+  height: 28px;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.createpost-btn:hover {
+  background-color: darkblue;
+}
+
+.createpost-body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-height: 100px;
+  min-height: 71px;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 18px;
+  padding-right: 48px;
+  border-bottom: 1px solid #e9ebee;
+  border-top: 1px solid #e9ebee;
+}
+
+.createpost-body input {
+  font-size: 16px;
+  padding-top: 24px;
+}
+
+.createpost-title {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+  cursor: pointer;
+  color: #4b4f56;
+  text-align: left;
+  border-bottom: 1px solid #dddfe2;
+  border-radius: 2px 2px 0 0;
+  background-color: #f5f6f7;
+}
+
+.createpost-title h3 {
+  justify-content: space-between;
+  align-items: baseline;
+  padding-right: 24px;
+  border-right: 1px solid #dddfe2;
+  padding-left: 12px;
+}
+
+.createpost-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.createpost-avatar, .createpost-body {
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.createpost-post {
+  display: block;
+}
+
+.createpost-main {
+  display: flex;
+  flex-direction: row;
+}

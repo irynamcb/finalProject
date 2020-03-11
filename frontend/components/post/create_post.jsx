@@ -22,8 +22,6 @@ export default class CreatePost extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
-    // add click handler
-
     render() {
         return (
             <div>
@@ -31,7 +29,7 @@ export default class CreatePost extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Body
-            <textarea
+                <textarea
                             value={this.state.body}
                             onChange={this.update('body')}
                         />

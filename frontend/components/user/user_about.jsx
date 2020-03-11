@@ -73,9 +73,9 @@ componentDidMount() {
                     <br/>
                     Born on {bornOn}
                 </div>
-
+                <div>
                 <CreatePostContainer />
-
+                </div>
                 <div className="user-post">
                     <PostList posts={this.props.posts}/>
                 </div>

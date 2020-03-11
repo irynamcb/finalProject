@@ -682,8 +682,7 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
       };
-    } // add click handler
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -1634,7 +1633,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         className: "born-on"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faDragon"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Born on ", bornOn), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Born on ", bornOn), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_posts__WEBPACK_IMPORTED_MODULE_3__["default"], {
         posts: this.props.posts

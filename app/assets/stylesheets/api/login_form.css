@@ -12,8 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-    
+    position: relative;
 }
 
 .login-form-box {
@@ -23,8 +22,6 @@
    background-color: #fff;
    border: 1px solid #dddfe2;
    border-radius: 3px;
-   position: relative;
-    
 }
 
 .kb h1 {
@@ -44,7 +41,6 @@
     border-radius: 1px;
     margin: 5px;
     width: 377px;
-    position: relative;
 }
 
 .login-submit {

@@ -6,12 +6,17 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import UserAboutContainer from './user/user_about_container';
-import Footer from './footer/footer'
+import Footer from './footer/footer';
+
 
 
 const NoMatchPage = () => {
     return (
-        <h3>404 - Not found</h3>
+        <div>
+            <img src={window.notfound} style={{ width: 400, height: 400, display: 'block', margin: 'auto', position: 'relative' }} />
+            <h3 className="">404 - Not found</h3>
+        </div>
+
     );
 };
 

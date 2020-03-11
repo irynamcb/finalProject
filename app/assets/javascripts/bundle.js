@@ -274,7 +274,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NoMatchPage = function NoMatchPage() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "404 - Not found");
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.notfound,
+    style: {
+      width: 400,
+      height: 400,
+      display: 'block',
+      margin: 'auto',
+      position: 'relative'
+    }
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: ""
+  }, "404 - Not found"));
 };
 
 var App = function App() {

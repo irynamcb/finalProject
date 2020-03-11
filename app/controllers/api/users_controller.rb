@@ -3,9 +3,11 @@ class Api::UsersController < ApplicationController
 def show
 
     @user = User.includes(:posts_on_wall)
+                .includes(:posts_on_wall_authors)
                 .includes(:comments)
                 .includes(:likes)
                 .includes(:posts)
+                .includes(:wall_users)
                 .find(params[:id])
     if @user
         render :show

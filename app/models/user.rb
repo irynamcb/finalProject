@@ -15,12 +15,18 @@ has_many :posts,
   class_name: :Post,
   dependent: :destroy
 
+has_many :wall_users,
+  through: :posts,
+  source: :wall
 
 has_many :posts_on_wall,
-primary_key: :id,
-foreign_key: :parent_id,
-class_name: :Post
+  primary_key: :id,
+  foreign_key: :parent_id,
+  class_name: :Post
 
+has_many :posts_on_wall_authors,
+  through: :posts_on_wall,
+  source: :author
 
 has_many :comments,
   primary_key: :id,
@@ -29,9 +35,9 @@ has_many :comments,
 
 
 has_many :likes,
-primary_key: :id,
-foreign_key: :author_id,
-class_name: :Like
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: :Like
 
 has_many :liked_comments,
   through: :likes,

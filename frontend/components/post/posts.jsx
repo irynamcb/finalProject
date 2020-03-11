@@ -1,5 +1,5 @@
 import React from 'react';
-import PostItem from './post_item';
+import PostItemContainer from './post_item_container';
 
 export default class PostList extends React.Component {
     constructor(props) {
@@ -21,12 +21,12 @@ export default class PostList extends React.Component {
         <p>Posts</p>
            
         {
-        Object.keys(this.props.posts).map(postId => (
-        <PostItem
-            post={this.props.posts[postId]}
-            key={postId}
+        this.props.posts.map(post => 
+        <PostItemContainer
+            post={post}
+            key={post.id}
         />
-        ))
+        )
         }
         </ul>
     </div>

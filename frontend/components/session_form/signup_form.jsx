@@ -43,6 +43,11 @@ class SignupForm extends React.Component {
         );
     }
 
+    demo() {
+        event.preventDefault();
+        this.props.demoLogin();
+    }
+
     render() {
 
         let title;
@@ -126,8 +131,8 @@ class SignupForm extends React.Component {
                         </label>
                         <br />
                         <span className="info">By clicking Sign Up, you agree to our <a href="https://www.facebook.com/legal/terms/update" target="_blank">Terms</a>, <a href="https://www.facebook.com/about/privacy/update" target="_blank">Data Policy</a> and <a href="https://www.facebook.com/policies/cookies/" target="_blank">Cookies Policy</a>. You may receive SMS Notifications from us and can opt out any time.</span>
-                        <input className="signup-submit" type="submit" value={this.props.formType} 
-                        />
+                        <input className="signup-submit" type="submit" value={this.props.formType} />
+                        <input className="signup-submit" type="submit" value="Demo User" onClick={() => this.demo()} />
                     </div>
                 </form>
             </div>

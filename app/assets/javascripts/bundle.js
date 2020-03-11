@@ -944,8 +944,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _session_form_login_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../session_form/login_form */ "./frontend/components/session_form/login_form.jsx");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-
 
 
 
@@ -1065,8 +1063,16 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       }));
     }
   }, {
+    key: "demo",
+    value: function demo() {
+      event.preventDefault();
+      this.props.demoLogin();
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var title;
 
       if (this.props.location.pathname === '/signup') {
@@ -1164,6 +1170,13 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         className: "signup-submit",
         type: "submit",
         value: this.props.formType
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "signup-submit",
+        type: "submit",
+        value: "Demo User",
+        onClick: function onClick() {
+          return _this3.demo();
+        }
       }))));
     }
   }]);
@@ -1210,6 +1223,12 @@ var mDTP = function mDTP(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
+    },
+    demoLogin: function demoLogin() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
+        email: "sara@gmail.com",
+        password: "123456"
+      }));
     },
     clearErrors: function clearErrors() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["clearSessionErrors"])());

@@ -1,15 +1,16 @@
-html, body {
+/* html, body {
     height: 100%;
 }
 
 #root, #main-div {
     height: 80%
-}
+} */
 
 .signup-form-container {
     display:block;
     background: #edf0f5;
     height: 100%;
+    position: relative;
 }
 
 .signup-form-box {

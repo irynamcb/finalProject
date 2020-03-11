@@ -14,7 +14,6 @@ const NoMatchPage = () => {
     return (
         <div>
             <img src={window.notfound} style={{ width: 500, height: 500, display: 'flex', margin: 'auto', position: 'relative', justifyContent: 'center' }} />
-            {/* <h3 className="">404 - Not found</h3> */}
         </div>
 
     );

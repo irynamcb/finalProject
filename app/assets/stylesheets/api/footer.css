@@ -11,6 +11,8 @@
 .footer {
     background-color: #ffffff;
     display: block;
+    position: relative;
+    top: 0px;
     width: 980px;
     justify-content: center;
     margin-left: 300px;

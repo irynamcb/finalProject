@@ -33,20 +33,20 @@ export default class CreatePost extends React.Component {
             padding: '16px'
         }
 
-        return (
-            <div className="createpost-container">
-            <div className="createpost-title">
-                <h3>{this.props.formType}</h3>
-                <h3>Photo/Video</h3>
-                <h3>Live Video</h3>
-                <h3>Live Event</h3>
-            </div>
-                <form onSubmit={this.handleSubmit} className="createpost-form">
-                <div className="createpost-main">
-                    <div className="createpost-avatar">
-                        <FontAwesomeIcon icon={faUserCircle} style={iconStyle}/>
-                    </div>
-                    <div className="createpost-body">
+    return (
+    <div className="createpost-container">
+        <div className="createpost-title">
+            <h3>{this.props.formType}</h3>
+            <h3>Photo/Video</h3>
+            <h3>Live Video</h3>
+            <h3>Live Event</h3>
+        </div>
+        <form onSubmit={this.handleSubmit} className="createpost-form">
+            <div className="createpost-main">
+                <div className="createpost-avatar">
+                    <FontAwesomeIcon icon={faUserCircle} style={iconStyle}/>
+                </div>
+                <div className="createpost-body">
                     <input
                             type="text"
                             placeholder="Whats' on your mind?"
@@ -54,12 +54,11 @@ export default class CreatePost extends React.Component {
                             onChange={this.update('body')
                             }
                         />
-                    </div>
-                    </div>
-                        <button type='submit' className="createpost-btn">Post</button>
-                    
-                </form>
+                </div>
             </div>
+                <button type='submit' className="createpost-btn">Post</button>           
+        </form>
+    </div>
         );
     }
 }

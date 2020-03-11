@@ -820,7 +820,9 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           post = _this$props.post,
           author = _this$props.author,
           parent = _this$props.parent;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "From: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "single-post"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "From: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(author.id)
       }, author.firstName, " ", author.lastName), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "To: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(parent.id)
@@ -1640,6 +1642,12 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         month: "long",
         day: "numeric"
       }).format(bday);
+      var iconStyle = {
+        width: '46px',
+        height: '46px',
+        color: '#666',
+        padding: '16px'
+      };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -1659,8 +1667,11 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
       }, about !== null ? "About Info: ".concat(about) : " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "born-on"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
-        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faDragon"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Born on ", bornOn), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faMeh"],
+        style: iconStyle
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Born on ", bornOn), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-create-post"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_posts__WEBPACK_IMPORTED_MODULE_3__["default"], {
         posts: this.props.posts

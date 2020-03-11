@@ -2,18 +2,17 @@
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  min-height: 253px;
-  min-width: 514px;
+  min-height: 165px;
+  min-width: 516px;
   letter-spacing: normal;
   background-color: #fff;
   color: #1d2129;
   text-align: center;
-  border: 1px solid lightgray;
+  border: 1px solid #e9ebee;
   border-radius: 3px;
   cursor: pointer;
   line-height: 24px;
   text-decoration-style: solid;
-
 }
 
 .user-details li{
@@ -32,4 +31,10 @@
 
 .user-details {
   border: 1px solid lightgray;
+}
+
+.user-about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }

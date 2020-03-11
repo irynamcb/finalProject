@@ -10,7 +10,7 @@ render() {
     const { post, author, parent } = this.props;
 
     return (
-        <div>
+        <div className="single-post">
             <p>
                 From: <Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link> <br/>
                 To: <Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link> <br/>

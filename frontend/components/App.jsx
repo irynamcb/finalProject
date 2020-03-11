@@ -13,8 +13,8 @@ import Footer from './footer/footer';
 const NoMatchPage = () => {
     return (
         <div>
-            <img src={window.notfound} style={{ width: 400, height: 400, display: 'block', margin: 'auto', position: 'relative' }} />
-            <h3 className="">404 - Not found</h3>
+            <img src={window.notfound} style={{ width: 500, height: 500, display: 'flex', margin: 'auto', position: 'relative', justifyContent: 'center' }} />
+            {/* <h3 className="">404 - Not found</h3> */}
         </div>
 
     );

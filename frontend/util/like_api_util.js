@@ -12,10 +12,3 @@ export const deleteLike = likeId => (
     method: 'DELETE'
   })
 );
-
-// export const receiveAllLikesForPost = post => (
-//   $.ajax({
-//     url: 
-//     method: 'GET'
-//   })
-// )

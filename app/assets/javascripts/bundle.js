@@ -90,22 +90,19 @@
 /*!******************************************!*\
   !*** ./frontend/actions/like_actions.js ***!
   \******************************************/
-/*! exports provided: CREATE_LIKE, REMOVE_LIKE, RECEIVE_LIKES, createLike, deleteLike, receiveAllLikesForPost */
+/*! exports provided: CREATE_LIKE, REMOVE_LIKE, createLike, deleteLike */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_LIKE", function() { return CREATE_LIKE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_LIKE", function() { return REMOVE_LIKE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LIKES", function() { return RECEIVE_LIKES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLike", function() { return createLike; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteLike", function() { return deleteLike; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllLikesForPost", function() { return receiveAllLikesForPost; });
 /* harmony import */ var _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/like_api_util */ "./frontend/util/like_api_util.js");
 
 var CREATE_LIKE = 'CREATE_LIKE';
-var REMOVE_LIKE = 'REMOVE_LIKE';
-var RECEIVE_LIKES = 'RECEIVE_LIKES'; // regular action
+var REMOVE_LIKE = 'REMOVE_LIKE'; // regular action
 
 var createSingleLike = function createSingleLike(like) {
   return {
@@ -118,13 +115,6 @@ var removeLike = function removeLike(like) {
   return {
     type: REMOVE_LIKE,
     like: like
-  };
-};
-
-var receiveLikes = function receiveLikes(likes) {
-  return {
-    type: RECEIVE_LIKES,
-    likes: likes
   };
 }; // thunk actions
 
@@ -140,13 +130,6 @@ var deleteLike = function deleteLike(likeId) {
   return function (dispatch) {
     return _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteLike"](likeId).then(function (like) {
       return dispatch(removeLike(like));
-    });
-  };
-};
-var receiveAllLikesForPost = function receiveAllLikesForPost(post) {
-  return function (dispatch) {
-    return _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllLikesForPost"](post).then(function (likes) {
-      return receiveLikes(likes);
     });
   };
 };
@@ -2310,12 +2293,7 @@ var deleteLike = function deleteLike(likeId) {
     url: "/api/likes/".concat(likeId),
     method: 'DELETE'
   });
-}; // export const receiveAllLikesForPost = post => (
-//   $.ajax({
-//     url: 
-//     method: 'GET'
-//   })
-// )
+};
 
 /***/ }),
 

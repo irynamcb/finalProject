@@ -1647,9 +1647,9 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         day: "numeric"
       }).format(bday);
       var iconStyle = {
-        width: '46px',
-        height: '46px',
-        color: '#666',
+        width: '36px',
+        height: '36px',
+        color: '#385898',
         padding: '16px'
       };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1679,7 +1679,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "born-on"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
-        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faMeh"],
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faBaby"],
         style: iconStyle
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Born on ", bornOn)));
     }

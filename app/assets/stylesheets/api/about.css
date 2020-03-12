@@ -1,3 +1,11 @@
+html, body {
+    height: 100%;
+}
+
+#root, #main-div {
+    height: 100%
+}
+
 .born-on {
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
@@ -10,9 +18,12 @@
   text-align: center;
   border: 1px solid #e9ebee;
   border-radius: 3px;
-  cursor: pointer;
   line-height: 24px;
   text-decoration-style: solid;
+}
+
+.user-details {
+  background-color: #fff;
 }
 
 .user-details li{
@@ -22,7 +33,6 @@
   min-height: 30px;
   min-width: 100px;
   letter-spacing: normal;
-  background-color: #fff;
   color: #385898;
   text-align: left;
   border-radius: 3px;
@@ -31,6 +41,8 @@
 
 .user-details {
   border: 1px solid lightgray;
+  margin: 15px;
+  min-width: 222px;
 }
 
 .user-about {
@@ -44,4 +56,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 15px;
 }
+

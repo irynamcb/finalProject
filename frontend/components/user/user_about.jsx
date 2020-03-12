@@ -1,5 +1,5 @@
 import React from 'react';
-import { faClock, faHome, faMapMarkerAlt, faMeh } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faHome, faMapMarkerAlt, faBaby } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
@@ -40,9 +40,9 @@ componentDidMount() {
         }).format(bday);
 
         let iconStyle = {
-            width: '46px',
-            height: '46px',
-            color: '#666',
+            width: '36px',
+            height: '36px',
+            color: '#385898',
             padding: '16px'
         }
    
@@ -85,7 +85,7 @@ componentDidMount() {
                 </div>
 
                 <div className="born-on">
-                    <FontAwesomeIcon icon={faMeh} style={iconStyle} />
+                    <FontAwesomeIcon icon={faBaby} style={iconStyle} />
                     <br />
                     Born on {bornOn}
                 </div>

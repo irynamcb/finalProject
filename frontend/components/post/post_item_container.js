@@ -1,11 +1,23 @@
 import { connect } from 'react-redux';
 import PostItem from './post_item';
+import { fetchPost } from '../../actions/post_actions';
+import { createLike, deleteLike } from '../../actions/like_actions';
 
 const mSTP = (state, ownProps) => {
+    const postLikes = Object.values(state.entities.likes).filter(like => like.likeableId === ownProps.post.id && like.likeableType === "Post");
+
     return {
         parent: state.entities.users[ownProps.post.parentId],
         author: state.entities.users[ownProps.post.authorId],
+        likes: postLikes,
+        currentUserId: state.session.id,
     }
 };
 
-export default connect(mSTP)(PostItem);
+const mDTP = dispatch => ({
+    fetchPost: postId => dispatch(fetchPost(postId)),
+    createLike: like => dispatch(createLike(like)),
+    deleteLike: likeId => dispatch(deleteLike(likeId)), 
+});
+
+export default connect(mSTP, mDTP)(PostItem);

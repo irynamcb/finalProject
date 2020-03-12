@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { createPost } from './actions/post_actions';
+import { createLike, deleteLike } from './actions/like_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (process.env.NODE_ENV !== "production") {
         window.getState = store.getState;
         window.dispatch = store.dispatch;
-        window.createPost = createPost;
+        window.createLike = createLike;
+        window.deleteLike = deleteLike;
     }
 
     const root = document.getElementById("root");

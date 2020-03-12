@@ -114,10 +114,10 @@ var createSingleLike = function createSingleLike(like) {
   };
 };
 
-var removeLike = function removeLike(likeId) {
+var removeLike = function removeLike(like) {
   return {
     type: REMOVE_LIKE,
-    likeId: likeId
+    like: like
   };
 };
 
@@ -131,15 +131,15 @@ var receiveLikes = function receiveLikes(likes) {
 
 var createLike = function createLike(like) {
   return function (dispatch) {
-    return LikeApiUtil.createLike(like).then(function (like) {
+    return _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__["createLike"](like).then(function (like) {
       return dispatch(createSingleLike(like));
     });
   };
 };
 var deleteLike = function deleteLike(likeId) {
   return function (dispatch) {
-    return LikeApiUtil.deleteLike(likeId).then(function () {
-      return dispatch(removeLike(likeId));
+    return _util_like_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteLike"](likeId).then(function (like) {
+      return dispatch(removeLike(like));
     });
   };
 };
@@ -902,9 +902,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -917,18 +917,60 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
   _inherits(PostItem, _React$Component);
 
   function PostItem(props) {
+    var _this;
+
     _classCallCheck(this, PostItem);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PostItem).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PostItem).call(this, props));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(PostItem, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchPost(this.props.post.id);
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick(userLiked) {
+      var _this$props = this.props,
+          createLike = _this$props.createLike,
+          deleteLike = _this$props.deleteLike,
+          currentUserId = _this$props.currentUserId,
+          post = _this$props.post,
+          likes = _this$props.likes;
+
+      if (userLiked) {
+        var userLike = likes.find(function (like) {
+          return like.authorId === currentUserId;
+        });
+        deleteLike(userLike.id);
+      } else {
+        createLike({
+          author_id: currentUserId,
+          likeable_id: post.id,
+          likeable_type: "Post"
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          post = _this$props.post,
-          author = _this$props.author,
-          parent = _this$props.parent;
+      var _this2 = this;
+
+      var _this$props2 = this.props,
+          post = _this$props2.post,
+          author = _this$props2.author,
+          parent = _this$props2.parent,
+          likes = _this$props2.likes,
+          currentUserId = _this$props2.currentUserId;
+      var userLiked = false;
+      likes.forEach(function (like) {
+        if (like.authorId === currentUserId) {
+          userLiked = true;
+        }
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -937,7 +979,11 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         to: "/users/".concat(author.id)
       }, author.firstName, " ", author.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "To: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(parent.id)
-      }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body)));
+      }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), likes.length, " likes.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this2.handleClick(userLiked);
+        }
+      }, userLiked ? "Unlike" : "Like")));
     }
   }]);
 
@@ -960,17 +1006,40 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _post_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_item */ "./frontend/components/post/post_item.jsx");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/like_actions */ "./frontend/actions/like_actions.js");
+
+
 
 
 
 var mSTP = function mSTP(state, ownProps) {
+  var postLikes = Object.values(state.entities.likes).filter(function (like) {
+    return like.likeableId === ownProps.post.id && like.likeableType === "Post";
+  });
   return {
     parent: state.entities.users[ownProps.post.parentId],
-    author: state.entities.users[ownProps.post.authorId]
+    author: state.entities.users[ownProps.post.authorId],
+    likes: postLikes,
+    currentUserId: state.session.id
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP)(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"]));
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchPost: function fetchPost(postId) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchPost"])(postId));
+    },
+    createLike: function createLike(like) {
+      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_3__["createLike"])(like));
+    },
+    deleteLike: function deleteLike(likeId) {
+      return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_3__["deleteLike"])(likeId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -1864,7 +1933,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
-/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/like_actions */ "./frontend/actions/like_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -1893,7 +1962,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (true) {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.createPost = _actions_post_actions__WEBPACK_IMPORTED_MODULE_4__["createPost"];
+    window.createLike = _actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["createLike"];
+    window.deleteLike = _actions_like_actions__WEBPACK_IMPORTED_MODULE_4__["deleteLike"];
   }
 
   var root = document.getElementById("root");
@@ -1959,10 +2029,8 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/like_actions */ "./frontend/actions/like_actions.js");
-
+/* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/like_actions */ "./frontend/actions/like_actions.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/post_actions */ "./frontend/actions/post_actions.js");
 
 
 
@@ -1971,21 +2039,21 @@ var likesReducer = function likesReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var newState = Object.assign({}, state);
+  var like;
 
   switch (action.type) {
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
-      return Object.assign(newState, action.currentUser.posts.likes);
-
-    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER"]:
-      return Object.assign(newState, action.user.posts.likes);
-
-    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_2__["CREATE_LIKE"]:
-      //  
+    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_0__["CREATE_LIKE"]:
+      like = Object.values(action.like)[0];
+      newState[like.id] = like;
       return newState;
 
-    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_LIKE"]:
-      //  
-      return nextState;
+    case _actions_like_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_LIKE"]:
+      like = Object.values(action.like)[0];
+      delete newState[like.id];
+      return newState;
+
+    case _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_POST"]:
+      return Object.assign(newState, action.post.likes);
 
     default:
       return state;
@@ -2239,7 +2307,7 @@ var createLike = function createLike(like) {
 };
 var deleteLike = function deleteLike(likeId) {
   return $.ajax({
-    url: "/api/likes/".concat(likeId, "/"),
+    url: "/api/likes/".concat(likeId),
     method: 'DELETE'
   });
 }; // export const receiveAllLikesForPost = post => (

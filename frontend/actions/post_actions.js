@@ -20,7 +20,7 @@ const removePost = postId => ({
 const receiveSinglePost = post => ({
   type: RECEIVE_POST,
   post
-})
+});
 
 export const createPost = post => dispatch => (
   PostApiUtil.createPost(post)

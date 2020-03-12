@@ -10,9 +10,9 @@ const createSingleLike = like => ({
   like
 });
 
-const removeLike = likeId => ({
+const removeLike = like => ({
   type: REMOVE_LIKE,
-  likeId
+  like
 });
 
 const receiveLikes = likes => ({
@@ -23,13 +23,13 @@ const receiveLikes = likes => ({
 
 // thunk actions
 export const createLike= like => dispatch => (
-  LikeApiUtil.createLike(like)
+  LikeAPIUtil.createLike(like)
     .then(like => dispatch(createSingleLike(like)))
 );
 
 export const deleteLike = likeId => dispatch => (
-  LikeApiUtil.deleteLike(likeId)
-    .then(() => dispatch(removeLike(likeId)))
+  LikeAPIUtil.deleteLike(likeId)
+    .then(like => dispatch(removeLike(like)))
 );
 
 export const receiveAllLikesForPost = post => dispatch => (

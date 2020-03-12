@@ -1,27 +1,25 @@
-import { RECEIVE_USER } from "../actions/user_actions";
-import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { CREATE_LIKE, REMOVE_LIKE } from "../actions/like_actions";
+import { RECEIVE_POST } from '../actions/post_actions';
 
 const likesReducer = (state = {}, action) => {
   Object.freeze(state);
   const newState = Object.assign({}, state);
+  let like;
 
   switch(action.type) {
-
-  case RECEIVE_CURRENT_USER:
-    return Object.assign(newState, action.currentUser.posts.likes);
-  case RECEIVE_USER:
-    return Object.assign(newState, action.user.posts.likes);
-  case CREATE_LIKE:
-    //  
-    return newState;
-  case REMOVE_LIKE:
-  //  
-    return nextState;
-  default:
-    return state;
+    case CREATE_LIKE:
+      like = Object.values(action.like)[0];
+      newState[like.id] = like;
+      return newState;
+    case REMOVE_LIKE:
+      like = Object.values(action.like)[0];
+      delete newState[like.id];
+      return newState;
+    case RECEIVE_POST:
+      return Object.assign(newState, action.post.likes);
+    default:
+      return state;
   }
-
 };
 
 

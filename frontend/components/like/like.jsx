@@ -10,7 +10,7 @@ export default class Like extends React.Component {
   like() {
     const { currentUser, postId, createLike } = this.props;
 
-    let iconStyle ={
+    let iconStyle = {
       width: '26px',
       height: '26px',
       color: 'red'
@@ -26,7 +26,7 @@ export default class Like extends React.Component {
   unlike() {
     const { like, deleteLike } = this.props;
     return (
-    <div className="unliked" onClick={(likeId) => deleteLike(likeId)}><FontAwesomeIcon icon={faHeart}/>
+    <div className="unliked" onClick={(like.id) => deleteLike(like.id)}><FontAwesomeIcon icon={faHeart}/>
     </div>
     )
   }
@@ -38,4 +38,5 @@ export default class Like extends React.Component {
       </div>
     )
   }
-}
+
+};

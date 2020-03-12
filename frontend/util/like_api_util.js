@@ -8,7 +8,7 @@ export const createLike = like => (
 
 export const deleteLike = likeId => (
   $.ajax({
-    url: `/api/posts/${likeId}/`,
+    url: `/api/likes/${likeId}/`,
     method: 'DELETE'
   })
 );

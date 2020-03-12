@@ -35,4 +35,4 @@ export const deleteLike = likeId => dispatch => (
 export const receiveAllLikesForPost = post => dispatch => (
   LikeAPIUtil.fetchAllLikesForPost(post)
   .then(likes => receiveLikes(likes))
-)
+);

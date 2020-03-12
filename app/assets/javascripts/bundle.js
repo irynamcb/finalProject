@@ -669,6 +669,7 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
       parent_id: props.parent_id
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.clearBody = _this.clearBody.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -687,16 +688,27 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
-      this.props.action(this.state);
+      this.props.action(this.state).then(function () {
+        return _this2.clearBody();
+      });
+    }
+  }, {
+    key: "clearBody",
+    value: function clearBody() {
+      this.setState({
+        body: ""
+      });
     }
   }, {
     key: "update",
     value: function update(field) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
       };
     }
   }, {
@@ -726,7 +738,7 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
         className: "createpost-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        placeholder: "Whats' on your mind?",
+        placeholder: "What's on your mind?",
         value: this.state.body,
         onChange: this.update('body')
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

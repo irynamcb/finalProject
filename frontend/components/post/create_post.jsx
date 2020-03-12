@@ -13,6 +13,7 @@ export default class CreatePost extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.clearBody = this.clearBody.bind(this);
     }
 
     componentDidMount(){
@@ -20,14 +21,18 @@ export default class CreatePost extends React.Component {
     }
 
     componentWillUpdate(prevProps){
-        const { parent_id } = prevProps;
 
+        const { parent_id } = prevProps;
         if( parent_id !== this.props.parent_id) this.setState({parent_id: parent_id});
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state);
+        this.props.action(this.state).then(() => this.clearBody());
+    }
+
+    clearBody(){
+        this.setState({body: ""});
     }
 
     update(field) {
@@ -59,7 +64,7 @@ export default class CreatePost extends React.Component {
                 <div className="createpost-body">
                     <input
                             type="text"
-                            placeholder="Whats' on your mind?"
+                            placeholder="What's on your mind?"
                             value={this.state.body}
                             onChange={this.update('body')
                             }

@@ -1597,26 +1597,26 @@ var Splash = /*#__PURE__*/function (_React$Component) {
         className: "d"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ma3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "ma3"
-      }, "Connect with friends and the world around you on Friendsbook.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "ess7"
+      }, "Connect with friends and the world around you on Friendsbook."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faFileAlt"],
         style: iconStyle
-      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "See photos and updates"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "from friends in News Feed.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "See photos and updates from friends in News Feed.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faStarHalf"],
         style: iconStyle
-      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Share what's new "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "in your life on your Timeline.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Share what's new in your life on your Timeline.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ess8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faCaretSquareUp"],
         style: iconStyle
-      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Find more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "of what you're looking for with Friendsbook Search.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Find more of what you're looking for with Friendsbook Search.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "e"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
     }
@@ -2028,8 +2028,8 @@ var postsReducer = function postsReducer() {
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["CREATE_POST"]:
       return Object.assign(newState, action.post.posts);
     // case REMOVE_POST:
-    //     delete nextState[Object.keys(action.user.posts)[0]];
-    //     return nextState;
+    //     delete newtState[Object.keys(action.user.posts)[0]];
+    //     return newtState;
 
     default:
       return state;
@@ -2239,7 +2239,7 @@ var createLike = function createLike(like) {
 };
 var deleteLike = function deleteLike(likeId) {
   return $.ajax({
-    url: "/api/posts/".concat(likeId, "/"),
+    url: "/api/likes/".concat(likeId, "/"),
     method: 'DELETE'
   });
 }; // export const receiveAllLikesForPost = post => (

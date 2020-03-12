@@ -1,6 +1,8 @@
 .ma3 {
     color: #333;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     letter-spacing: normal;
     line-height: 36px;
     padding: 42px 0 24px;
@@ -9,6 +11,13 @@
     font-weight: bold;
     font-size: 28px;
     text-align: start;
+    
+}
+
+.ma4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .ess8 {
@@ -32,17 +41,22 @@
 }
 
 .splash-info {
-    margin-left: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* margin-left: 350px; */
+    width: 40%;
 }
 
 .d {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     background-color: #edf0f5;
-    
 }
 
 .e {
     width: 60%;
-    margin-right: 300px;
+    /* margin-right: 300px; */
 }

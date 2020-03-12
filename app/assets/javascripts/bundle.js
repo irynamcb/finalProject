@@ -673,6 +673,18 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(CreatePost, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {// debugger
+    }
+  }, {
+    key: "componentWillUpdate",
+    value: function componentWillUpdate(prevProps) {
+      var parent_id = prevProps.parent_id;
+      if (parent_id !== this.props.parent_id) this.setState({
+        parent_id: parent_id
+      });
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
@@ -754,7 +766,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     formType: 'Create Post',
     author_id: state.session.id,
-    parent_id: ownProps.match.params.userId
+    parent_id: Number(ownProps.parentId)
   };
 };
 
@@ -1634,7 +1646,8 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
           createdAt = _this$props$user.createdAt,
           education = _this$props$user.education,
           about = _this$props$user.about,
-          birthday = _this$props$user.birthday;
+          birthday = _this$props$user.birthday,
+          id = _this$props$user.id;
       var cdate = new Date(createdAt);
       var joinedOn = new Intl.DateTimeFormat("en-US", {
         year: "numeric",
@@ -1672,7 +1685,9 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         className: "user-about-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-create-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        parentId: id
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_posts__WEBPACK_IMPORTED_MODULE_3__["default"], {
         posts: this.props.posts
@@ -2007,13 +2022,10 @@ var usersReducer = function usersReducer() {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       userId = Number(Object.keys(action.currentUser.users)[0]);
       newState[userId] = action.currentUser.users[userId];
-      return newState;
+      return Object.assign(newState, action.currentUser.otherUsers);
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
-      // userId = Number(Object.keys(action.user.users))
-      // newState[userId] = action.user.users[userId];
-      // return newState;
-      return Object.assign(newState, action.user.users);
+      return Object.assign(newState, action.user.users, action.user.otherUsers);
 
     default:
       return state;

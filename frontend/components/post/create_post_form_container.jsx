@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     formType: 'Create Post',
     author_id: state.session.id,
-    parent_id: ownProps.match.params.userId,
+    parent_id: Number(ownProps.parentId),
 }};
 
 const mapDispatchToProps = dispatch => ({

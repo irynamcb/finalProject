@@ -16,16 +16,16 @@ export default class UserAbout extends React.Component {
         }
     }
 
-componentDidMount() {
-    this.props.fetchUser(Number(this.props.match.params.userId))
-}
+    componentDidMount() {
+        this.props.fetchUser(Number(this.props.match.params.userId))
+    }
 
     render () {
         if (this.props.user === undefined) {
             return null;
         }
         
-        const { firstName, lastName, location, createdAt, education, about, birthday } = this.props.user;
+        const { firstName, lastName, location, createdAt, education, about, birthday, id } = this.props.user;
         let cdate = new Date(createdAt);
         let joinedOn = new Intl.DateTimeFormat("en-US", {
             year: "numeric",
@@ -78,7 +78,7 @@ componentDidMount() {
                 <div className="user-about-info">
 
                 <div className="user-create-post">
-                <CreatePostContainer />
+                <CreatePostContainer parentId={id} />
                 </div>
                 <div className="user-post">
                     <PostList posts={this.props.posts}/>

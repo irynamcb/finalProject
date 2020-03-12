@@ -1,4 +1,4 @@
-import * as LikeAPIUtil from;
+import * as LikeAPIUtil from '../util/like_api_util';
 
 export const CREATE_LIKE = 'CREATE_LIKE';
 export const REMOVE_LIKE= 'REMOVE_LIKE';

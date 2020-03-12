@@ -20,3 +20,10 @@ p2 = Post.create(author_id: u6.id, body: "I am doing good, how are you?", parent
 p3 = Post.create(author_id: u5.id, body: "I am here!", parent_id: u5.id)
 p4 = Post.create(author_id: u1.id, body: "Let's grab a beer soon!", parent_id: u4.id)
 p5 = Post.create(author_id: u3.id, body: "Don't forget about homework!", parent_id: u4.id)
+
+Like.destroy_all
+l1 = Like.create(author_id: u6.id, likeable_id: p1.id, likeable_type: 'Post')
+l2 = Like.create(author_id: u6.id, likeable_id: p2.id, likeable_type: 'Post')
+l3 = Like.create(author_id: u6.id, likeable_id: p3.id, likeable_type: 'Post')
+l4 = Like.create(author_id: u4.id, likeable_id: p4.id, likeable_type: 'Post')
+l5 = Like.create(author_id: u4.id, likeable_id: p5.id, likeable_type: 'Post')

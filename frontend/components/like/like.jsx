@@ -14,18 +14,21 @@ export default class Like extends React.Component {
       width: '26px',
       height: '26px',
       color: 'red'
-    }
+    };
 
     return (
       <div className="liked" 
-        onClick={() => createLike({ post_id: postId, liker_id: currentUser })}><FontAwesomeIcon icon={faHeart} style={iconStyle} />
+        onClick={() => createLike(like)}><FontAwesomeIcon icon={faHeart} style={iconStyle} />
        </div>
     )
   }
 
   unlike() {
     const { like, deleteLike } = this.props;
-    return <div className="unliked" onClick={() => deleteLike(like)}></i></div>
+    return (
+    <div className="unliked" onClick={(likeId) => deleteLike(likeId)}><FontAwesomeIcon icon={faHeart}/>
+    </div>
+    )
   }
 
   render() {

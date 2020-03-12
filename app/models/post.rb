@@ -13,7 +13,8 @@ belongs_to :wall,
   foreign_key: :parent_id,
   class_name: :User
 
-has_many :likes, as: :likeable  
+has_many :likes, as: :likeable,
+dependent: :destroy  
 
 has_many :likers,
   through: :likes,

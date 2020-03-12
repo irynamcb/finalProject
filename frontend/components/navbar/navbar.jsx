@@ -37,9 +37,6 @@ export default class Navbar extends React.Component {
                 <div className="nav">
                     <Link to={`/users/${this.props.currentUser.id}`} className="header-name">{this.props.currentUser.firstName}</Link>
                 </div>
-                {/* <div className="nav">
-                    <NavLink to="/" className="header-link">Create a Post</NavLink>
-                </div> */}
                 <div className="nav">
                     <NavLink to="/" className="header-link">Home</NavLink>
                 </div>

@@ -18,7 +18,7 @@ export default class PostList extends React.Component {
     <div>
         <ul>
             
-        <p>Posts</p>
+        <p className="posts-total">Posts</p>
            
         {
         this.props.posts.map(post => 

@@ -36,5 +36,12 @@
 .user-about {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  background-color: #f5f6f7;
+}
+
+.user-about-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

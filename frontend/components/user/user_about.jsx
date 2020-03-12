@@ -75,16 +75,21 @@ componentDidMount() {
                         {(about !== null) ? `About Info: ${about}` : ` `}
                     </li>
                 </ul>
-                <div className="born-on">
-                    <FontAwesomeIcon icon={faMeh} style={iconStyle}/> 
-                    <br/>
-                    Born on {bornOn}
-                </div>
+                <div className="user-about-info">
+
                 <div className="user-create-post">
                 <CreatePostContainer />
                 </div>
                 <div className="user-post">
                     <PostList posts={this.props.posts}/>
+                </div>
+
+                <div className="born-on">
+                    <FontAwesomeIcon icon={faMeh} style={iconStyle} />
+                    <br />
+                    Born on {bornOn}
+                </div>
+
                 </div>
             </div>
         )

@@ -11,11 +11,11 @@ render() {
 
     return (
         <div className="single-post">
-            <p>
-                From: <Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link> <br/>
-                To: <Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link> <br/>
-                {post.body}
-            </p>
+            <div className="single-post-info">
+                <p>From: <Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link></p><br/>
+                <p>To: <Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link></p><br/>
+                <h2>{post.body}</h2>
+            </div>
         </div>
         )
     }

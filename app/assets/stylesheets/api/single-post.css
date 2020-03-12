@@ -6,13 +6,22 @@
   position: relative;
   min-width: 516px;
   min-height: 105px;
+  background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  padding-top: 5px;
 }
 
-.single-post p {
+.single-post-info {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 14px;
   color: #4b4f56;
   text-align: left;
+}
+
+.single-post-info h2{
+  margin-top: 15px;
 }

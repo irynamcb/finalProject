@@ -12,17 +12,12 @@ const likesReducer = (state = {}, action) => {
     return Object.assign(newState, action.currentUser.posts.likes);
   case RECEIVE_USER:
     return Object.assign(newState, action.user.posts.likes);
-
-
-    // case CREATE_LIKE:
-    //   likeId = Object.keys(action.payload)[0];
-    //   nextState[likeId] = action.payload[likeId];
-    //   return nextState;
-
-    // case DELETE_LIKE:
-    //   likeId = Object.keys(action.payload)[0];
-    //   delete nextState[likeId];
-    //   return nextState;
+  case CREATE_LIKE:
+    //  
+    return newState;
+  case REMOVE_LIKE:
+  //  
+    return nextState;
   default:
     return state;
   }

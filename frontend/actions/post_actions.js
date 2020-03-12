@@ -34,5 +34,5 @@ export const deletePost = postId => dispatch => (
 
 export const fetchPost = postId => dispatch => {
   return PostApiUtil.fetchPost(postId)
-  .then (post => dispatch (receiveSinglePost(post)))
-}
+  .then (post => dispatch (receiveSinglePost(post)));
+};

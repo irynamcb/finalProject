@@ -682,7 +682,8 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
     value: function componentWillUpdate(prevProps) {
       var parent_id = prevProps.parent_id;
       if (parent_id !== this.props.parent_id) this.setState({
-        parent_id: parent_id
+        parent_id: parent_id,
+        body: ""
       });
     }
   }, {

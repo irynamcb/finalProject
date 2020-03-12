@@ -23,7 +23,7 @@ export default class CreatePost extends React.Component {
     componentWillUpdate(prevProps){
 
         const { parent_id } = prevProps;
-        if( parent_id !== this.props.parent_id) this.setState({parent_id: parent_id});
+        if( parent_id !== this.props.parent_id) this.setState({parent_id: parent_id, body: ""});
     }
 
     handleSubmit(e) {

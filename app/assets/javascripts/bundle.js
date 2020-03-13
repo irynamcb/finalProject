@@ -962,11 +962,17 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         to: "/users/".concat(author.id)
       }, author.firstName, " ", author.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "To: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(parent.id)
-      }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), likes.length, " likes.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "likes-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "number-of-likes"
+      }, likes.length, " likes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "like-btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this2.handleClick(userLiked);
         }
-      }, userLiked ? "Unlike" : "Like")));
+      }, userLiked ? "Unlike" : "Like")))));
     }
   }]);
 

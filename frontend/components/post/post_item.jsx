@@ -40,8 +40,14 @@ export default class PostItem extends React.Component {
                     <p>From: <Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link></p><br/>
                     <p>To: <Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link></p><br/>
                     <h2>{post.body}</h2>
-                    {likes.length} likes.
+                <div className="likes-main">
+                    <div className="number-of-likes">
+                    {likes.length} likes
+                    </div>
+                    <div className="like-btn">
                     <button onClick={() => this.handleClick(userLiked)}>{userLiked ? "Unlike" : "Like"}</button>
+                    </div>
+                </div>    
                 </div>
             </div>
         )

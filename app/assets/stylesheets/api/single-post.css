@@ -25,3 +25,25 @@
 .single-post-info h2{
   margin-top: 15px;
 }
+
+
+.likes-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-top: 1px solid #dddfe2;
+  border-bottom: 1px solid #dddfe2;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  min-height: 52px;
+
+}
+
+.like-btn, .number-of-likes {
+ align-items: baseline;
+ padding-right: 24px;
+ padding-left: 12px;
+ text-align: center;
+ vertical-align: middle;
+ align-self: center;
+}

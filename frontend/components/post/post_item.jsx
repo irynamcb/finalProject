@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { faHeart} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class PostItem extends React.Component {
     constructor(props) {
@@ -32,7 +34,13 @@ export default class PostItem extends React.Component {
             if (like.authorId === currentUserId){
                 userLiked = true;
             }
-        })
+        });
+
+        let iconStyle = {
+            width: '16px',
+            height: '16px',
+            color: 'red'
+        };
 
         return (
             <div className="single-post">
@@ -42,7 +50,7 @@ export default class PostItem extends React.Component {
                     <h2>{post.body}</h2>
                 <div className="likes-main">
                     <div className="number-of-likes">
-                    {likes.length} likes
+                        {likes.length} <FontAwesomeIcon icon={faHeart} style={iconStyle} />
                     </div>
                     <div className="like-btn">
                     <button onClick={() => this.handleClick(userLiked)}>{userLiked ? "Unlike" : "Like"}</button>

@@ -919,6 +919,10 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
       this.props.fetchPost(this.props.post.id);
     }
   }, {
+    key: "componentWillUpdate",
+    value: function componentWillUpdate() {// 
+    }
+  }, {
     key: "handleClick",
     value: function handleClick(userLiked) {
       var _this$props = this.props,

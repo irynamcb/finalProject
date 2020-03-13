@@ -14,6 +14,10 @@ export default class PostItem extends React.Component {
         this.props.fetchPost(this.props.post.id);
     }
 
+    componentWillUpdate() {
+        // 
+    }
+
     handleClick(userLiked){
         const { createLike, deleteLike, currentUserId, post, likes } = this.props;
 

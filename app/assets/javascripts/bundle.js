@@ -958,10 +958,15 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           userLiked = true;
         }
       });
-      var iconStyle = {
+      var iconStyleRed = {
         width: '16px',
         height: '16px',
         color: 'red'
+      };
+      var iconStyleGray = {
+        width: '16px',
+        height: '16px',
+        color: 'gray'
       };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-post"
@@ -977,7 +982,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "number-of-likes"
       }, likes.length, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHeart"],
-        style: iconStyle
+        style: likes.length === 0 ? iconStyleGray : iconStyleRed
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "like-btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

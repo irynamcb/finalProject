@@ -36,10 +36,16 @@ export default class PostItem extends React.Component {
             }
         });
 
-        let iconStyle = {
+        let iconStyleRed = {
             width: '16px',
             height: '16px',
             color: 'red'
+        };
+
+        let iconStyleGray = {
+            width: '16px',
+            height: '16px',
+            color: 'gray'
         };
 
         return (
@@ -50,7 +56,7 @@ export default class PostItem extends React.Component {
                     <h2>{post.body}</h2>
                 <div className="likes-main">
                     <div className="number-of-likes">
-                        {likes.length} <FontAwesomeIcon icon={faHeart} style={iconStyle} />
+                        {likes.length} <FontAwesomeIcon icon={faHeart} style={(likes.length === 0) ? iconStyleGray : iconStyleRed} />
                     </div>
                     <div className="like-btn">
                     <button onClick={() => this.handleClick(userLiked)}>{userLiked ? "Unlike" : "Like"}</button>

@@ -23,12 +23,12 @@ export default class Splash extends React.Component {
                 <div className="splash-info">
                     
                     <div className="ma3">
-                        <h1 className="ess7">Connect with friends and the world around you on Friendsbook.</h1>
-                        <div className="ess8" ><FontAwesomeIcon icon={faFileAlt} style={iconStyle}/> <h2>See photos and updates from friends in News Feed.</h2></div> 
+                        <h1>Connect with friends and the world around you on Friendsbook.</h1>
+                        <div className="ess8"><h2>See photos and updates from friends in News Feed.</h2></div> 
                         <br/>
-                        <div className="ess8"><FontAwesomeIcon icon={faStarHalf} style={iconStyle}/> <h2>Share what's new in your life on your Timeline.</h2></div>
+                        <div className="ess8"><h2>Share what's new in your life on your Timeline.</h2></div>
                         <br/>
-                        <div className="ess8"><FontAwesomeIcon icon={faCaretSquareUp} style={iconStyle}/> <h2>Find more of what you're looking for with Friendsbook Search.</h2></div>
+                        <div className="ess8"><h2>Find more of what you're looking for with Friendsbook Search.</h2></div>
                         <br/> 
                      </div> 
                 </div>

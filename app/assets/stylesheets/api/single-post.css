@@ -2,13 +2,13 @@
   font-family: Arial, Helvetica, sans-serif;
   display: block;
   font-size: 12px;
-  border: 1px solid #e9ebee;
+  border: 2px solid #e9ebee;
   position: relative;
   min-width: 516px;
   min-height: 105px;
   background-color: #fff;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   padding-left: 12px;
   padding-top: 5px;
   padding-right: 12px;
@@ -23,15 +23,32 @@
   text-align: left;
 }
 
+.single-post-info p a {
+  text-decoration: none;
+  color: #385898;
+  text-align: left;
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.single-post-info p a:hover {
+  text-decoration: underline;
+}
+
 .single-post-info h2{
-  margin-top: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 
 .likes-main {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   border-top: 1px solid #dddfe2;
   border-bottom: 1px solid #dddfe2;
   margin-top: 12px;
@@ -42,8 +59,6 @@
 
 .like-btn, .number-of-likes {
  align-items: baseline;
- padding-right: 24px;
- padding-left: 12px;
  text-align: center;
  vertical-align: middle;
  align-self: center;

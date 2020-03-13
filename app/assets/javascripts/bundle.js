@@ -962,7 +962,12 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         width: '16px',
         height: '16px',
         color: 'red'
-      };
+      }; // let iconStyleBlue = {
+      //     width: '16px',
+      //     height: '16px',
+      //     color: 'blue'
+      // };
+
       var iconStyleGray = {
         width: '16px',
         height: '16px',
@@ -972,9 +977,12 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "single-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-post-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "From: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(author.id)
-      }, author.firstName, " ", author.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "To: ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, author.firstName, " ", author.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faCaretRight"],
+        style: iconStyleGray
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(parent.id)
       }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "likes-main"
@@ -989,7 +997,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.handleClick(userLiked);
         }
-      }, userLiked ? "Unlike" : "Like")))));
+      }, userLiked ? "Unlike" : "Like")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
     }
   }]);
 

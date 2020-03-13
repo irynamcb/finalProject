@@ -966,12 +966,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         width: '16px',
         height: '16px',
         color: 'red'
-      }; // let iconStyleBlue = {
-      //     width: '16px',
-      //     height: '16px',
-      //     color: 'blue'
-      // };
-
+      };
       var iconStyleGray = {
         width: '16px',
         height: '16px',

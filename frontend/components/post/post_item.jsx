@@ -46,12 +46,6 @@ export default class PostItem extends React.Component {
             color: 'red'
         };
 
-        // let iconStyleBlue = {
-        //     width: '16px',
-        //     height: '16px',
-        //     color: 'blue'
-        // };
-
         let iconStyleGray = {
             width: '16px',
             height: '16px',

@@ -56,7 +56,7 @@ class LoginForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <br />
                     <div className="kb">
-                        <h1>Log Into Facebook</h1>
+                        <h1>Log Into Friendsbook</h1>
                     </div>
                     {this.props.errors.length > 0 ?  
                         <div className="login-errors">

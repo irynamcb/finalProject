@@ -2569,9 +2569,7 @@ var postsReducer = function postsReducer() {
       // debugger
       comment = Object.values(action.comment.comments)[0];
       commentIdx = newState[comment.postId].comments.indexOf(comment.id);
-      newState[comment.postId].comments.splice(commentIdx); // console.log('post:', newState[comment.postId].comments)
-      // console.log('commentIdx ', commentIdx)
-
+      newState[comment.postId].comments.splice(commentIdx);
       return newState;
     // case REMOVE_POST:
     //     delete newtState[Object.keys(action.user.posts)[0]];

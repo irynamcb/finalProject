@@ -6,8 +6,10 @@ import {CREATE_COMMENT, REMOVE_COMMENT} from '../actions/comment_action';
 const postsReducer = (state = {}, action) => {
     Object.freeze(state);
     const newState = Object.assign({}, state);
+
     let comment;
     let commentIdx;
+
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
         return Object.assign(newState, action.currentUser.posts);
@@ -20,13 +22,9 @@ const postsReducer = (state = {}, action) => {
             newState[comment.postId].comments.push(comment.id);
             return newState;
         case REMOVE_COMMENT: 
-        // debugger
             comment = Object.values(action.comment.comments)[0];
             commentIdx = newState[comment.postId].comments.indexOf(comment.id);
-
             newState[comment.postId].comments.splice(commentIdx);
-            // console.log('post:', newState[comment.postId].comments)
-            // console.log('commentIdx ', commentIdx)
             return newState;
         // case REMOVE_POST:
         //     delete newtState[Object.keys(action.user.posts)[0]];

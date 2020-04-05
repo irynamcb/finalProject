@@ -58,6 +58,15 @@ export default class PostItem extends React.Component {
                     <p><Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link><FontAwesomeIcon icon={faCaretRight} style={iconStyleGray}/><Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link></p>
                     <br/>
                     <h2>{post.body}</h2>
+
+                    {
+
+                        (comments.length !== 0) ?
+                            <div className="number-of-comments">
+                                <Link to={`/posts/${post.id}/comments`}>{comments.length} Comments</Link>
+                            </div> : ""
+                    }
+
                 <div className="likes-main">
                     <div className="number-of-likes">
                         {likes.length} <FontAwesomeIcon icon={faHeart} style={(likes.length === 0) ? iconStyleGray : iconStyleRed} />
@@ -65,14 +74,6 @@ export default class PostItem extends React.Component {
                     <div className="like-btn">
                     <button onClick={() => this.handleClick(userLiked)}>{userLiked ? "Unlike" : "Like"}</button>
                     </div>
-
-                        {
-                            
-                            (comments.length !== 0) ?
-                                <div className="number-of-comments">
-                                    <Link to={`/posts/${post.id}/comments`}>{comments.length} Comments</Link>
-                                </div> : ""
-                        }
 
                     <button>Comment</button>
                     <button>Share</button>

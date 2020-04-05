@@ -38,7 +38,7 @@ export default class CreateComment extends React.Component {
                         <div className="createcomment-body">
                             <input
                                 type="text"
-                                placeholder="Add your comment"
+                                placeholder="Write a comment..."
                                 value={this.state.body}
                                 onChange={this.update('body')
                                 }

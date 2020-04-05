@@ -488,8 +488,7 @@ var Comments = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.comments === undefined) {
         return null;
-      } // debugger
-
+      }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "comments-total"
@@ -540,13 +539,11 @@ var mSTP = function mSTP(state, ownProps) {
   var post = state.entities.posts[postId];
   var comments = post.comments.map(function (commentId) {
     return state.entities.comments[commentId];
-  }); // debugger
-  // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
+  }); // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
 
   if (post === undefined) {
     return {};
-  } // debugger
-
+  }
 
   return {
     authors: state.entities.users,
@@ -661,7 +658,7 @@ var CreateComment = /*#__PURE__*/function (_React$Component) {
         className: "createcomment-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        placeholder: "Add your comment",
+        placeholder: "Write a comment...",
         value: this.state.body,
         onChange: this.update('body')
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1385,7 +1382,11 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         style: iconStyleGray
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(parent.id)
-      }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "number-of-comments"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/posts/".concat(post.id, "/comments")
+      }, comments.length, " Comments")) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "likes-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "number-of-likes"
@@ -1398,11 +1399,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.handleClick(userLiked);
         }
-      }, userLiked ? "Unlike" : "Like")), comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "number-of-comments"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/posts/".concat(post.id, "/comments")
-      }, comments.length, " Comments")) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
+      }, userLiked ? "Unlike" : "Like")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
     }
   }]);
 
@@ -2417,7 +2414,6 @@ var commentsReducer = function commentsReducer() {
       return newState;
 
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__["REMOVE_COMMENT"]:
-      // debugger
       comment = Object.values(action.comment.comments)[0];
       delete newState[comment.id];
       return newState;
@@ -2566,7 +2562,6 @@ var postsReducer = function postsReducer() {
       return newState;
 
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_3__["REMOVE_COMMENT"]:
-      // debugger
       comment = Object.values(action.comment.comments)[0];
       commentIdx = newState[comment.postId].comments.indexOf(comment.id);
       newState[comment.postId].comments.splice(commentIdx);

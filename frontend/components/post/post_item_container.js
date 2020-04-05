@@ -5,11 +5,13 @@ import { createLike, deleteLike } from '../../actions/like_actions';
 
 const mSTP = (state, ownProps) => {
     const postLikes = Object.values(state.entities.likes).filter(like => like.likeableId === ownProps.post.id && like.likeableType === "Post");
+    const postComments = Object.values(state.entities.comments).filter(comment => comment.id === ownProps.post.id);
 
     return {
         parent: state.entities.users[ownProps.post.parentId],
         author: state.entities.users[ownProps.post.authorId],
         likes: postLikes,
+        comments: postComments,
         currentUserId: state.session.id,
     }
 };

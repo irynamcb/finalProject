@@ -955,7 +955,8 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           author = _this$props2.author,
           parent = _this$props2.parent,
           likes = _this$props2.likes,
-          currentUserId = _this$props2.currentUserId;
+          currentUserId = _this$props2.currentUserId,
+          comments = _this$props2.comments;
       var userLiked = false;
       likes.forEach(function (like) {
         if (like.authorId === currentUserId) {
@@ -971,7 +972,8 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         width: '16px',
         height: '16px',
         color: 'gray'
-      };
+      }; // debugger
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -996,7 +998,11 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.handleClick(userLiked);
         }
-      }, userLiked ? "Unlike" : "Like")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
+      }, userLiked ? "Unlike" : "Like")), comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "number-of-comments"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
+      }, comments.length, " Comments")) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
     }
   }]);
 
@@ -1029,9 +1035,10 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   var postLikes = Object.values(state.entities.likes).filter(function (like) {
     return like.likeableId === ownProps.post.id && like.likeableType === "Post";
-  });
-  var postComments = Object.values(state.entities.comments).filter(function (comment) {
-    return comment.id === ownProps.post.id;
+  }); // const postComments = Object.values(state.entities.comments).filter(comment => comment.id === ownProps.post.id);
+
+  var postComments = ownProps.post.comments.map(function (commentId) {
+    return state.entities.comments[commentId];
   });
   return {
     parent: state.entities.users[ownProps.post.parentId],

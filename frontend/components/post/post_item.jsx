@@ -30,7 +30,7 @@ export default class PostItem extends React.Component {
     }
 
     render() {
-        const { post, author, parent, likes, currentUserId } = this.props;
+        const { post, author, parent, likes, currentUserId, comments } = this.props;
 
         let userLiked = false;
 
@@ -51,8 +51,9 @@ export default class PostItem extends React.Component {
             height: '16px',
             color: 'gray'
         };
-
+// debugger
         return (
+            
             <div className="single-post">
                 <div className="single-post-info">
                     <p><Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link><FontAwesomeIcon icon={faCaretRight} style={iconStyleGray}/><Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link></p>
@@ -65,6 +66,15 @@ export default class PostItem extends React.Component {
                     <div className="like-btn">
                     <button onClick={() => this.handleClick(userLiked)}>{userLiked ? "Unlike" : "Like"}</button>
                     </div>
+
+                        {
+                            
+                            (comments.length !== 0) ?
+                                <div className="number-of-comments">
+                                    <Link to="/" >{comments.length} Comments</Link>
+                                </div> : ""
+                        }
+
                     <button>Comment</button>
                     <button>Share</button>
                 </div>    

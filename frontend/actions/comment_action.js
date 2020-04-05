@@ -1,4 +1,4 @@
-// import * as CommentAPIUtil from '../util/like_api_util';
+import * as CommentAPIUtil from '../util/comment_api_util';
 
 export const CREATE_COMMENT = 'CREATE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';

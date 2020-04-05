@@ -432,7 +432,7 @@ var SingleComment = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-comment"
-      }, this.props.author.firstName, this.props.comment.body);
+      }, "".concat(this.props.author.firstName, " ").concat(this.props.author.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.comment.body);
     }
   }]);
 
@@ -534,12 +534,6 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   var postId = Number(ownProps.match.params.postId);
   var post = state.entities.posts[postId];
-  console.log('comments', post);
-
-  if (post === undefined) {
-    return {};
-  }
-
   var comments = post.comments.map(function (commentId) {
     return state.entities.comments[commentId];
   }); // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
@@ -2095,7 +2089,6 @@ var mSTP = function mSTP(state, ownProps) {
   }).sort(function (a, b) {
     return b.id - a.id;
   });
-  console.log('userabout', userPosts);
   return {
     user: state.entities.users[Number(ownProps.match.params.userId)],
     posts: userPosts

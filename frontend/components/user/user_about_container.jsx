@@ -9,8 +9,6 @@ const mSTP = (state, ownProps) => {
     let arrPosts = Object.values(state.entities.posts);
     let userPosts = arrPosts.filter(post => post.authorId === userId || post.parentId === userId).sort((a, b) => b.id - a.id);
     
-    console.log('userabout', userPosts)
-    
     return {
     user: state.entities.users[Number(ownProps.match.params.userId)],
     posts: userPosts,

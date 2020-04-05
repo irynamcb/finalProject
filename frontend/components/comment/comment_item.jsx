@@ -9,7 +9,8 @@ export default class SingleComment extends React.Component {
     render() {
         return (
             <div className="single-comment">
-                {this.props.author.firstName}
+                {`${this.props.author.firstName} ${this.props.author.lastName}`}
+                <br/>
                 {this.props.comment.body}
             </div>
         )

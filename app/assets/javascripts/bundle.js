@@ -1370,8 +1370,9 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         width: '16px',
         height: '16px',
         color: 'gray'
-      }; // debugger
-
+      };
+      var commentText;
+      comments.length === 1 ? commentText = "Comment" : commentText = "Comments";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1387,24 +1388,23 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "number-of-comments"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/posts/".concat(post.id, "/comments")
-      }, comments.length, " Comments")) : "", author.id === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, comments.length, " ", commentText)) : "", author.id === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return deletePost(post.id);
         }
       }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "like-btn"
+      }, likes.length), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "likes-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "number-of-likes"
-      }, likes.length, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHeart"],
-        style: likes.length === 0 ? iconStyleGray : iconStyleRed
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "like-btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this2.handleClick(userLiked);
-        }
-      }, userLiked ? "Unlike" : "Like")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        },
+        style: userLiked ? iconStyleRed : iconStyleGray
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/posts/".concat(post.id, "/comments"),
         className: "like-btn"
       }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
@@ -1444,6 +1444,7 @@ var mSTP = function mSTP(state, ownProps) {
   var postComments = ownProps.post.comments.map(function (commentId) {
     return state.entities.comments[commentId];
   });
+  debugger;
   return {
     parent: state.entities.users[ownProps.post.parentId],
     author: state.entities.users[ownProps.post.authorId],

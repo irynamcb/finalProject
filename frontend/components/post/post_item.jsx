@@ -50,7 +50,10 @@ export default class PostItem extends React.Component {
             height: '16px',
             color: 'gray'
         };
-// debugger
+
+        let commentText;
+        (comments.length === 1) ? commentText= "Comment" : commentText = "Comments";
+
         return (
             
             <div className="single-post">
@@ -63,7 +66,7 @@ export default class PostItem extends React.Component {
 
                         (comments.length !== 0) ?
                             <div className="number-of-comments">
-                                <Link to={`/posts/${post.id}/comments`}>{comments.length} Comments</Link>
+                                <Link to={`/posts/${post.id}/comments`}>{comments.length} {commentText}</Link>
                             </div> : ""
                     }
 
@@ -72,18 +75,15 @@ export default class PostItem extends React.Component {
                             <button onClick={() => deletePost(post.id)}>Delete Post</button>
                             : ""
                     }
-
+                    <div className="like-btn">
+                        {likes.length} 
+                    </div>
 
 
                 <div className="likes-main">
                     <div className="number-of-likes">
-                        {likes.length} <FontAwesomeIcon icon={faHeart} style={(likes.length === 0) ? iconStyleGray : iconStyleRed} />
+                        <FontAwesomeIcon icon={faHeart} onClick={() => this.handleClick(userLiked)} style={(userLiked) ? iconStyleRed : iconStyleGray} />
                     </div>
-                    <div className="like-btn">
-                    <button onClick={() => this.handleClick(userLiked)}>{userLiked ? "Unlike" : "Like"}</button>
-                </div>
-
-                    {/* <button>Comment</button> */}
                     <Link to={`/posts/${post.id}/comments`} className="like-btn">Comment</Link>
                     <button>Share</button>
                 </div>    

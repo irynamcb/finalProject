@@ -30,7 +30,7 @@ export default class PostItem extends React.Component {
     }
 
     render() {
-        const { post, author, parent, likes, currentUserId, comments } = this.props;
+        const { post, author, parent, likes, currentUserId, comments, deletePost } = this.props;
         let userLiked = false;
 
         likes.forEach(like => {
@@ -67,15 +67,24 @@ export default class PostItem extends React.Component {
                             </div> : ""
                     }
 
+                    {
+                        (author.id === currentUserId) ?
+                            <button onClick={() => deletePost(post.id)}>Delete Post</button>
+                            : ""
+                    }
+
+
+
                 <div className="likes-main">
                     <div className="number-of-likes">
                         {likes.length} <FontAwesomeIcon icon={faHeart} style={(likes.length === 0) ? iconStyleGray : iconStyleRed} />
                     </div>
                     <div className="like-btn">
                     <button onClick={() => this.handleClick(userLiked)}>{userLiked ? "Unlike" : "Like"}</button>
-                    </div>
+                </div>
 
-                    <button>Comment</button>
+                    {/* <button>Comment</button> */}
+                    <Link to={`/posts/${post.id}/comments`} className="like-btn">Comment</Link>
                     <button>Share</button>
                 </div>    
                 </div>

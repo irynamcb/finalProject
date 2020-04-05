@@ -1353,7 +1353,8 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           parent = _this$props2.parent,
           likes = _this$props2.likes,
           currentUserId = _this$props2.currentUserId,
-          comments = _this$props2.comments;
+          comments = _this$props2.comments,
+          deletePost = _this$props2.deletePost;
       var userLiked = false;
       likes.forEach(function (like) {
         if (like.authorId === currentUserId) {
@@ -1386,7 +1387,11 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "number-of-comments"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/posts/".concat(post.id, "/comments")
-      }, comments.length, " Comments")) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, comments.length, " Comments")) : "", author.id === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return deletePost(post.id);
+        }
+      }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "likes-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "number-of-likes"
@@ -1399,7 +1404,10 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this2.handleClick(userLiked);
         }
-      }, userLiked ? "Unlike" : "Like")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
+      }, userLiked ? "Unlike" : "Like")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/posts/".concat(post.id, "/comments"),
+        className: "like-btn"
+      }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
     }
   }]);
 
@@ -1455,6 +1463,9 @@ var mDTP = function mDTP(dispatch) {
     },
     deleteLike: function deleteLike(likeId) {
       return dispatch(Object(_actions_like_actions__WEBPACK_IMPORTED_MODULE_3__["deleteLike"])(likeId));
+    },
+    deletePost: function deletePost(postId) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["deletePost"])(postId));
     }
   };
 };
@@ -2545,6 +2556,7 @@ var postsReducer = function postsReducer() {
   var newState = Object.assign({}, state);
   var comment;
   var commentIdx;
+  var post;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
@@ -2566,9 +2578,10 @@ var postsReducer = function postsReducer() {
       commentIdx = newState[comment.postId].comments.indexOf(comment.id);
       newState[comment.postId].comments.splice(commentIdx);
       return newState;
-    // case REMOVE_POST:
-    //     delete newtState[Object.keys(action.user.posts)[0]];
-    //     return newtState;
+
+    case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_POST"]:
+      delete newState[action.postId];
+      return newState;
 
     default:
       return state;

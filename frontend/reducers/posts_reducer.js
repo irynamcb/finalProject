@@ -9,6 +9,7 @@ const postsReducer = (state = {}, action) => {
 
     let comment;
     let commentIdx;
+    let post;
 
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
@@ -26,9 +27,9 @@ const postsReducer = (state = {}, action) => {
             commentIdx = newState[comment.postId].comments.indexOf(comment.id);
             newState[comment.postId].comments.splice(commentIdx);
             return newState;
-        // case REMOVE_POST:
-        //     delete newtState[Object.keys(action.user.posts)[0]];
-        //     return newtState;
+        case REMOVE_POST:
+            delete newState[action.postId];
+            return newState;
         default:
             return state;
     }

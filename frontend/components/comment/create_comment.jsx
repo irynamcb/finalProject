@@ -15,15 +15,6 @@ export default class CreateComment extends React.Component {
         this.clearBody = this.clearBody.bind(this);
     }
 
-    componentDidMount() {
-        // debugger
-    }
-
-    componentWillUpdate(prevProps) {
-
-       
-    }
-
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state).then(() => this.clearBody());

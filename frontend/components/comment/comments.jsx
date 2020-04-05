@@ -1,8 +1,8 @@
 import React from 'react';
-import SingleComment from './comment_item';
+import SingleComment from './single_comment';
 import CreateCommentContainer from './create_comment_form_container';
 
-export default class CommentList extends React.Component {
+export default class Comments extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -14,6 +14,7 @@ export default class CommentList extends React.Component {
         }
 // debugger
         return (
+
             <div>
                 <ul>
                     <p className="comments-total">Comments:</p>
@@ -23,6 +24,8 @@ export default class CommentList extends React.Component {
                                 comment={comment}
                                 key={comment.id}
                                 author={this.props.authors[comment.authorId]}
+                                currentUserId={this.props.currentUserId}
+                                deleteComment={this.props.deleteComment}
                             />)
                     }
                 </ul>

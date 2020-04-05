@@ -436,64 +436,6 @@ var App = function App() {
 
 /***/ }),
 
-/***/ "./frontend/components/comment/comment_item.jsx":
-/*!******************************************************!*\
-  !*** ./frontend/components/comment/comment_item.jsx ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SingleComment; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var SingleComment = /*#__PURE__*/function (_React$Component) {
-  _inherits(SingleComment, _React$Component);
-
-  function SingleComment(props) {
-    _classCallCheck(this, SingleComment);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SingleComment).call(this, props));
-  }
-
-  _createClass(SingleComment, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "single-comment"
-      }, "".concat(this.props.author.firstName, " ").concat(this.props.author.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.comment.body);
-    }
-  }]);
-
-  return SingleComment;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-
-;
-
-/***/ }),
-
 /***/ "./frontend/components/comment/comments.jsx":
 /*!**************************************************!*\
   !*** ./frontend/components/comment/comments.jsx ***!
@@ -503,10 +445,10 @@ var SingleComment = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CommentList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Comments; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _comment_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comment_item */ "./frontend/components/comment/comment_item.jsx");
+/* harmony import */ var _single_comment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./single_comment */ "./frontend/components/comment/single_comment.jsx");
 /* harmony import */ var _create_comment_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./create_comment_form_container */ "./frontend/components/comment/create_comment_form_container.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -530,16 +472,16 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var CommentList = /*#__PURE__*/function (_React$Component) {
-  _inherits(CommentList, _React$Component);
+var Comments = /*#__PURE__*/function (_React$Component) {
+  _inherits(Comments, _React$Component);
 
-  function CommentList(props) {
-    _classCallCheck(this, CommentList);
+  function Comments(props) {
+    _classCallCheck(this, Comments);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CommentList).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Comments).call(this, props));
   }
 
-  _createClass(CommentList, [{
+  _createClass(Comments, [{
     key: "render",
     value: function render() {
       var _this = this;
@@ -552,10 +494,12 @@ var CommentList = /*#__PURE__*/function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "comments-total"
       }, "Comments:"), this.props.comments.map(function (comment) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_single_comment__WEBPACK_IMPORTED_MODULE_1__["default"], {
           comment: comment,
           key: comment.id,
-          author: _this.props.authors[comment.authorId]
+          author: _this.props.authors[comment.authorId],
+          currentUserId: _this.props.currentUserId,
+          deleteComment: _this.props.deleteComment
         });
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-create-post"
@@ -565,7 +509,7 @@ var CommentList = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return CommentList;
+  return Comments;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
@@ -596,8 +540,8 @@ var mSTP = function mSTP(state, ownProps) {
   var post = state.entities.posts[postId];
   var comments = post.comments.map(function (commentId) {
     return state.entities.comments[commentId];
-  });
-  debugger; // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
+  }); // debugger
+  // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
 
   if (post === undefined) {
     return {};
@@ -607,7 +551,8 @@ var mSTP = function mSTP(state, ownProps) {
   return {
     authors: state.entities.users,
     postId: postId,
-    comments: comments
+    comments: comments,
+    currentUserId: state.session.id
   };
 };
 
@@ -677,13 +622,6 @@ var CreateComment = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(CreateComment, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {// debugger
-    }
-  }, {
-    key: "componentWillUpdate",
-    value: function componentWillUpdate(prevProps) {}
-  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       var _this2 = this;
@@ -775,6 +713,71 @@ var mDTP = function mDTP(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_create_comment__WEBPACK_IMPORTED_MODULE_3__["default"])));
+
+/***/ }),
+
+/***/ "./frontend/components/comment/single_comment.jsx":
+/*!********************************************************!*\
+  !*** ./frontend/components/comment/single_comment.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SingleComment; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var SingleComment = /*#__PURE__*/function (_React$Component) {
+  _inherits(SingleComment, _React$Component);
+
+  function SingleComment(props) {
+    _classCallCheck(this, SingleComment);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SingleComment).call(this, props));
+  }
+
+  _createClass(SingleComment, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      // debugger
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "single-comment"
+      }, "".concat(this.props.author.firstName, " ").concat(this.props.author.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.comment.body, this.props.comment.authorId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this.props.deleteComment(_this.props.comment.id);
+        }
+      }, "Delete Comment") : "");
+    }
+  }]);
+
+  return SingleComment;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+;
 
 /***/ }),
 
@@ -2414,6 +2417,7 @@ var commentsReducer = function commentsReducer() {
       return newState;
 
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__["REMOVE_COMMENT"]:
+      // debugger
       comment = Object.values(action.comment.comments)[0];
       delete newState[comment.id];
       return newState;
@@ -2544,6 +2548,7 @@ var postsReducer = function postsReducer() {
   Object.freeze(state);
   var newState = Object.assign({}, state);
   var comment;
+  var commentIdx;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
@@ -2558,6 +2563,15 @@ var postsReducer = function postsReducer() {
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_3__["CREATE_COMMENT"]:
       comment = Object.values(action.comment.comments)[0];
       newState[comment.postId].comments.push(comment.id);
+      return newState;
+
+    case _actions_comment_action__WEBPACK_IMPORTED_MODULE_3__["REMOVE_COMMENT"]:
+      // debugger
+      comment = Object.values(action.comment.comments)[0];
+      commentIdx = newState[comment.postId].comments.indexOf(comment.id);
+      newState[comment.postId].comments.splice(commentIdx); // console.log('post:', newState[comment.postId].comments)
+      // console.log('commentIdx ', commentIdx)
+
       return newState;
     // case REMOVE_POST:
     //     delete newtState[Object.keys(action.user.posts)[0]];

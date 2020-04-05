@@ -13,7 +13,7 @@ export default class Comments extends React.Component {
             return null;
         }
         return (
-            <div>
+            <div className="user-comments">
                 <ul>
                     <p className="comments-total">Comments:</p>
                     {

@@ -1,0 +1,76 @@
+/* // Place all the styles related to the api/comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+.user-comments {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+}
+
+
+.single-comment {
+
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  font-size: 12px;
+  border: 2px solid #e9ebee;
+  position: relative;
+  min-width: 516px;
+  min-height: 105px;
+  background-color: #fff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  padding-top: 5px;
+  padding-right: 12px;
+
+}
+
+.single-comment-info {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  color: #4b4f56;
+  text-align: left;
+}
+
+
+.single-comment-info p a {
+  text-decoration: none;
+  color: #385898;
+  text-align: left;
+  font-size: 15px;
+  letter-spacing: normal;
+  line-height: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.single-comment-info p a:hover {
+  text-decoration: underline;
+}
+
+.single-comment-info h2{
+  
+    border-radius: 25px;
+    border: 2px solid #4b4f56;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;  
+}
+
+.comments-total {
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 14px;
+  color: #4b4f56;
+  text-align: left;
+  padding-left: 12px;
+}

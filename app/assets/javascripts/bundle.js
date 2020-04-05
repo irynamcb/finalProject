@@ -490,7 +490,9 @@ var Comments = /*#__PURE__*/function (_React$Component) {
         return null;
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-comments"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "comments-total"
       }, "Comments:"), this.props.comments.map(function (comment) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_single_comment__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -725,6 +727,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SingleComment; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -745,6 +748,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var SingleComment = /*#__PURE__*/function (_React$Component) {
   _inherits(SingleComment, _React$Component);
 
@@ -762,7 +766,11 @@ var SingleComment = /*#__PURE__*/function (_React$Component) {
       // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-comment"
-      }, "".concat(this.props.author.firstName, " ").concat(this.props.author.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.props.comment.body, this.props.comment.authorId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "single-comment-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/users/".concat(this.props.author.id)
+      }, "".concat(this.props.author.firstName, " ").concat(this.props.author.lastName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.comment.body)), this.props.comment.authorId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.deleteComment(_this.props.comment.id);
         }
@@ -1443,8 +1451,8 @@ var mSTP = function mSTP(state, ownProps) {
   });
   var postComments = ownProps.post.comments.map(function (commentId) {
     return state.entities.comments[commentId];
-  });
-  debugger;
+  }); // debugger
+
   return {
     parent: state.entities.users[ownProps.post.parentId],
     author: state.entities.users[ownProps.post.authorId],

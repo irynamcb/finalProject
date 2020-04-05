@@ -10,11 +10,11 @@ const commentsReducer = (state = {}, action) => {
         case RECEIVE_POST:
             return Object.assign(newState, action.post.comments);
         case CREATE_COMMENT:
-            comment = Object.values(action.comment)[0];
+            comment = Object.values(action.comment.comments)[0];
             newState[comment.id] = comment;
             return newState;
         case REMOVE_COMMENT:
-            comment = Object.values(action.comment)[0];
+            comment = Object.values(action.comment.comments)[0];
             delete newState[comment.id];
             return newState;
         default:

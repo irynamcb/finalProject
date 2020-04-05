@@ -1,5 +1,6 @@
 import React from 'react';
 import SingleComment from './comment_item';
+import CreateCommentContainer from './create_comment_form_container';
 
 export default class CommentList extends React.Component {
     constructor(props) {
@@ -25,6 +26,9 @@ export default class CommentList extends React.Component {
                             />)
                     }
                 </ul>
+                <div className="user-create-post">
+                    <CreateCommentContainer  postId={this.props.postId}/>
+                </div>
             </div>
         )
     }

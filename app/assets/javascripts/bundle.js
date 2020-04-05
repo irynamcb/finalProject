@@ -507,6 +507,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _comment_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comment_item */ "./frontend/components/comment/comment_item.jsx");
+/* harmony import */ var _create_comment_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./create_comment_form_container */ "./frontend/components/comment/create_comment_form_container.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -524,6 +525,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -555,6 +557,10 @@ var CommentList = /*#__PURE__*/function (_React$Component) {
           key: comment.id,
           author: _this.props.authors[comment.authorId]
         });
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-create-post"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_comment_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        postId: this.props.postId
       })));
     }
   }]);
@@ -578,6 +584,10 @@ var CommentList = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _comments__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comments */ "./frontend/components/comment/comments.jsx");
+/* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
 
 
 
@@ -586,7 +596,8 @@ var mSTP = function mSTP(state, ownProps) {
   var post = state.entities.posts[postId];
   var comments = post.comments.map(function (commentId) {
     return state.entities.comments[commentId];
-  }); // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
+  });
+  debugger; // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
 
   if (post === undefined) {
     return {};
@@ -595,16 +606,175 @@ var mSTP = function mSTP(state, ownProps) {
 
   return {
     authors: state.entities.users,
+    postId: postId,
     comments: comments
   };
 };
 
 var mDTP = function mDTP(dispatch) {
-  return {//    
+  return {
+    deleteComment: function deleteComment(commentId) {
+      return dispatch(Object(_actions_comment_action__WEBPACK_IMPORTED_MODULE_2__["deleteComment"])(commentId));
+    }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_comments__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_comments__WEBPACK_IMPORTED_MODULE_1__["default"])));
+
+/***/ }),
+
+/***/ "./frontend/components/comment/create_comment.jsx":
+/*!********************************************************!*\
+  !*** ./frontend/components/comment/create_comment.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CreateComment; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var CreateComment = /*#__PURE__*/function (_React$Component) {
+  _inherits(CreateComment, _React$Component);
+
+  function CreateComment(props) {
+    var _this;
+
+    _classCallCheck(this, CreateComment);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateComment).call(this, props));
+    _this.state = {
+      body: "",
+      author_id: props.author_id,
+      post_id: props.post_id
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.clearBody = _this.clearBody.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(CreateComment, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {// debugger
+    }
+  }, {
+    key: "componentWillUpdate",
+    value: function componentWillUpdate(prevProps) {}
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.props.createComment(this.state).then(function () {
+        return _this2.clearBody();
+      });
+    }
+  }, {
+    key: "clearBody",
+    value: function clearBody() {
+      this.setState({
+        body: ""
+      });
+    }
+  }, {
+    key: "update",
+    value: function update(field) {
+      var _this3 = this;
+
+      return function (e) {
+        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "createcomment-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        className: "createpost-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "createpost-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "createcomment-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        placeholder: "Add your comment",
+        value: this.state.body,
+        onChange: this.update('body')
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        className: "createcomment-btn"
+      }, "Comment")));
+    }
+  }]);
+
+  return CreateComment;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./frontend/components/comment/create_comment_form_container.js":
+/*!**********************************************************************!*\
+  !*** ./frontend/components/comment/create_comment_form_container.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
+/* harmony import */ var _create_comment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./create_comment */ "./frontend/components/comment/create_comment.jsx");
+
+
+
+
+
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    formType: 'Add Comment',
+    author_id: state.session.id,
+    post_id: Number(ownProps.postId)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    createComment: function createComment(comment) {
+      return dispatch(Object(_actions_comment_action__WEBPACK_IMPORTED_MODULE_2__["createComment"])(comment));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_create_comment__WEBPACK_IMPORTED_MODULE_3__["default"])));
 
 /***/ }),
 
@@ -2239,12 +2409,12 @@ var commentsReducer = function commentsReducer() {
       return Object.assign(newState, action.post.comments);
 
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__["CREATE_COMMENT"]:
-      comment = Object.values(action.comment)[0];
+      comment = Object.values(action.comment.comments)[0];
       newState[comment.id] = comment;
       return newState;
 
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__["REMOVE_COMMENT"]:
-      comment = Object.values(action.comment)[0];
+      comment = Object.values(action.comment.comments)[0];
       delete newState[comment.id];
       return newState;
 
@@ -2362,6 +2532,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/comment_action */ "./frontend/actions/comment_action.js");
+
 
 
 
@@ -2371,6 +2543,7 @@ var postsReducer = function postsReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var newState = Object.assign({}, state);
+  var comment;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:
@@ -2381,6 +2554,11 @@ var postsReducer = function postsReducer() {
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["CREATE_POST"]:
       return Object.assign(newState, action.post.posts);
+
+    case _actions_comment_action__WEBPACK_IMPORTED_MODULE_3__["CREATE_COMMENT"]:
+      comment = Object.values(action.comment.comments)[0];
+      newState[comment.postId].comments.push(comment.id);
+      return newState;
     // case REMOVE_POST:
     //     delete newtState[Object.keys(action.user.posts)[0]];
     //     return newtState;

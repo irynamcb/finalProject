@@ -51,6 +51,10 @@ has_many :liked_posts,
   source_type: 'Post'
   # actual liked posts
 
+has_many :post_comment_authors,
+through: :posts,
+source: :comment_authors
+
 
 after_initialize :ensure_session_token
 

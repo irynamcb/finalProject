@@ -31,7 +31,6 @@ export default class PostItem extends React.Component {
 
     render() {
         const { post, author, parent, likes, currentUserId, comments } = this.props;
-
         let userLiked = false;
 
         likes.forEach(like => {
@@ -71,7 +70,7 @@ export default class PostItem extends React.Component {
                             
                             (comments.length !== 0) ?
                                 <div className="number-of-comments">
-                                    <Link to="/" >{comments.length} Comments</Link>
+                                    <Link to={`/posts/${post.id}/comments`}>{comments.length} Comments</Link>
                                 </div> : ""
                         }
 

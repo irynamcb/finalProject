@@ -7,6 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import UserAboutContainer from './user/user_about_container';
 import Footer from './footer/footer';
+import CommentListContainer from "./comment/comments_container";
 
 
 
@@ -29,6 +30,7 @@ const App = () => (
         </header>
         <Switch>
             <ProtectedRoute path="/users/:userId" component={UserAboutContainer} />
+            <ProtectedRoute path="/posts/:postId/comments" component={CommentListContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <Route exact path="/" component={SplashContainer} />

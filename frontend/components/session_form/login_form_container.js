@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { login, clearSessionErrors } from '../../actions/session_actions';
-import LoginForm from '../session_form/login_form';
+import LoginForm from './login_form';
  
 
 const mSTP = ({ errors }) => {

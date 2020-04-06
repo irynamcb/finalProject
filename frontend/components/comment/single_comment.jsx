@@ -18,15 +18,13 @@ export default class SingleComment extends React.Component {
             <div className="single-comment">
                 <div className="single-comment-info">
                     <p><Link to={`/users/${author.id}`}>{`${author.firstName} ${author.lastName}`}</Link></p>
-                    <br/>
                     <h2>{comment.body}</h2>
-                </div>
+                </div> 
                 {
-                (comment.authorId === currentUserId) ?
-                <button onClick={() => this.props.deleteComment(comment.id)}>Delete Comment</button>
-                : ""
+                    (comment.authorId === currentUserId) ?
+                        <button onClick={() => this.props.deleteComment(comment.id)} className="delete-comment">Delete Comment</button>
+                        : ""
                 }
-                
             </div>
         )
     }

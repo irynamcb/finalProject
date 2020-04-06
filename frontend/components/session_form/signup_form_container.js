@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { login, signup, clearSessionErrors } from '../../actions/session_actions';
-import SignupForm from '../session_form/signup_form';
+import SignupForm from './signup_form';
 import {withRouter} from 'react-router-dom';
 
 

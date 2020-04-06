@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { faHeart, faThumbsUp, faCaretRight} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CommentsContainer from "../comment/comments_container";
 
 export default class PostItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {showComments: false}
 
         this.handleClick = this.handleClick.bind(this);
+        this.showComments = this.showComments.bind(this);
     }
 
     componentDidMount(){
@@ -16,6 +19,11 @@ export default class PostItem extends React.Component {
 
     componentWillUpdate() {
         // 
+    }
+
+    showComments() {
+        event.preventDefault();
+        this.setState({showComments: !this.state.showComments});
     }
 
     handleClick(userLiked){
@@ -65,8 +73,8 @@ export default class PostItem extends React.Component {
                     {
 
                         (comments.length !== 0) ?
-                            <div className="number-of-comments">
-                                <Link to={`/posts/${post.id}/comments`}>{comments.length} {commentText}</Link>
+                            <div className="number-of-comments" onClick = {this.showComments}>
+                                {comments.length} {commentText}
                             </div> : ""
                     }
 
@@ -84,7 +92,15 @@ export default class PostItem extends React.Component {
                     <div className="number-of-likes">
                         <FontAwesomeIcon icon={faHeart} onClick={() => this.handleClick(userLiked)} style={(userLiked) ? iconStyleRed : iconStyleGray} />
                     </div>
-                    <Link to={`/posts/${post.id}/comments`} className="like-btn">Comment</Link>
+
+                    {
+                        (this.state.showComments) ?
+                                <div>
+                                    <CommentsContainer postId={post.id}/>
+                                </div> : ""
+                    }
+                  
+                    <button className="like-btn" onClick={this.showComments}>Comment</button>
                     <button>Share</button>
                 </div>    
                 </div>

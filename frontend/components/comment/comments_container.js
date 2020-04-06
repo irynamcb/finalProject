@@ -6,13 +6,13 @@ import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
 
-    let postId = Number(ownProps.match.params.postId);
+    let postId = ownProps.postId;
     let post = state.entities.posts[postId];
     let comments = post.comments.map(commentId => state.entities.comments[commentId]);
 
     // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
 
-    if (post === undefined ) {
+    if (post === undefined || Object.keys(state.entities.comments).length === 0) {
         return {};
     }
     

@@ -25,7 +25,7 @@ const postsReducer = (state = {}, action) => {
         case REMOVE_COMMENT: 
             comment = Object.values(action.comment.comments)[0];
             commentIdx = newState[comment.postId].comments.indexOf(comment.id);
-            newState[comment.postId].comments.splice(commentIdx);
+            newState[comment.postId].comments.splice(commentIdx, 1);
             return newState;
         case REMOVE_POST:
             delete newState[action.postId];

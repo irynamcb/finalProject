@@ -380,8 +380,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splash_splash_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./splash/splash_container */ "./frontend/components/splash/splash_container.jsx");
 /* harmony import */ var _user_user_about_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./user/user_about_container */ "./frontend/components/user/user_about_container.jsx");
 /* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./footer/footer */ "./frontend/components/footer/footer.jsx");
-/* harmony import */ var _comment_comments_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./comment/comments_container */ "./frontend/components/comment/comments_container.js");
-
 
 
 
@@ -412,9 +410,6 @@ var App = function App() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     path: "/users/:userId",
     component: _user_user_about_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
-    path: "/posts/:postId/comments",
-    component: _comment_comments_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
     exact: true,
     path: "/login",
@@ -488,7 +483,8 @@ var Comments = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.comments === undefined) {
         return null;
-      }
+      } // debugger
+
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-comments"
@@ -537,13 +533,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  var postId = Number(ownProps.match.params.postId);
+  var postId = ownProps.postId;
   var post = state.entities.posts[postId];
   var comments = post.comments.map(function (commentId) {
     return state.entities.comments[commentId];
   }); // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
 
-  if (post === undefined) {
+  if (post === undefined || Object.keys(state.entities.comments).length === 0) {
     return {};
   }
 
@@ -1282,6 +1278,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
+/* harmony import */ var _comment_comments_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../comment/comments_container */ "./frontend/components/comment/comments_container.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1305,6 +1302,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var PostItem = /*#__PURE__*/function (_React$Component) {
   _inherits(PostItem, _React$Component);
 
@@ -1314,7 +1312,11 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, PostItem);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PostItem).call(this, props));
+    _this.state = {
+      showComments: false
+    };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.showComments = _this.showComments.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1326,6 +1328,14 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentWillUpdate",
     value: function componentWillUpdate() {// 
+    }
+  }, {
+    key: "showComments",
+    value: function showComments() {
+      event.preventDefault();
+      this.setState({
+        showComments: !this.state.showComments
+      });
     }
   }, {
     key: "handleClick",
@@ -1393,10 +1403,9 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(parent.id)
       }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "number-of-comments"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/posts/".concat(post.id, "/comments")
-      }, comments.length, " ", commentText)) : "", author.id === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "number-of-comments",
+        onClick: this.showComments
+      }, comments.length, " ", commentText) : "", author.id === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return deletePost(post.id);
         }
@@ -1412,9 +1421,11 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           return _this2.handleClick(userLiked);
         },
         style: userLiked ? iconStyleRed : iconStyleGray
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/posts/".concat(post.id, "/comments"),
-        className: "like-btn"
+      })), this.state.showComments ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comments_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        postId: post.id
+      })) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "like-btn",
+        onClick: this.showComments
       }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
     }
   }]);
@@ -2585,7 +2596,7 @@ var postsReducer = function postsReducer() {
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_3__["REMOVE_COMMENT"]:
       comment = Object.values(action.comment.comments)[0];
       commentIdx = newState[comment.postId].comments.indexOf(comment.id);
-      newState[comment.postId].comments.splice(commentIdx);
+      newState[comment.postId].comments.splice(commentIdx, 1);
       return newState;
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_POST"]:

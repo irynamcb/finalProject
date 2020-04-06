@@ -7,7 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import UserAboutContainer from './user/user_about_container';
 import Footer from './footer/footer';
-import CommentsContainer from "./comment/comments_container";
+
 
 
 
@@ -23,14 +23,10 @@ const NoMatchPage = () => {
 const App = () => (
     <div id="main-div">
         <header>
-            {/* <Link to="/" className="">
-                <h1>FriendsBook</h1>
-            </Link> */}
             <NavbarContainer />
         </header>
         <Switch>
             <ProtectedRoute path="/users/:userId" component={UserAboutContainer} />
-            <ProtectedRoute path="/posts/:postId/comments" component={CommentsContainer} />
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <Route exact path="/" component={SplashContainer} />

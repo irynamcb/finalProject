@@ -17,6 +17,7 @@
   display: block;
   font-size: 12px;
   border: 2px solid #e9ebee;
+  border-radius: 25px;
   position: relative;
   min-width: 516px;
   min-height: 105px;
@@ -57,11 +58,7 @@
 
 .single-comment-info h2{
   
-    border-radius: 25px;
-    border: 2px solid #4b4f56;
-    padding: 20px; 
-    width: 200px;
-    height: 15px;  
+    color: #4b4f56;
 }
 
 .comments-total {

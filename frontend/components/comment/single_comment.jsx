@@ -25,7 +25,7 @@ export default class SingleComment extends React.Component {
 
     render() {
 // debugger
-        const { author, comment, currentUserId, likes, currentUserId, deleteComment } = this.props;
+        const { author, comment, likes, currentUserId, deleteComment } = this.props;
 
         let userLiked = false;
 

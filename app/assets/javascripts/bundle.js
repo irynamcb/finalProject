@@ -716,9 +716,136 @@ var mDTP = function mDTP(dispatch) {
   !*** ./frontend/components/comment/single_comment.jsx ***!
   \********************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/irynamcbride/Desktop/finalProject/frontend/components/comment/single_comment.jsx: Identifier 'currentUserId' has already been declared (28:55)\n\n\u001b[0m \u001b[90m 26 | \u001b[39m    render() {\u001b[0m\n\u001b[0m \u001b[90m 27 | \u001b[39m\u001b[90m// debugger\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 | \u001b[39m        \u001b[36mconst\u001b[39m { author\u001b[33m,\u001b[39m comment\u001b[33m,\u001b[39m currentUserId\u001b[33m,\u001b[39m likes\u001b[33m,\u001b[39m currentUserId\u001b[33m,\u001b[39m deleteComment } \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 29 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 30 | \u001b[39m        let userLiked \u001b[33m=\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 31 | \u001b[39m\u001b[0m\n    at Object.raise (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:7044:17)\n    at ScopeHandler.checkRedeclarationInScope (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:4270:12)\n    at ScopeHandler.declareName (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:4236:12)\n    at Object.checkLVal (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:8891:22)\n    at Object.checkLVal (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:8907:16)\n    at Object.parseVarId (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11395:10)\n    at Object.parseVar (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11370:12)\n    at Object.parseVarStatement (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11192:10)\n    at Object.parseStatementContent (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10791:21)\n    at Object.parseStatement (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10724:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11298:25)\n    at Object.parseBlockBody (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11285:10)\n    at Object.parseBlock (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11269:10)\n    at Object.parseFunctionBody (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10285:24)\n    at Object.parseFunctionBodyAndFinish (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10254:10)\n    at Object.parseMethod (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10216:10)\n    at Object.pushClassMethod (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11704:30)\n    at Object.parseClassMemberWithIsStatic (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11621:12)\n    at Object.parseClassMember (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11563:10)\n    at /Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11518:14\n    at Object.withTopicForbiddingContext (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10599:14)\n    at Object.parseClassBody (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11495:10)\n    at Object.parseClass (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11469:22)\n    at Object.parseExportDefaultExpression (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11895:19)\n    at Object.parseExport (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11808:31)\n    at Object.parseStatementContent (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10828:27)\n    at Object.parseStatement (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10724:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11298:25)\n    at Object.parseBlockBody (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11285:10)\n    at Object.parseTopLevel (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10655:10)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SingleComment; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var SingleComment = /*#__PURE__*/function (_React$Component) {
+  _inherits(SingleComment, _React$Component);
+
+  function SingleComment(props) {
+    var _this;
+
+    _classCallCheck(this, SingleComment);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SingleComment).call(this, props));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(SingleComment, [{
+    key: "handleClick",
+    value: function handleClick(userLiked) {
+      var _this$props = this.props,
+          createLike = _this$props.createLike,
+          deleteLike = _this$props.deleteLike,
+          currentUserId = _this$props.currentUserId,
+          comment = _this$props.comment,
+          likes = _this$props.likes;
+
+      if (userLiked) {
+        var userLike = likes.find(function (like) {
+          return like.authorId === currentUserId;
+        });
+        deleteLike(userLike.id);
+      } else {
+        createLike({
+          author_id: currentUserId,
+          likeable_id: comment.id,
+          likeable_type: "Comment"
+        });
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      // debugger
+      var _this$props2 = this.props,
+          author = _this$props2.author,
+          comment = _this$props2.comment,
+          likes = _this$props2.likes,
+          currentUserId = _this$props2.currentUserId,
+          deleteComment = _this$props2.deleteComment;
+      var userLiked = false;
+      likes.forEach(function (like) {
+        if (like.authorId === currentUserId) {
+          userLiked = true;
+        }
+      });
+
+      if (author === undefined) {// debugger
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "single-comment"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "single-comment-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/users/".concat(author.id)
+      }, "".concat(author.firstName, " ").concat(author.lastName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, comment.body)), comment.authorId === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return deleteComment(comment.id);
+        },
+        className: "delete-comment"
+      }, "Delete Comment") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comments-likes"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "like-btn"
+      }, likes.length, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHeart"],
+        style: {
+          width: '11px',
+          height: '11px',
+          color: '#385898'
+        }
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "likes-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "like"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this2.handleClick(userLiked);
+        }
+      }, "Like"))));
+    }
+  }]);
+
+  return SingleComment;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+;
 
 /***/ }),
 

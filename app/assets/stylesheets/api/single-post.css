@@ -49,6 +49,7 @@
 .likes-main {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-evenly;
   border-top: 1px solid #dddfe2;
   border-bottom: 1px solid #dddfe2;
@@ -58,12 +59,17 @@
 
 }
 
-.like-btn, .number-of-likes {
+.like-btn {
  align-items: baseline;
  text-align: center;
  vertical-align: middle;
  align-self: center;
 
+}
+
+.number-of-likes {
+  display: flex;
+  justify-content: space-between;
 }
 
 .number-of-likes:hover {
@@ -91,4 +97,17 @@ font-weight: 700;
 
 .number-of-comments:hover {
   cursor: pointer;
+}
+
+.like, .comment, .share {
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  width: 85px;
+  height: 16px;
+  align-content: center;
+}
+
+.like:hover, .comment:hover, .share:hover {
+  background-color: lightblue;
 }

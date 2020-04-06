@@ -649,7 +649,7 @@ var CreateComment = /*#__PURE__*/function (_React$Component) {
         className: "createcomment-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
-        className: "createpost-form"
+        className: "createcomment-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createpost-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1388,10 +1388,10 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           userLiked = true;
         }
       });
-      var iconStyleRed = {
+      var iconStyleBlue = {
         width: '16px',
         height: '16px',
-        color: 'red'
+        color: '385898'
       };
       var iconStyleGray = {
         width: '16px',
@@ -1433,17 +1433,25 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
       }, comments.length, " ", commentText) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "likes-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "number-of-likes"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
-        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHeart"],
+        className: "like",
         onClick: function onClick() {
           return _this2.handleClick(userLiked);
-        },
-        style: userLiked ? iconStyleRed : iconStyleGray
-      }), "\xA0Like"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "like-btn",
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faThumbsUp"],
+        style: userLiked ? iconStyleBlue : iconStyleGray
+      }), "\xA0Like"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment",
         onClick: this.showComments
-      }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))), this.state.showComments ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comments_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faComment"],
+        style: iconStyleGray
+      }), "\xA0Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "share"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faShare"],
+        style: iconStyleGray
+      }), "\xA0Share"))), this.state.showComments ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comments_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         postId: post.id
       })) : "");
     }

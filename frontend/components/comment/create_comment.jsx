@@ -32,7 +32,7 @@ export default class CreateComment extends React.Component {
 
         return (
             <div className="createcomment-container">
-                <form onSubmit={this.handleSubmit} className="createpost-form">
+                <form onSubmit={this.handleSubmit} className="createcomment-form">
                     <div className="createpost-main">
                      
                         <div className="createcomment-body">

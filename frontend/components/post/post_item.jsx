@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { faHeart, faThumbsUp, faCaretRight} from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faThumbsUp, faCaretRight, faComment, faShare} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CommentsContainer from "../comment/comments_container";
 
@@ -47,10 +47,10 @@ export default class PostItem extends React.Component {
             }
         });
 
-        let iconStyleRed = {
+        let iconStyleBlue = {
             width: '16px',
             height: '16px',
-            color: 'red'
+            color: '385898'
         };
 
         let iconStyleGray = {
@@ -96,12 +96,17 @@ export default class PostItem extends React.Component {
                     </div>
 
                 <div className="likes-main">
-                    <div className="number-of-likes">
-                        <FontAwesomeIcon icon={faHeart} onClick={() => this.handleClick(userLiked)} style={(userLiked) ? iconStyleRed : iconStyleGray} />&nbsp;Like
-                    </div>
-                  
-                    <button className="like-btn" onClick={this.showComments}>Comment</button>
-                    <button>Share</button>
+
+                        <div className="like" onClick={() => this.handleClick(userLiked)}>
+                        <FontAwesomeIcon icon={faThumbsUp} style={(userLiked) ? iconStyleBlue : iconStyleGray} />&nbsp;Like
+                        </div>
+                        <div className="comment" onClick={this.showComments} >
+                        <FontAwesomeIcon icon={faComment} style={iconStyleGray} />&nbsp;Comment
+                        </div>
+                        <div className="share">
+                        <FontAwesomeIcon icon={faShare} style={iconStyleGray} />&nbsp;Share
+                        </div>
+                    
                 </div>    
                 </div>
 

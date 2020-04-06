@@ -15,6 +15,7 @@
 
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
+  flex-direction: column;
   position: relative;
   border-radius: 18px;
   border: 2px solid #e9ebee;
@@ -96,13 +97,19 @@
 
 .delete-comment {
   position: absolute;
-  bottom: 0px;
+  right: 10px;
+  top: 5px;
   font-size: 12px;
-  margin-top: 10px;
+
 
 }
 
-.delete-comment:hover {
+.lk {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.delete-comment:hover, .lk:hover {
 color: #385898;
 font-weight: 700;
 }

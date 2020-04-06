@@ -90,19 +90,28 @@
 /*!********************************************!*\
   !*** ./frontend/actions/comment_action.js ***!
   \********************************************/
-/*! exports provided: CREATE_COMMENT, REMOVE_COMMENT, createComment, deleteComment */
+/*! exports provided: CREATE_COMMENT, REMOVE_COMMENT, RECEIVE_COMMENT, createComment, deleteComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_COMMENT", function() { return CREATE_COMMENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_COMMENT", function() { return REMOVE_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_COMMENT", function() { return RECEIVE_COMMENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
 /* harmony import */ var _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/comment_api_util */ "./frontend/util/comment_api_util.js");
 
 var CREATE_COMMENT = 'CREATE_COMMENT';
-var REMOVE_COMMENT = 'REMOVE_COMMENT'; // regular action
+var REMOVE_COMMENT = 'REMOVE_COMMENT';
+var RECEIVE_COMMENT = 'RECEIVE_COMMENT'; // regular action
+
+var receiveComment = function receiveComment(comment) {
+  return {
+    type: RECEIVE_COMMENT,
+    comment: comment
+  };
+};
 
 var createSingleComment = function createSingleComment(comment) {
   return {
@@ -797,12 +806,12 @@ var SingleComment = /*#__PURE__*/function (_React$Component) {
           likes = _this$props2.likes,
           currentUserId = _this$props2.currentUserId,
           deleteComment = _this$props2.deleteComment;
-      var userLiked = false;
-      likes.forEach(function (like) {
-        if (like.authorId === currentUserId) {
-          userLiked = true;
-        }
-      });
+      var userLiked = false; // debugger
+      // likes.forEach(like => {
+      //     if (like.authorId === currentUserId) {
+      //         userLiked = true;
+      //     }
+      // });
 
       if (author === undefined) {// debugger
       }
@@ -813,31 +822,26 @@ var SingleComment = /*#__PURE__*/function (_React$Component) {
         className: "single-comment-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(author.id)
-      }, "".concat(author.firstName, " ").concat(author.lastName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, comment.body)), comment.authorId === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: function onClick() {
-          return deleteComment(comment.id);
-        },
-        className: "delete-comment"
-      }, "Delete Comment") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "comments-likes"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "like-btn"
-      }, likes.length, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
-        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHeart"],
+      }, "".concat(author.firstName, " ").concat(author.lastName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, comment.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "lkn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faThumbsUp"],
         style: {
           width: '11px',
           height: '11px',
           color: '#385898'
         }
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "likes-main"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "like"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this2.handleClick(userLiked);
-        }
-      }, "Like"))));
+        },
+        className: "lk"
+      }, "Like"), comment.authorId === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return deleteComment(comment.id);
+        },
+        className: "delete-comment"
+      }, "Delete Comment") : "");
     }
   }]);
 
@@ -2603,6 +2607,8 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_like_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/like_actions */ "./frontend/actions/like_actions.js");
 /* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/comment_action */ "./frontend/actions/comment_action.js");
+
 
 
 
@@ -2626,6 +2632,9 @@ var likesReducer = function likesReducer() {
 
     case _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_POST"]:
       return Object.assign(newState, action.post.likes);
+
+    case _actions_comment_action__WEBPACK_IMPORTED_MODULE_2__["RECEIVE_COMMENT"]:
+      return Object.assign(newState, action.comment.commentLikes);
 
     default:
       return state;
@@ -2661,7 +2670,6 @@ var postsReducer = function postsReducer() {
   var newState = Object.assign({}, state);
   var comment;
   var commentIdx;
-  var post;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_USER"]:

@@ -1,5 +1,6 @@
 import { CREATE_LIKE, REMOVE_LIKE } from "../actions/like_actions";
 import { RECEIVE_POST } from '../actions/post_actions';
+import {RECEIVE_COMMENT} from '../actions/comment_action';
 
 const likesReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -17,6 +18,8 @@ const likesReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_POST:
       return Object.assign(newState, action.post.likes);
+    case RECEIVE_COMMENT:
+      return Object.assign(newState, action.comment.commentLikes);
     default:
       return state;
   }

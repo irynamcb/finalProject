@@ -9,7 +9,6 @@ const postsReducer = (state = {}, action) => {
 
     let comment;
     let commentIdx;
-    let post;
 
     switch (action.type) {
         case RECEIVE_CURRENT_USER:

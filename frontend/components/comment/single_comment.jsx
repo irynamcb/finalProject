@@ -28,12 +28,12 @@ export default class SingleComment extends React.Component {
         const { author, comment, likes, currentUserId, deleteComment } = this.props;
 
         let userLiked = false;
-
-        likes.forEach(like => {
-            if (like.authorId === currentUserId) {
-                userLiked = true;
-            }
-        });
+        // debugger
+        // likes.forEach(like => {
+        //     if (like.authorId === currentUserId) {
+        //         userLiked = true;
+        //     }
+        // });
 
         if (author === undefined) {
             // debugger
@@ -45,39 +45,19 @@ export default class SingleComment extends React.Component {
                     <p><Link to={`/users/${author.id}`}>{`${author.firstName} ${author.lastName}`}</Link></p>
                     <h2>{comment.body}</h2>
                 </div> 
+
+                    <div className="lkn" >
+                        {/* {likes.length}&nbsp; */}
+                        <FontAwesomeIcon icon={faThumbsUp} style={{ width: '11px', height: '11px', color: '#385898' }} />
+                    </div>
+                    <button onClick={() => this.handleClick(userLiked)} className="lk">Like</button>
+                
                 {
                     (comment.authorId === currentUserId) ?
                         <button onClick={() => deleteComment(comment.id)} className="delete-comment">Delete Comment</button>
                         : ""
                 }
-
-
-                
-
-                <div className="comments-likes">
-
-                    <div className="like-btn">
-                        {likes.length}&nbsp;<FontAwesomeIcon icon={faHeart} style={{ width: '11px', height: '11px', color: '#385898' }} />
-                    </div>
-
-                </div>
-
-                <div className="likes-main">
-
-                    <div className="like" >
-                        <button onClick={() => this.handleClick(userLiked)}>Like</button>
-                    </div>
-                </div>
-           
-           
-           
             </div>
-
-
-
-
-
-          
         )
     }
 };

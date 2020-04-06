@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { faHeart, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export default class SingleComment extends React.Component {
@@ -25,7 +27,38 @@ export default class SingleComment extends React.Component {
                         <button onClick={() => this.props.deleteComment(comment.id)} className="delete-comment">Delete Comment</button>
                         : ""
                 }
+
+
+                
+
+                <div className="comments-likes">
+
+                    {
+
+                        (likes.length !== 0) ?
+                            <div className="number-of-comments" onClick={this.showComments}>
+                                {likes.length} <FontAwesomeIcon icon={faHeart} style={{ width: '11px', height: '11px', color: '#385898' }} />
+                            </div> : ""
+                    }
+
+                </div>
+
+                <div className="likes-main">
+
+                    <div className="like" >
+                        <button onClick={() => this.handleClick(userLiked)}>Like</button>
+                    </div>
+                </div>
+           
+           
+           
             </div>
+
+
+
+
+
+          
         )
     }
 };

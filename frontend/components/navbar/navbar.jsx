@@ -32,13 +32,11 @@ export default class Navbar extends React.Component {
        
     personalGreeting() {
         return (
+            <div className="navbar">
             <div className="header-group">
                 <Link to="/" className="home">Friendsbook</Link>
                 <div className="nav">
                     <Link to={`/users/${this.props.currentUser.id}`} className="header-name">{this.props.currentUser.firstName}</Link>
-                </div>
-                <div className="nav">
-                    <NavLink to="/" className="header-link">Home</NavLink>
                 </div>
                 <div className="nav">
                     <NavLink to="/" className="header-link">Friends</NavLink>
@@ -46,6 +44,7 @@ export default class Navbar extends React.Component {
                 <div className="nav">
                     <button className="header-button" onClick={this.props.logout}>Log Out</button>
                 </div>
+            </div>
             </div>
         )
     }

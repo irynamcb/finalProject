@@ -11,7 +11,6 @@ export default class SingleComment extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-
     handleClick(userLiked) {
         const { createLike, deleteLike, currentUserId, comment, likes } = this.props;
 

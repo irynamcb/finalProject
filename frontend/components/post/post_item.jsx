@@ -68,14 +68,11 @@ export default class PostItem extends React.Component {
                 <div className="single-post-info">
                     <p><Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link><FontAwesomeIcon icon={faCaretRight} style={iconStyleGray}/><Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link></p>
                     <br/>
-
-
                     {
                         (author.id === currentUserId) ?
                             <button onClick={() => deletePost(post.id)} className="delete-post">Delete Post</button>
                             : ""
                     }
-
 
                     <h2>{post.body}</h2>
 
@@ -86,7 +83,6 @@ export default class PostItem extends React.Component {
                     </div>
 
                     {
-
                         (comments.length !== 0) ?
                             <div className="number-of-comments" onClick = {this.showComments}>
                                 {comments.length} {commentText}
@@ -95,7 +91,7 @@ export default class PostItem extends React.Component {
 
                     </div>
 
-                <div className="likes-main">
+                    <div className="likes-main">
 
                         <div className="like" onClick={() => this.handleClick(userLiked)}>
                         <FontAwesomeIcon icon={faThumbsUp} style={(userLiked) ? iconStyleBlue : iconStyleGray} />&nbsp;Like
@@ -107,7 +103,7 @@ export default class PostItem extends React.Component {
                         <FontAwesomeIcon icon={faShare} style={iconStyleGray} />&nbsp;Share
                         </div>
                     
-                </div>    
+                    </div>    
                 </div>
 
                 {

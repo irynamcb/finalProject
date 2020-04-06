@@ -760,15 +760,23 @@ var SingleComment = /*#__PURE__*/function (_React$Component) {
       var _this = this;
 
       // debugger
+      var _this$props = this.props,
+          author = _this$props.author,
+          comment = _this$props.comment,
+          currentUserId = _this$props.currentUserId;
+
+      if (author === undefined) {// debugger
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-comment"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-comment-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/users/".concat(this.props.author.id)
-      }, "".concat(this.props.author.firstName, " ").concat(this.props.author.lastName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.props.comment.body)), this.props.comment.authorId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        to: "/users/".concat(author.id)
+      }, "".concat(author.firstName, " ").concat(author.lastName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, comment.body)), comment.authorId === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this.props.deleteComment(_this.props.comment.id);
+          return _this.props.deleteComment(comment.id);
         }
       }, "Delete Comment") : "");
     }

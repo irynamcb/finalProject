@@ -45,7 +45,7 @@ export default class CreateComment extends React.Component {
                             />
                         </div>
                     </div>
-                    <button type='submit' className="createcomment-btn">Comment</button>
+                    {/* <button type='submit' className="createcomment-btn">Comment</button> */}
                 </form>
             </div>
         );

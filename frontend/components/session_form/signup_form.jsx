@@ -130,7 +130,7 @@ class SignupForm extends React.Component {
               <label htmlFor="custom" className="signup-input-4">Custom</label>
                         </label>
                         <br />
-                        <span className="info">By clicking Sign Up, you agree to our <a href="https://www.facebook.com/legal/terms/update" target="_blank">Terms</a>, <a href="https://www.facebook.com/about/privacy/update" target="_blank">Data Policy</a> and <a href="https://www.facebook.com/policies/cookies/" target="_blank">Cookies Policy</a>. You may receive SMS Notifications from us and can opt out any time.</span>
+                        <span className="info">By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</span>
                         <input className="signup-submit" type="submit" value={this.props.formType} />
                         <input className="signup-submit" type="submit" value="Demo User" onClick={() => this.demo()} />
                     </div>

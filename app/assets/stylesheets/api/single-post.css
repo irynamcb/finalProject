@@ -109,5 +109,5 @@ font-weight: 700;
 }
 
 .like:hover, .comment:hover, .share:hover {
-  background-color: lightblue;
+  background-color: #f5f6f7;
 }

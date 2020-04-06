@@ -68,7 +68,22 @@ export default class PostItem extends React.Component {
                 <div className="single-post-info">
                     <p><Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link><FontAwesomeIcon icon={faCaretRight} style={iconStyleGray}/><Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link></p>
                     <br/>
+
+
+                    {
+                        (author.id === currentUserId) ?
+                            <button onClick={() => deletePost(post.id)} className="delete-post">Delete Post</button>
+                            : ""
+                    }
+
+
                     <h2>{post.body}</h2>
+
+                    <div className="comments-likes">
+
+                    <div className="like-btn">
+                            {likes.length}&nbsp;<FontAwesomeIcon icon={faHeart} style={{ width: '12px', height: '12px', color: '#385898'}} />
+                    </div>
 
                     {
 
@@ -78,32 +93,24 @@ export default class PostItem extends React.Component {
                             </div> : ""
                     }
 
-                    {
-                        (author.id === currentUserId) ?
-                            <button onClick={() => deletePost(post.id)}>Delete Post</button>
-                            : ""
-                    }
-                    <div className="like-btn">
-                        {likes.length} 
                     </div>
-
 
                 <div className="likes-main">
                     <div className="number-of-likes">
-                        <FontAwesomeIcon icon={faHeart} onClick={() => this.handleClick(userLiked)} style={(userLiked) ? iconStyleRed : iconStyleGray} />
+                        <FontAwesomeIcon icon={faHeart} onClick={() => this.handleClick(userLiked)} style={(userLiked) ? iconStyleRed : iconStyleGray} />&nbsp;Like
                     </div>
-
-                    {
-                        (this.state.showComments) ?
-                                <div>
-                                    <CommentsContainer postId={post.id}/>
-                                </div> : ""
-                    }
                   
                     <button className="like-btn" onClick={this.showComments}>Comment</button>
                     <button>Share</button>
                 </div>    
                 </div>
+
+                {
+                    (this.state.showComments) ?
+                        <div>
+                            <CommentsContainer postId={post.id} />
+                        </div> : ""
+                }
             </div>
         )
     }

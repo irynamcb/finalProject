@@ -51,10 +51,10 @@ export default class CreatePost extends React.Component {
     return (
     <div className="createpost-container">
         <div className="createpost-title">
-            <h3>{this.props.formType}</h3>
-            <h3>Photo/Video</h3>
-            <h3>Live Video</h3>
-            <h3>Live Event</h3>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
         </div>
         <form onSubmit={this.handleSubmit} className="createpost-form">
             <div className="createpost-main">

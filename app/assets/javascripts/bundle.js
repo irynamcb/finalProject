@@ -1193,7 +1193,7 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
         className: "createpost-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createpost-title"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Photo/Video"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Live Video"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Live Event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "createpost-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1402,16 +1402,26 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         style: iconStyleGray
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(parent.id)
-      }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "number-of-comments",
-        onClick: this.showComments
-      }, comments.length, " ", commentText) : "", author.id === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, parent.firstName, " ", parent.lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), author.id === currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return deletePost(post.id);
-        }
-      }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        },
+        className: "delete-post"
+      }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comments-likes"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "like-btn"
-      }, likes.length), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, likes.length, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHeart"],
+        style: {
+          width: '12px',
+          height: '12px',
+          color: '#385898'
+        }
+      })), comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "number-of-comments",
+        onClick: this.showComments
+      }, comments.length, " ", commentText) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "likes-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "number-of-likes"
@@ -1421,12 +1431,12 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           return _this2.handleClick(userLiked);
         },
         style: userLiked ? iconStyleRed : iconStyleGray
-      })), this.state.showComments ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comments_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        postId: post.id
-      })) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), "\xA0Like"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "like-btn",
         onClick: this.showComments
-      }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))));
+      }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Share"))), this.state.showComments ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comments_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        postId: post.id
+      })) : "");
     }
   }]);
 

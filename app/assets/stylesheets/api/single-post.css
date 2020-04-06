@@ -12,7 +12,9 @@
   padding-left: 12px;
   padding-top: 5px;
   padding-right: 12px;
+  position: relative;
 }
+
 
 .single-post-info {
   font-family: Arial, Helvetica, sans-serif;
@@ -62,4 +64,32 @@
  text-align: center;
  vertical-align: middle;
  align-self: center;
+}
+
+
+.like-btn:hover, .number-of-likes:hover {
+  cursor: pointer;
+  
+}
+
+.delete-post {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 12px;
+
+}
+
+.delete-post:hover {
+color: #385898;
+font-weight: 700;
+}
+
+.comments-likes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.number-of-comments:hover {
+  cursor: pointer;
 }

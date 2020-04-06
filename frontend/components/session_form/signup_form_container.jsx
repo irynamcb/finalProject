@@ -17,7 +17,7 @@ const mDTP = dispatch => {
         processForm: (user) => dispatch(signup(user)),
         demoLogin: () => (
             dispatch(
-                login({ email: "sara@gmail.com", password: "123456" })
+                login({ email: "brian@gmail.com", password: "123456" })
             )
         ),
         clearErrors: () => dispatch(clearSessionErrors())

@@ -82,7 +82,7 @@ export default class PostItem extends React.Component {
                     <div className="comments-likes">
 
                     <div className="like-btn">
-                            {likes.length}&nbsp;<FontAwesomeIcon icon={faHeart} style={{ width: '12px', height: '12px', color: '#385898'}} />
+                            {likes.length}&nbsp;<FontAwesomeIcon icon={faHeart} style={{ width: '11px', height: '11px', color: '#385898'}} />
                     </div>
 
                     {

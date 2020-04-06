@@ -64,12 +64,11 @@
  text-align: center;
  vertical-align: middle;
  align-self: center;
+
 }
 
-
-.like-btn:hover, .number-of-likes:hover {
+.number-of-likes:hover {
   cursor: pointer;
-  
 }
 
 .delete-post {
@@ -88,6 +87,7 @@ font-weight: 700;
 .comments-likes {
   display: flex;
   justify-content: space-between;
+  margin-top: 5px;
 }
 
 .number-of-comments:hover {

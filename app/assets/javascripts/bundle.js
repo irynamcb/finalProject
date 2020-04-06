@@ -1414,8 +1414,8 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
       }, likes.length, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHeart"],
         style: {
-          width: '12px',
-          height: '12px',
+          width: '11px',
+          height: '11px',
           color: '#385898'
         }
       })), comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1791,7 +1791,7 @@ var mDTP = function mDTP(dispatch) {
     },
     demoLogin: function demoLogin() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
-        email: "sara@gmail.com",
+        email: "brian@gmail.com",
         password: "123456"
       }));
     },
@@ -2053,7 +2053,7 @@ var mDTP = function mDTP(dispatch) {
     },
     demoLogin: function demoLogin() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
-        email: "sara@gmail.com",
+        email: "brian@gmail.com",
         password: "123456"
       }));
     },

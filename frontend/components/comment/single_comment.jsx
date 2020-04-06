@@ -7,11 +7,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default class SingleComment extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+
+    handleClick(userLiked) {
+        const { createLike, deleteLike, currentUserId, comment, likes } = this.props;
+
+        if (userLiked) {
+            let userLike = likes.find(like => like.authorId === currentUserId);
+            deleteLike(userLike.id);
+        } else {
+            createLike({ author_id: currentUserId, likeable_id: comment.id, likeable_type: "Comment" });
+        }
     }
 
     render() {
 // debugger
-        const { author, comment, currentUserId } = this.props;
+        const { author, comment, currentUserId, likes, currentUserId, deleteComment } = this.props;
+
+        let userLiked = false;
+
+        likes.forEach(like => {
+            if (like.authorId === currentUserId) {
+                userLiked = true;
+            }
+        });
+
         if (author === undefined) {
             // debugger
         }
@@ -24,7 +47,7 @@ export default class SingleComment extends React.Component {
                 </div> 
                 {
                     (comment.authorId === currentUserId) ?
-                        <button onClick={() => this.props.deleteComment(comment.id)} className="delete-comment">Delete Comment</button>
+                        <button onClick={() => deleteComment(comment.id)} className="delete-comment">Delete Comment</button>
                         : ""
                 }
 
@@ -33,13 +56,9 @@ export default class SingleComment extends React.Component {
 
                 <div className="comments-likes">
 
-                    {
-
-                        (likes.length !== 0) ?
-                            <div className="number-of-comments" onClick={this.showComments}>
-                                {likes.length} <FontAwesomeIcon icon={faHeart} style={{ width: '11px', height: '11px', color: '#385898' }} />
-                            </div> : ""
-                    }
+                    <div className="like-btn">
+                        {likes.length}&nbsp;<FontAwesomeIcon icon={faHeart} style={{ width: '11px', height: '11px', color: '#385898' }} />
+                    </div>
 
                 </div>
 

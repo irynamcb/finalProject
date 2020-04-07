@@ -108,6 +108,21 @@
   margin-top: 10px;
 }
 
+.lkn {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    color: #8d949e;
+    font-size: 11px;
+    font-weight: normal;
+    padding: 2px 1px 2px 2px;
+    max-width: 30px;
+    max-height: 30px;
+    position: absolute;
+    left: 140px;
+    top: 20px;
+}
+
 .delete-comment:hover, .lk:hover {
   color: #385898;
   font-weight: 700;

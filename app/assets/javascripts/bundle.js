@@ -811,16 +811,16 @@ var SingleComment = /*#__PURE__*/function (_React$Component) {
         className: "single-comment-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(author.id)
-      }, "".concat(author.firstName, " ").concat(author.lastName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, comment.body)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "".concat(author.firstName, " ").concat(author.lastName))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, comment.body)), likes.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lkn"
-      }, likes.length, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faThumbsUp"],
         style: {
           width: '11px',
           height: '11px',
           color: '#385898'
         }
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), "\xA0", likes.length) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this2.handleClick(userLiked);
         },
@@ -1431,14 +1431,14 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "comments-likes"
       }, likes.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "like-btn"
-      }, likes.length, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
-        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHeart"],
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faThumbsUp"],
         style: {
           width: '11px',
           height: '11px',
           color: '#385898'
         }
-      })) : "", comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), "\xA0", likes.length) : "", comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "number-of-comments",
         onClick: this.showComments
       }, comments.length, " ", commentText) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

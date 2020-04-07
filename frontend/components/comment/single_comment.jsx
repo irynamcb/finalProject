@@ -45,12 +45,14 @@ export default class SingleComment extends React.Component {
                     <h2>{comment.body}</h2>
                 </div> 
 
+                {  (likes.length !== 0) ?
                     <div className="lkn" >
-                        {likes.length}&nbsp;
-                        <FontAwesomeIcon icon={faThumbsUp} style={{ width: '11px', height: '11px', color: '#385898' }} />
-                    </div>
+                        <FontAwesomeIcon icon={faThumbsUp} style={{ width: '11px', height: '11px', color: '#385898' }} />&nbsp;{likes.length}
+                    </div>: ""
+
+                }
                     <button onClick={() => this.handleClick(userLiked)} className="lk">Like</button>
-                
+
                 {
                     (comment.authorId === currentUserId) ?
                         <button onClick={() => deleteComment(comment.id)} className="delete-comment">Delete Comment</button>

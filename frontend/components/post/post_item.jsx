@@ -80,7 +80,7 @@ export default class PostItem extends React.Component {
                     { 
                         (likes.length !== 0) ?
                         <div className="like-btn">
-                                {likes.length}&nbsp;<FontAwesomeIcon icon={faHeart} style={{ width: '11px', height: '11px', color: '#385898'}} />
+                                    <FontAwesomeIcon icon={faThumbsUp} style={{ width: '11px', height: '11px', color: '#385898' }} />&nbsp;{likes.length}
                         </div>: ""
                     }
                     

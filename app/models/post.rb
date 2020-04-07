@@ -31,6 +31,11 @@ has_many :comment_authors,
 through: :comments,
 source: :author
 
+has_many :comment_likes,
+through: :comments,
+source: :likes
+
+
 
 def post_too_long
     if body.length > 150

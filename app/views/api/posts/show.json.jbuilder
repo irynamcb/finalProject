@@ -13,7 +13,7 @@ json.comments do
 end
 
 json.likes do
-  @post.likes.each do |like|
+  (@post.likes + @post.comment_likes).each do |like|
     json.set! like.id do
       json.partial! 'api/likes/like', like: like
     end

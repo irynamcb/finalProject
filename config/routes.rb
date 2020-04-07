@@ -9,6 +9,8 @@ namespace :api, defaults: {format: :json} do
   resources :likes, only: [:create, :destroy]
   resources :posts, only: [:index, :show, :create, :update, :destroy]
   resources :comments, only: [:show, :create, :update, :destroy]
+  resources :friend_requests
+  resources :friends
 end
 
 end

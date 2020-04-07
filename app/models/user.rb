@@ -56,6 +56,10 @@ through: :posts,
 source: :comment_authors
 
 
+has_many :friendships, dependent: :destroy
+has_many :friends, through: :friendships
+
+
 after_initialize :ensure_session_token
 
 

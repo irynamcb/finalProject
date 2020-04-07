@@ -66,6 +66,10 @@ has_many :friends, through: :friendships
 after_initialize :ensure_session_token
 
 
+def remove_friend(friend)
+  current_user.friends.destroy(friend)
+end
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user

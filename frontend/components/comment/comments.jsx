@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleComment from './single_comment';
+import SingleCommentContainer from './single_comment_container';
 import CreateCommentContainer from './create_comment_form_container';
 
 export default class Comments extends React.Component {
@@ -19,7 +19,7 @@ export default class Comments extends React.Component {
                     <p className="comments-total">Comments:</p>
                     {
                         this.props.comments.map(comment =>
-                            <SingleComment
+                            <SingleCommentContainer
                                 comment={comment}
                                 key={comment.id}
                                 author={this.props.authors[comment.authorId]}

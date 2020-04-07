@@ -28,11 +28,11 @@ export default class SingleComment extends React.Component {
 
         let userLiked = false;
         // debugger
-        // likes.forEach(like => {
-        //     if (like.authorId === currentUserId) {
-        //         userLiked = true;
-        //     }
-        // });
+        likes.forEach(like => {
+            if (like.authorId === currentUserId) {
+                userLiked = true;
+            }
+        });
 
         if (author === undefined) {
             // debugger
@@ -46,7 +46,7 @@ export default class SingleComment extends React.Component {
                 </div> 
 
                     <div className="lkn" >
-                        {/* {likes.length}&nbsp; */}
+                        {likes.length}&nbsp;
                         <FontAwesomeIcon icon={faThumbsUp} style={{ width: '11px', height: '11px', color: '#385898' }} />
                     </div>
                     <button onClick={() => this.handleClick(userLiked)} className="lk">Like</button>

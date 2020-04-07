@@ -18,8 +18,6 @@ const likesReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_POST:
       return Object.assign(newState, action.post.likes);
-    case RECEIVE_COMMENT:
-      return Object.assign(newState, action.comment.commentLikes);
     default:
       return state;
   }

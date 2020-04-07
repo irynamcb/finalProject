@@ -1,19 +1,6 @@
 class Api::CommentsController < ApplicationController
 
 
-def show
-    @comment = Comment.includes(:author) 
-                .includes(:post)
-                .includes(:likes)
-                .find_by(id: params[:id])
-if @comment
-  render :show
-else
-  flash.now[:errors] = ['No comments found :(']
-  render json: ['No comments found :('], status: :not_found
-end
-end  
-
 def create
     @comment = Comment.new(comment_params)
 

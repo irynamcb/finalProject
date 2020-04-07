@@ -1396,7 +1396,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "delete-post"
       }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-likes"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, likes.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "like-btn"
       }, likes.length, "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faHeart"],
@@ -1405,7 +1405,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           height: '11px',
           color: '#385898'
         }
-      })), comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })) : "", comments.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "number-of-comments",
         onClick: this.showComments
       }, comments.length, " ", commentText) : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

@@ -77,11 +77,13 @@ export default class PostItem extends React.Component {
                     <h2>{post.body}</h2>
 
                     <div className="comments-likes">
-
-                    <div className="like-btn">
-                            {likes.length}&nbsp;<FontAwesomeIcon icon={faHeart} style={{ width: '11px', height: '11px', color: '#385898'}} />
-                    </div>
-
+                    { 
+                        (likes.length !== 0) ?
+                        <div className="like-btn">
+                                {likes.length}&nbsp;<FontAwesomeIcon icon={faHeart} style={{ width: '11px', height: '11px', color: '#385898'}} />
+                        </div>: ""
+                    }
+                    
                     {
                         (comments.length !== 0) ?
                             <div className="number-of-comments" onClick = {this.showComments}>

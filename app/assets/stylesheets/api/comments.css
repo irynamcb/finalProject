@@ -95,11 +95,11 @@
 
 
 .delete-comment {
+
   position: absolute;
   right: 10px;
   top: 5px;
   font-size: 12px;
-
 
 }
 
@@ -109,6 +109,6 @@
 }
 
 .delete-comment:hover, .lk:hover {
-color: #385898;
-font-weight: 700;
+  color: #385898;
+  font-weight: 700;
 }

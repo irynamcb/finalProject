@@ -3,28 +3,32 @@ import Friend from './friend';
 import { faUserFriends} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default class PostList extends React.Component {
+export default class Friends extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        // debugger
-
-        // if (this.props.friends === undefined) {
-        //     return null;
+    
+        // let f;
+        // if (this.props.friends[0] !== undefined) {
+        //     f = this.props.friends[0];
+        // } else {
+        //     f = { id: 4, firstName: 'bar', lastName: 'foo' }
         // }
+    
         return (
             <div>
                 <p className=""> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#FF1493'}} />&nbsp;Friends</p>
                     {
-                        this.props.friends.map(friend =>
-                            <Friend
+                        this.props.friends.map(friend => 
+                            {if (friend !== undefined){
+                            return <Friend
                                 friend={friend}
                                 key={friend.id}
                             />
-                        )
-                    }    
+                            }
+                        })}
             </div>
         )
     }

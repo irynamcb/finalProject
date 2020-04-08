@@ -2212,7 +2212,7 @@ var mSTP = function mSTP(state) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UserAbout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Friend; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
@@ -2237,16 +2237,16 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var UserAbout = /*#__PURE__*/function (_React$Component) {
-  _inherits(UserAbout, _React$Component);
+var Friend = /*#__PURE__*/function (_React$Component) {
+  _inherits(Friend, _React$Component);
 
-  function UserAbout(props) {
-    _classCallCheck(this, UserAbout);
+  function Friend(props) {
+    _classCallCheck(this, Friend);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(UserAbout).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Friend).call(this, props));
   }
 
-  _createClass(UserAbout, [{
+  _createClass(Friend, [{
     key: "render",
     value: function render() {
       var _this$props$friend = this.props.friend,
@@ -2260,7 +2260,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
     }
   }]);
 
-  return UserAbout;
+  return Friend;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
@@ -2276,7 +2276,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PostList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Friends; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _friend__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./friend */ "./frontend/components/user/friend.jsx");
@@ -2305,21 +2305,23 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var PostList = /*#__PURE__*/function (_React$Component) {
-  _inherits(PostList, _React$Component);
+var Friends = /*#__PURE__*/function (_React$Component) {
+  _inherits(Friends, _React$Component);
 
-  function PostList(props) {
-    _classCallCheck(this, PostList);
+  function Friends(props) {
+    _classCallCheck(this, Friends);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PostList).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Friends).call(this, props));
   }
 
-  _createClass(PostList, [{
+  _createClass(Friends, [{
     key: "render",
     value: function render() {
-      // debugger
-      // if (this.props.friends === undefined) {
-      //     return null;
+      // let f;
+      // if (this.props.friends[0] !== undefined) {
+      //     f = this.props.friends[0];
+      // } else {
+      //     f = { id: 4, firstName: 'bar', lastName: 'foo' }
       // }
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: ""
@@ -2331,15 +2333,17 @@ var PostList = /*#__PURE__*/function (_React$Component) {
           color: '#FF1493'
         }
       }), "\xA0Friends"), this.props.friends.map(function (friend) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          friend: friend,
-          key: friend.id
-        });
+        if (friend !== undefined) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            friend: friend,
+            key: friend.id
+          });
+        }
       }));
     }
   }]);
 
-  return PostList;
+  return Friends;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
@@ -2363,16 +2367,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mSTP = function mSTP(state, ownProps) {
-  // returns undefined
-  var userFriends = ownProps.friends.map(function (friendId) {
-    return state.entities.users[friendId];
-  }); // debugger
-
-  return {
-    friends: userFriends
-  };
-};
+var mSTP = function mSTP(state, ownProps) {};
 
 var mDTP = function mDTP(dispatch) {
   return {};
@@ -2399,6 +2394,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_posts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../post/posts */ "./frontend/components/post/posts.jsx");
 /* harmony import */ var _post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../post/create_post_form_container */ "./frontend/components/post/create_post_form_container.js");
 /* harmony import */ var _friends_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./friends_container */ "./frontend/components/user/friends_container.js");
+/* harmony import */ var _friends__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./friends */ "./frontend/components/user/friends.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2424,13 +2420,14 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var UserAbout = /*#__PURE__*/function (_React$Component) {
   _inherits(UserAbout, _React$Component);
 
   function UserAbout(props) {
     _classCallCheck(this, UserAbout);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(UserAbout).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(UserAbout).call(this, props)); // this.props.fetchUser(Number(this.props.match.params.userId));
   }
 
   _createClass(UserAbout, [{
@@ -2499,12 +2496,8 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         className: "user-detail"
       }, about !== null ? "About Info: ".concat(about) : " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-details"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friends_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        friends: this.props.user.friends
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-details"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friends_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        friends: this.props.user.friendRequests
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friends__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        friends: this.props.friends
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2558,9 +2551,19 @@ var mSTP = function mSTP(state, ownProps) {
   }).sort(function (a, b) {
     return b.id - a.id;
   });
+  var user = state.entities.users[Number(ownProps.match.params.userId)];
+  var userFriends = user.friends.map(function (friendId) {
+    return state.entities.users[friendId];
+  });
+
+  if (userFriends === undefined) {
+    return {};
+  }
+
   return {
-    user: state.entities.users[Number(ownProps.match.params.userId)],
-    posts: userPosts
+    user: user,
+    posts: userPosts,
+    friends: userFriends
   };
 };
 

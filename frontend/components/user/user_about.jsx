@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
 import FriendsContainer from './friends_container';
+import Friends from './friends';
 
 export default class UserAbout extends React.Component {
 
     constructor(props) {
         super(props);
+        // this.props.fetchUser(Number(this.props.match.params.userId));
     }
 
     componentDidUpdate(prevProps){
@@ -16,6 +18,7 @@ export default class UserAbout extends React.Component {
             this.props.fetchUser(Number(this.props.match.params.userId))
         }
     }
+
 
     componentDidMount() {
         this.props.fetchUser(Number(this.props.match.params.userId));
@@ -79,13 +82,17 @@ export default class UserAbout extends React.Component {
                     </li>
                 </div>
               
-                <div className="user-details">
-                    <FriendsContainer friends={this.props.user.friends} />
-                </div>
+                {/* <div className="user-details">
+                    <FriendsContainer friends={this.props.friends} />
+                </div> */}
 
-                <div className="user-details">
+                    <div className="user-details">
+                        <Friends friends={this.props.friends} />
+                    </div>
+
+                {/* <div className="user-details">
                     <FriendsContainer friends={this.props.user.friendRequests} />
-                </div>
+                </div> */}
                 </div>
                 
                 <div className="user-about-info">

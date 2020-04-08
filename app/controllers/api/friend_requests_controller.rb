@@ -5,7 +5,7 @@ def create
     @friend_request = FriendRequest.new(friend_request_params)
 
     if @friend_request.save 
-      render status: 200
+      render json: ["Success"], status: 200
 
     else 
       flash.now[:errors] = @friend_request.errors.full_messages
@@ -19,7 +19,7 @@ def destroy
 
   if @friend_request
     @friend_request.destroy
-    render status: 200
+    render json: ["Success"], status: 200
   else
     flash.now[:errors] = ['Cannot find post with that id']
     render json: ['Cannot find post with that id'], satus: 422

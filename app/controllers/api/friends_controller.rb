@@ -3,16 +3,16 @@ class Api::FriendsController < ApplicationController
 
 def index
     @friends = current_user.friends
-    render status: 200
+    render json: ["Success"], status: 200
 end
 
 
 def create 
 
-  @friend = Friend.new(friend_params)
-  @friend_request = FriendRequest.find_by(user_id: friend_params.user_id, friend_id: friend_params.friend_id)
-  @opposite_friend = Friend.new(user_id: friend_params.friend_id, friend_id: friend_params.user_id)
-  @opposite_friend_request = FriendRequest.find_by(user_id: friend_params.friend_id, friend_id: friend_params.user_id)
+  @friend = Friend.new(friend_params)   
+  @friend_request = FriendRequest.find_by(user_id: friend_params[:user_id], friend_id: friend_params[:friend_id])
+  @opposite_friend = Friend.new(user_id: friend_params[:friend_id], friend_id: friend_params[:user_id])
+  @opposite_friend_request = FriendRequest.find_by(user_id: friend_params[:friend_id], friend_id: friend_params[:user_id])
 
  begin 
   Friend.transaction do
@@ -21,7 +21,7 @@ def create
     @friend_request.destroy if @friend_request 
     @opposite_friend_request.destroy if @opposite_friend_request
 
-    render status: 200
+    render json: ["Success"], status: 200
 
   end
   rescue ActiveRecord::RecordInvalid => exception
@@ -36,7 +36,7 @@ def destroy
 
   if @friend
     @friend.destroy
-    render status: 200
+    render json: ["Success"], status: 200
   else
     flash.now[:errors] = ['Cannot find a friend']
     render json: ['Cannot find a friend'], status: 422

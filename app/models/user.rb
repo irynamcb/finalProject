@@ -78,6 +78,9 @@ has_many :user_friends,
 through: :friends,
 source: :user
 
+has_many :user_friend_requests,
+through: :incoming_friend_requests,
+source: :friend
 
 after_initialize :ensure_session_token
 

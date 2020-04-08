@@ -3,6 +3,7 @@ import { faClock, faHome, faMapMarkerAlt, faBaby } from "@fortawesome/free-solid
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
+import FriendsContainer from './friends_container';
 
 export default class UserAbout extends React.Component {
 
@@ -75,11 +76,20 @@ export default class UserAbout extends React.Component {
                         {(about !== null) ? `About Info: ${about}` : ` `}
                     </li>
                 </ul>
+
+                <div className="friends-block">
+                    <FriendsContainer friends={this.props.user.friends} />
+                </div>
+
+                <div className="friend-requests-block">
+                    <FriendsContainer friends={this.props.user.friendRequests} />
+                </div>
+
                 <div className="user-about-info">
 
-                <div className="user-create-post">
-                <CreatePostContainer parentId={id} />
-                </div>
+                    <div className="user-create-post">
+                        <CreatePostContainer parentId={id} />
+                    </div>
                 <div className="user-post">
                     <PostList posts={this.props.posts}/>
                 </div>

@@ -2461,7 +2461,9 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
       };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "about-block"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-fullname"
@@ -2476,14 +2478,14 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
       }, education !== null ? "Studied at ".concat(education) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
       }, about !== null ? "About Info: ".concat(about) : " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "friends-block"
+        className: "user-details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friends_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
         friends: this.props.user.friends
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "friend-requests-block"
+        className: "user-details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friends_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
         friends: this.props.user.friendRequests
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-create-post"

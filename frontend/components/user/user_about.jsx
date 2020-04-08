@@ -49,7 +49,9 @@ export default class UserAbout extends React.Component {
    
         return (
             <div className="user-about">
-                <ul className="user-details">
+            <div className="about-block">
+                
+                <div className="user-details">
                     <li className="user-fullname">
                         {firstName} {lastName}     
                     </li>
@@ -75,16 +77,16 @@ export default class UserAbout extends React.Component {
                     <li className="user-detail">
                         {(about !== null) ? `About Info: ${about}` : ` `}
                     </li>
-                </ul>
-
-                <div className="friends-block">
+                </div>
+              
+                <div className="user-details">
                     <FriendsContainer friends={this.props.user.friends} />
                 </div>
 
-                <div className="friend-requests-block">
+                <div className="user-details">
                     <FriendsContainer friends={this.props.user.friendRequests} />
                 </div>
-
+                </div>
                 <div className="user-about-info">
 
                     <div className="user-create-post">

@@ -1,8 +1,14 @@
 .user-about {
     display: flex;
     justify-content: center;
+    flex-direction: row;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-block {
+    display: flex;
+    flex-direction: column;
 }
 
 .user-fullname {

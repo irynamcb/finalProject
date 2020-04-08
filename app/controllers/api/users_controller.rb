@@ -8,7 +8,8 @@ def show
                 .includes(:likes)
                 .includes(:posts)
                 .includes(:wall_users)
-                .includes(:friend_requests)
+                .includes(:incoming_friend_requests)
+                .includes(:outgoing_friend_requests)
                 .includes(:friends)
                 .find(params[:id])
     if @user
@@ -52,7 +53,7 @@ def destroy
       render :show
     else
       flash.now[:errors] = ['Cant find this user']
-      render json: ['Cant find this user']
+      render json: ['Cant find this user'], status: 422
     end
 
 end

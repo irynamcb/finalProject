@@ -29,7 +29,7 @@ if @post
   render :show
 else
   flash.now[:errors] = ['No post found :(']
-  render json: ['No post found :('], status: :not_found
+  render json: ['No post found :('], status: 422
 end
 end
 
@@ -62,7 +62,7 @@ def destroy
     render :show
   else
     flash.now[:errors] = ['Cannot find post with that id']
-    render json: ['Cannot find post with that id']
+    render json: ['Cannot find post with that id'], status: 422
   end
 end
 

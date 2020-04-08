@@ -36,7 +36,6 @@ through: :comments,
 source: :likes
 
 
-
 def post_too_long
     if body.length > 150
       errors[:body] << "too long"

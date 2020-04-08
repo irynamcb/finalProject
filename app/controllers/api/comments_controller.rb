@@ -30,7 +30,7 @@ def create
        render :show
     else
       flash.now[:errors] = ['Cant find a comment']
-      render json: ['Cant find a comment']
+      render json: ['Cant find a comment'], status: 422
     end
   end
 

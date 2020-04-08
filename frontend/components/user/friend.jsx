@@ -10,12 +10,16 @@ export default class Friend extends React.Component {
  
 
 render () {
-    const {firstName, lastName} = this.props.friend
+    const {firstName, lastName, id, userId} = this.props.friend
+    
+    // debugger
     return (
         <div className="friend">
-            <button onClick={() => this.props.deleteFriend(this.props.friend.id)}>Delete Friend</button>
-            <p><Link to={`/users/${this.props.friend.id}`}>{firstName} {lastName}</Link></p>
-
+            <p><Link to={`/users/${id}`}>{firstName} {lastName}</Link></p>
+            <br/>
+            { (userId === this.props.currentUserId) ?
+            <button onClick={() => this.props.deleteFriend(id)}>Delete Friend</button> : ""
+            }
         </div>
     )
 }

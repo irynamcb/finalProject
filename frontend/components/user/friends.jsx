@@ -16,8 +16,9 @@ export default class Friends extends React.Component {
         // } else {
         //     f = { id: 4, firstName: 'bar', lastName: 'foo' }
         // }
-    
+    debugger
         return (
+        
             <div>
                 <p className=""> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#FF1493'}} />&nbsp;Friends</p>
                     {

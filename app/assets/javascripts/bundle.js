@@ -2273,16 +2273,19 @@ var Friend = /*#__PURE__*/function (_React$Component) {
 
       var _this$props$friend = this.props.friend,
           firstName = _this$props$friend.firstName,
-          lastName = _this$props$friend.lastName;
+          lastName = _this$props$friend.lastName,
+          id = _this$props$friend.id,
+          userId = _this$props$friend.userId; // debugger
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "friend"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/users/".concat(id)
+      }, firstName, " ", lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this.props.deleteFriend(_this.props.friend.id);
+          return _this.props.deleteFriend(id);
         }
-      }, "Delete Friend"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/users/".concat(this.props.friend.id)
-      }, firstName, " ", lastName)));
+      }, "Delete Friend") : "");
     }
   }]);
 
@@ -2311,7 +2314,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mSTP = function mSTP(state, ownProps) {};
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    currentUserId: state.session.id
+  };
+};
 
 var mDTP = function mDTP(dispatch) {
   return {
@@ -2381,6 +2388,7 @@ var Friends = /*#__PURE__*/function (_React$Component) {
       // } else {
       //     f = { id: 4, firstName: 'bar', lastName: 'foo' }
       // }
+      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: ""
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {

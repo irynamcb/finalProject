@@ -46,8 +46,7 @@ end
 private
 def friend_params
     params.require(:friend).permit(:user_id, :friend_id)
-    #  params.permit(:user_id, :friend_id)
-    
+  
 end   
 
 end

@@ -5,7 +5,7 @@ json.users do
 end 
 
 json.other_users do
-    (@user.wall_users + @user.posts_on_wall_authors + @user.post_comment_authors).uniq.each do |wall_user|
+    (@user.wall_users + @user.posts_on_wall_authors + @user.post_comment_authors + @user.user_friends).uniq.each do |wall_user|
         json.set! wall_user.id do
             json.partial! 'api/users/user', user: wall_user
         end

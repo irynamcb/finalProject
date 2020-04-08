@@ -74,6 +74,10 @@ primary_key: :id,
 foreign_key: :user_id,
 class_name: :Friend
 
+has_many :user_friends,
+through: :friends,
+source: :user
+
 
 after_initialize :ensure_session_token
 

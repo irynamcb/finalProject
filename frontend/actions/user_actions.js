@@ -1,6 +1,8 @@
 import * as UserAPIUtil from '../util/user_api_util';
+import * as FriendAPIUtil from '../util/friends_util';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
+export const REMOVE_FRIEND = 'REMOVE_FRIEND';
 
 // regular action
 export const receiveUser = user => ({
@@ -8,8 +10,18 @@ export const receiveUser = user => ({
     user
 });
 
+const removeFriend = friendId => ({
+    type: REMOVE_FRIEND,
+    friendId
+});
+
 // thunk action
 export const fetchUser = userId => dispatch => {
     return UserAPIUtil.fetchUser(userId)
     .then (user => dispatch(receiveUser(user)))
 }
+
+export const deleteFriend = friendId => dispatch => (
+    FriendAPIUtil.deleteFriend(friendId)
+        .then(() => dispatch(removeFriend(friendId)))
+);

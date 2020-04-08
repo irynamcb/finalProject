@@ -3,7 +3,7 @@ import { faClock, faHome, faMapMarkerAlt, faBaby } from "@fortawesome/free-solid
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
-import FriendsContainer from './friends_container';
+import FriendsContainer from './friend_container';
 import Friends from './friends';
 
 export default class UserAbout extends React.Component {

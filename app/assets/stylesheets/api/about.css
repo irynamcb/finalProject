@@ -42,7 +42,7 @@ html, body {
 .user-details {
   border: 1px solid lightgray;
   margin: 15px;
-  /* min-width: 222px; */
+  min-width: 222px;
 }
 
 .user-about {

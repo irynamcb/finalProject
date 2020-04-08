@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class UserAbout extends React.Component {
 
@@ -7,12 +8,11 @@ export default class UserAbout extends React.Component {
     }
 
 render () {
-
+    const {firstName, lastName} = this.props.friend
     return (
         <div className="friend">
-            {this.props.friend.firstName} {this.props.friend.lastName}
+            <p><Link to={`/users/${this.props.friend.id}`}>{firstName} {lastName}</Link></p>
         </div>
     )
 }
-
 }

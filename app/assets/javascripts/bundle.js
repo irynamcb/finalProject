@@ -2215,6 +2215,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return UserAbout; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2235,6 +2236,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var UserAbout = /*#__PURE__*/function (_React$Component) {
   _inherits(UserAbout, _React$Component);
 
@@ -2247,9 +2249,14 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
   _createClass(UserAbout, [{
     key: "render",
     value: function render() {
+      var _this$props$friend = this.props.friend,
+          firstName = _this$props$friend.firstName,
+          lastName = _this$props$friend.lastName;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "friend"
-      }, this.props.friend.firstName, " ", this.props.friend.lastName);
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/users/".concat(this.props.friend.id)
+      }, firstName, " ", lastName)));
     }
   }]);
 
@@ -2273,6 +2280,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _friend__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./friend */ "./frontend/components/user/friend.jsx");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2294,6 +2303,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var PostList = /*#__PURE__*/function (_React$Component) {
   _inherits(PostList, _React$Component);
 
@@ -2307,13 +2318,19 @@ var PostList = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       // debugger
-      if (this.props.friends.length === 0) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "No friends yet...");
-      }
-
+      // if (this.props.friends === undefined) {
+      //     return null;
+      // }
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: ""
-      }, "Friends:"), this.props.friends.map(function (friend) {
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faUserFriends"],
+        style: {
+          width: '24px',
+          height: '24px',
+          color: '#FF1493'
+        }
+      }), "\xA0Friends"), this.props.friends.map(function (friend) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend__WEBPACK_IMPORTED_MODULE_1__["default"], {
           friend: friend,
           key: friend.id
@@ -2347,9 +2364,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  // returns undefined
   var userFriends = ownProps.friends.map(function (friendId) {
     return state.entities.users[friendId];
-  });
+  }); // debugger
+
   return {
     friends: userFriends
   };
@@ -2431,7 +2450,8 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       if (this.props.user === undefined) {
         return null;
-      }
+      } // debugger
+
 
       var _this$props$user = this.props.user,
           firstName = _this$props$user.firstName,

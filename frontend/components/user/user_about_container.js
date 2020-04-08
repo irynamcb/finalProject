@@ -12,6 +12,7 @@ const mSTP = (state, ownProps) => {
     return {
     user: state.entities.users[Number(ownProps.match.params.userId)],
     posts: userPosts,
+    
     };
 };
 

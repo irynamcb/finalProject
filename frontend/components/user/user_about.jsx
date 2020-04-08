@@ -25,7 +25,7 @@ export default class UserAbout extends React.Component {
         if (this.props.user === undefined) {
             return null;
         }
-        
+        // debugger
         const { firstName, lastName, location, createdAt, education, about, birthday, id } = this.props.user;
         let cdate = new Date(createdAt);
         let joinedOn = new Intl.DateTimeFormat("en-US", {
@@ -87,6 +87,7 @@ export default class UserAbout extends React.Component {
                     <FriendsContainer friends={this.props.user.friendRequests} />
                 </div>
                 </div>
+                
                 <div className="user-about-info">
 
                     <div className="user-create-post">

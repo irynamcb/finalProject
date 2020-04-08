@@ -56,19 +56,27 @@ through: :posts,
 source: :comment_authors
 
 
-has_many :friend_requests, dependent: :destroy
-has_many :pending_friends, through: :friend_requests, source: :friend
+has_many :incoming_friend_requests, 
+primary_key: :id,
+foreign_key: :friend_id,
+class_name: :FriendRequest,
+dependent: :destroy
 
-has_many :friendships, dependent: :destroy
-has_many :friends, through: :friendships
+has_many :outgoing_friend_requests, 
+primary_key: :id,
+foreign_key: :user_id,
+class_name: :FriendRequest,
+dependent: :destroy
+
+
+has_many :friends,
+primary_key: :id,
+foreign_key: :user_id,
+class_name: :Friend
 
 
 after_initialize :ensure_session_token
 
-
-def remove_friend(friend)
-  current_user.friends.destroy(friend)
-end
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

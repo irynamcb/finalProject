@@ -40,7 +40,7 @@ def create
     render :show
   else
     flash.now[:errors] = @post.errors.full_messages
-    ender json: @post.errors.full_messages, status: 422
+    render json: @post.errors.full_messages, status: 422
   end
 end
 

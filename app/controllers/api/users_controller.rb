@@ -8,6 +8,8 @@ def show
                 .includes(:likes)
                 .includes(:posts)
                 .includes(:wall_users)
+                .includes(:friend_requests)
+                .includes(:friends)
                 .find(params[:id])
     if @user
         render :show

@@ -1,38 +1,35 @@
 class Api::FriendRequestsController < ApplicationController
 
-before_action :set_friend_request, except: [:index, :create]
-
-def index
-  @incoming = FriendRequest.where(friend: current_user)
-  @outgoing = current_user.friend_requests
-end
-
 
 def create
-    friend = User.find(params[:friend_id])
-    @friend_request = current_user.friend_requests.new(friend: friend)
+    @friend_request = FriendRequest.new(friend_request_params)
 
-    if @friend_request.save
-        render :show, status: :created, location: @friend_request
-    else
-        render json: @friend_request.errors, status: :unprocessable_entity
+    if @friend_request.save 
+      render json: status: 200
+
+    else 
+      flash.now[:errors] = @friend_request.errors.full_messages
+      render json: @friend_request.errors.full_messages, status: 422
     end
 end
 
-def update
-  @friend_request.accept
-  head :no_content
-end
 
 def destroy
-  @friend_request.destroy
-  head :no_content
+  @friend_request = FriendRequest.find_by(friend_request_params)
+
+  if @friend_request
+    @friend_request.destroy
+    render json: status: 200
+  else
+    flash.now[:errors] = ['Cannot find post with that id']
+    render json: ['Cannot find post with that id'], satus: 422
+  end
 end
   
-  private
+private
 
-def set_friend_request
- @friend_request = FriendRequest.find(params[:id])
-end
+def friend_request_params
+    params.require(:friend_request).permit(:user_id, :friend_id)
+end   
 
 end

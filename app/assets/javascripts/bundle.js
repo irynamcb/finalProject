@@ -3000,6 +3000,8 @@ var usersReducer = function usersReducer() {
   Object.freeze(state);
   var newState = Object.assign({}, state);
   var userId;
+  var friendIdx;
+  var userIdx;
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
@@ -3009,6 +3011,13 @@ var usersReducer = function usersReducer() {
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
       return Object.assign(newState, action.user.users, action.user.otherUsers);
+
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_FRIEND"]:
+      friendIdx = newState.users[action.userId].friends.indexOf(actions.friendId);
+      newState.users[action.userId].friends.splice(friendIdx, 1);
+      userIdx = newState.users[action.friendId].friends.indexOf(actions.userId);
+      newState.users[action.friendId].friends.splice(userIdx, 1);
+      return newState;
 
     default:
       return state;

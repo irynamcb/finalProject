@@ -1,12 +1,5 @@
 class Api::FriendsController < ApplicationController
   
-
-def index
-    @friends = current_user.friends
-    render json: ["Success"], status: 200
-end
-
-
 def create 
 
   @friend = Friend.new(user_id: current_user.id, friend_id: params[:id])   
@@ -36,7 +29,7 @@ def destroy
 
   if @friend
     @friend.destroy
-    render json: ["Success"], status: 200
+    render json: @friend, status: 200
   else
     flash.now[:errors] = ['Cannot find a friend']
     render json: ['Cannot find a friend'], status: 422

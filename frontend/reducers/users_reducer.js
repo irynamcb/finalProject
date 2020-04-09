@@ -16,11 +16,12 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_USER:
             return Object.assign(newState, action.user.users, action.user.otherUsers);
         case REMOVE_FRIEND:
-            friendIdx = newState.users[action.userId].friends.indexOf(actions.friendId);
-            newState.users[action.userId].friends.splice(friendIdx, 1);
+            debugger
+            friendIdx = newState[action.friend.userId].friends.indexOf(action.friend.friendId);
+            newState[action.friend.userId].friends.splice(friendIdx, 1);
 
-            userIdx = newState.users[action.friendId].friends.indexOf(actions.userId);
-            newState.users[action.friendId].friends.splice(userIdx, 1);
+            userIdx = newState[action.friend.friendId].friends.indexOf(action.friend.userId);
+            newState[action.friend.friendId].friends.splice(userIdx, 1);
             return newState;
         default:
             return state;

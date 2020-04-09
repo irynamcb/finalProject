@@ -10,9 +10,9 @@ export const receiveUser = user => ({
     user
 });
 
-const removeFriend = friendId => ({
+const removeFriend = friend => ({
     type: REMOVE_FRIEND,
-    friendId
+    friend
 });
 
 // thunk action
@@ -23,5 +23,5 @@ export const fetchUser = userId => dispatch => {
 
 export const deleteFriend = friendId => dispatch => (
     FriendAPIUtil.deleteFriend(friendId)
-        .then(() => dispatch(removeFriend(friendId)))
+        .then((friend) => dispatch(removeFriend(friend)))
 );

@@ -356,10 +356,10 @@ var receiveUser = function receiveUser(user) {
   };
 };
 
-var removeFriend = function removeFriend(friendId) {
+var removeFriend = function removeFriend(friend) {
   return {
     type: REMOVE_FRIEND,
-    friendId: friendId
+    friend: friend
   };
 }; // thunk action
 
@@ -373,8 +373,8 @@ var fetchUser = function fetchUser(userId) {
 };
 var deleteFriend = function deleteFriend(friendId) {
   return function (dispatch) {
-    return _util_friends_util__WEBPACK_IMPORTED_MODULE_1__["deleteFriend"](friendId).then(function () {
-      return dispatch(removeFriend(friendId));
+    return _util_friends_util__WEBPACK_IMPORTED_MODULE_1__["deleteFriend"](friendId).then(function (friend) {
+      return dispatch(removeFriend(friend));
     });
   };
 };
@@ -3013,10 +3013,11 @@ var usersReducer = function usersReducer() {
       return Object.assign(newState, action.user.users, action.user.otherUsers);
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_FRIEND"]:
-      friendIdx = newState.users[action.userId].friends.indexOf(actions.friendId);
-      newState.users[action.userId].friends.splice(friendIdx, 1);
-      userIdx = newState.users[action.friendId].friends.indexOf(actions.userId);
-      newState.users[action.friendId].friends.splice(userIdx, 1);
+      debugger;
+      friendIdx = newState[action.friend.userId].friends.indexOf(action.friend.friendId);
+      newState[action.friend.userId].friends.splice(friendIdx, 1);
+      userIdx = newState[action.friend.friendId].friends.indexOf(action.friend.userId);
+      newState[action.friend.friendId].friends.splice(userIdx, 1);
       return newState;
 
     default:

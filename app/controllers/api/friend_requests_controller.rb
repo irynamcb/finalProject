@@ -2,7 +2,7 @@ class Api::FriendRequestsController < ApplicationController
 
 
 def create
-    @friend_request = FriendRequest.new(friend_request_params)
+    @friend_request = FriendRequest.new(user_id: current_user.id, friend_id: friend_request_params[:friend_id])
 
     if @friend_request.save 
       render json: @friend_request, status: 200
@@ -29,7 +29,10 @@ end
 private
 
 def friend_request_params
+  
     params.require(:friend_request).permit(:friend_id)
+
+    #  params.permit(:friend_id)
 end   
 
 end

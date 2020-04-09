@@ -33,8 +33,14 @@ export default class UserAbout extends React.Component {
         const { firstName, lastName, location, createdAt, education, about, birthday, id } = this.props.user;
 
         let showAddFriend = true;
+        let showFriendRequest = false;
+        
+        if (this.props.user.friendRequests.includes(this.props.currentUserId)) {
+            showFriendRequest = true;
+            showAddFriend = false;
+        } 
 
-        if (this.props.currentUserId === id) {
+        if (this.props.currentUserId === id || this.props.user.friends.includes(this.props.currentUserId)) {
             showAddFriend = false;
         }
 
@@ -69,8 +75,9 @@ export default class UserAbout extends React.Component {
                     <br/>
 
                     { (showAddFriend) ?
-                    <button onClick={() => this.props.sendRequest(id)}>Add Friend</button> : ""
+                        <button onClick={() => this.props.sendRequest(id)}>Add Friend</button> : (showFriendRequest) ? 'Friend Request Sent' : ""
                     }
+                    
 
                     <li className="user-detail">
 

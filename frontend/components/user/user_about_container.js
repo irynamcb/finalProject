@@ -11,6 +11,7 @@ const mSTP = (state, ownProps) => {
     let userPosts = arrPosts.filter(post => post.authorId === userId || post.parentId === userId).sort((a, b) => b.id - a.id);
     let user = state.entities.users[Number(ownProps.match.params.userId)];
     let userFriends = user.friends.map(friendId => state.entities.users[friendId]);
+    let friendRequests = user.friendRequests.map(friendId => state.entities.users[friendId]);
    
     if (userFriends === undefined) {
         return {};
@@ -20,6 +21,7 @@ const mSTP = (state, ownProps) => {
     user: user,
     posts: userPosts,
     friends: userFriends,
+    friendRequests: friendRequests,
     currentUserId: state.session.id
     };
 };

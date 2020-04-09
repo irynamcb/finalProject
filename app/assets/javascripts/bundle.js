@@ -2557,8 +2557,14 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
           birthday = _this$props$user.birthday,
           id = _this$props$user.id;
       var showAddFriend = true;
+      var showFriendRequest = false;
 
-      if (this.props.currentUserId === id) {
+      if (this.props.user.friendRequests.includes(this.props.currentUserId)) {
+        showFriendRequest = true;
+        showAddFriend = false;
+      }
+
+      if (this.props.currentUserId === id || this.props.user.friends.includes(this.props.currentUserId)) {
         showAddFriend = false;
       }
 
@@ -2591,7 +2597,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this.props.sendRequest(id);
         }
-      }, "Add Friend") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Add Friend") : showFriendRequest ? 'Friend Request Sent' : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
       }, location !== null ? "Lives in ".concat(location) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
@@ -2665,6 +2671,9 @@ var mSTP = function mSTP(state, ownProps) {
   var userFriends = user.friends.map(function (friendId) {
     return state.entities.users[friendId];
   });
+  var friendRequests = user.friendRequests.map(function (friendId) {
+    return state.entities.users[friendId];
+  });
 
   if (userFriends === undefined) {
     return {};
@@ -2674,6 +2683,7 @@ var mSTP = function mSTP(state, ownProps) {
     user: user,
     posts: userPosts,
     friends: userFriends,
+    friendRequests: friendRequests,
     currentUserId: state.session.id
   };
 };

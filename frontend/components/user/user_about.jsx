@@ -1,5 +1,5 @@
 import React from 'react';
-import { faClock, faHome, faMapMarkerAlt, faBaby, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faHome, faMapMarkerAlt, faBaby, faUserPlus, faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
@@ -68,8 +68,10 @@ export default class UserAbout extends React.Component {
         return (
             <div className="user-about">
             <div className="about-block">
-                
                 <div className="user-details">
+                    <div className='friends-total'>
+                            <FontAwesomeIcon icon={faGlobeAmericas} style={{ width: '24px', height: '24px', color: '#3578E5' }} />&nbsp;Intro
+                    </div>
                     <li className="user-fullname">
                         {firstName} {lastName}     
                     </li>

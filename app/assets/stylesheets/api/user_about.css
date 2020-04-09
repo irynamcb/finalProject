@@ -19,9 +19,10 @@
 
 .friends-total {
     display: flex;
-    vertical-align: middle;
+    justify-content: row;
     margin: 5px;
     margin-bottom: 15px;
+    align-items: center;
    
 }
 

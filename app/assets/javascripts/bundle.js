@@ -2594,7 +2594,16 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         className: "about-block"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-details"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "friends-total"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faGlobeAmericas"],
+        style: {
+          width: '24px',
+          height: '24px',
+          color: '#3578E5'
+        }
+      }), "\xA0Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-fullname"
       }, firstName, " ", lastName), showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {

@@ -2522,7 +2522,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
   function UserAbout(props) {
     _classCallCheck(this, UserAbout);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(UserAbout).call(this, props)); // this.props.fetchUser(Number(this.props.match.params.userId));
+    return _possibleConstructorReturn(this, _getPrototypeOf(UserAbout).call(this, props));
   }
 
   _createClass(UserAbout, [{
@@ -2593,11 +2593,19 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         className: "user-details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-fullname"
-      }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, firstName, " ", lastName), showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.sendRequest(id);
+        },
+        className: "add-friend"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
+        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faUserPlus"],
+        style: {
+          width: '13px',
+          height: '13px',
+          color: '#385898'
         }
-      }, "Add Friend") : showFriendRequest ? 'Friend Request Sent' : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }), "\xA0Add Friend") : showFriendRequest ? 'Friend Request Sent' : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
       }, location !== null ? "Lives in ".concat(location) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"

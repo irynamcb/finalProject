@@ -1,5 +1,5 @@
 import React from 'react';
-import { faClock, faHome, faMapMarkerAlt, faBaby } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faHome, faMapMarkerAlt, faBaby, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
@@ -11,7 +11,6 @@ export default class UserAbout extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.props.fetchUser(Number(this.props.match.params.userId));
     }
 
     componentDidUpdate(prevProps){
@@ -74,10 +73,9 @@ export default class UserAbout extends React.Component {
                     <li className="user-fullname">
                         {firstName} {lastName}     
                     </li>
-                    <br/>
 
                     { (showAddFriend) ?
-                        <button onClick={() => this.props.sendRequest(id)}>Add Friend</button> : (showFriendRequest) ? 'Friend Request Sent' : ""
+                            <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#385898'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 'Friend Request Sent' : ""
                     }
                     
 

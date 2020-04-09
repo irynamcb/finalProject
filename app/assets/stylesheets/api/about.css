@@ -59,3 +59,24 @@ html, body {
   margin: 15px;
 }
 
+.add-friend {
+  cursor: pointer;
+  background-color: #f5f6f7;
+  color: #4b4f56;
+  border-color: rgba(0, 0, 0, .4);
+  border: 1px solid;
+  border-radius: 2px;
+  box-sizing: content-box;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  justify-content: center;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  vertical-align: middle;
+  min-height: 5vh;
+  margin: 5px;
+  
+}

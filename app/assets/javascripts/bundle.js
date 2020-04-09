@@ -3072,6 +3072,8 @@ var sessionReducer = function sessionReducer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_friend_requests_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/friend_requests_actions */ "./frontend/actions/friend_requests_actions.js");
+
 
 
 
@@ -3101,6 +3103,7 @@ var usersReducer = function usersReducer() {
       newState[action.friend.friendId].friends.splice(userIdx, 1);
       return newState;
 
+    case _actions_friend_requests_actions__WEBPACK_IMPORTED_MODULE_2__["SEND_FRIEND_REQUEST"]:
     default:
       return state;
   }

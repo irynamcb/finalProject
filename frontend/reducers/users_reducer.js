@@ -1,5 +1,6 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import { RECEIVE_USER, REMOVE_FRIEND } from "../actions/user_actions";
+import { SEND_FRIEND_REQUEST} from '../actions/friend_requests_actions';
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -23,6 +24,9 @@ const usersReducer = (state = {}, action) => {
             userIdx = newState[action.friend.friendId].friends.indexOf(action.friend.userId);
             newState[action.friend.friendId].friends.splice(userIdx, 1);
             return newState;
+        case SEND_FRIEND_REQUEST:
+
+            
         default:
             return state;
     }

@@ -5,7 +5,7 @@ def create
     @friend_request = FriendRequest.new(user_id: current_user.id, friend_id: friend_request_params[:friend_id])
 
     if @friend_request.save 
-      render json: @friend_request, status: 200
+      render :create, status: 200
 
     else 
       flash.now[:errors] = @friend_request.errors.full_messages

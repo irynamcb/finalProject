@@ -58,14 +58,12 @@
   min-height: 52px;
 
 }
-/* 
-.like-btn {
- align-items: baseline;
- text-align: center;
- vertical-align: middle;
- align-self: center;
 
-} */
+.like-btn {
+ display: flex;
+ align-items: center;
+ flex-direction: row;
+}
 
 .number-of-likes {
   display: flex;
@@ -92,6 +90,7 @@ font-weight: 700;
 .comments-likes {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 5px;
   margin-bottom: 5px;
   min-height: 18px;

@@ -20,6 +20,16 @@ u11 = User.create(first_name: 'Tarik', last_name: 'G', email: 'tarik@gmail.com',
 u12 = User.create(first_name: 'Iryna', last_name: 'McBride', email: 'iryna@gmail.com', gender: 'female', birthday: '12/05/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
 
 
+Friend.destroy_all
+f1 = Friend.create(user_id: 7, friend_id: 12)
+f2 = Friend.create(user_id: 12, friend_id: 7)
+f3 = Friend.create(user_id: 7, friend_id: 1)
+f4 = Friend.create(user_id: 1, friend_id: 7)
+f5 = Friend.create(user_id: 7, friend_id: 2)
+f6 = Friend.create(user_id: 2, friend_id: 7)
+f7 = Friend.create(user_id: 7, friend_id: 10)
+f8 = Friend.create(user_id: 10, friend_id: 7)
+
 Post.destroy_all
 p1 = Post.create(author_id: u4.id, body: "Hey Sara! How are you?", parent_id: u6.id)
 p2 = Post.create(author_id: u6.id, body: "I am doing good, how are you?", parent_id: u4.id)

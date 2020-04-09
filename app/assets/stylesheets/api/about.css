@@ -22,9 +22,6 @@ html, body {
   text-decoration-style: solid;
 }
 
-.user-details {
-  background-color: #fff;
-}
 
 .user-details li{
   display: block;
@@ -39,11 +36,6 @@ html, body {
   margin: 5px;
 }
 
-.user-details {
-  border: 1px solid lightgray;
-  margin: 15px;
-  min-width: 222px;
-}
 
 .user-about {
   display: flex;
@@ -78,5 +70,41 @@ html, body {
   vertical-align: middle;
   min-height: 5vh;
   margin: 5px;
-  
+
+}
+
+.sent {
+  color: rgb(255,20,147);
+  font-weight: 700;
+  margin: 5px;
+
+}
+
+.friend {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.friend a {
+  margin: 10px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.fr, .user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+  color: #1c1e21;
+  margin: 15px;
+  min-width: 20vw;
+
+
 }

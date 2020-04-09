@@ -2334,7 +2334,8 @@ var Friend = /*#__PURE__*/function (_React$Component) {
       }, firstName, " ", lastName)), this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.deleteFriend(id);
-        }
+        },
+        className: ""
       }, "Delete Friend") : "");
     }
   }]);
@@ -2441,7 +2442,9 @@ var Friends = /*#__PURE__*/function (_React$Component) {
       //     f = { id: 4, firstName: 'bar', lastName: 'foo' }
       // }
       // debugger
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "fr"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "friends-total"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faUserFriends"],
@@ -2605,7 +2608,9 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
           height: '13px',
           color: '#385898'
         }
-      }), "\xA0Add Friend") : showFriendRequest ? 'Friend Request Sent' : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }), "\xA0Add Friend") : showFriendRequest ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sent"
+      }, "Friend Request Sent") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
       }, location !== null ? "Lives in ".concat(location) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
@@ -2616,7 +2621,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
       }, education !== null ? "Studied at ".concat(education) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
       }, about !== null ? "About Info: ".concat(about) : " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-details"
+        className: "user-friends-all"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friends__WEBPACK_IMPORTED_MODULE_6__["default"], {
         friends: this.props.friends,
         userId: this.props.user.id

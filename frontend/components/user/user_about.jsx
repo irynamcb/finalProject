@@ -75,7 +75,8 @@ export default class UserAbout extends React.Component {
                     </li>
 
                     { (showAddFriend) ?
-                            <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#385898'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 'Friend Request Sent' : ""
+                            <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#385898'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 
+                            <div className='sent'>Friend Request Sent</div> : ""
                     }
                     
 
@@ -106,7 +107,7 @@ export default class UserAbout extends React.Component {
                     <FriendsContainer friends={this.props.friends} />
                 </div> */}
 
-                    <div className="user-details">
+                    <div className="user-friends-all">
                         <Friends friends={this.props.friends} userId={this.props.user.id}/>
                     </div>
 

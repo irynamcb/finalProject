@@ -23,5 +23,5 @@ export const fetchUser = userId => dispatch => {
 
 export const deleteFriend = friendId => dispatch => (
     FriendAPIUtil.deleteFriend(friendId)
-        .then((friend) => dispatch(removeFriend(friend)))
+        .then((friend) => dispatch(removeFriend(friend.friend)))
 );

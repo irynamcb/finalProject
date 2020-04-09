@@ -16,7 +16,7 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_USER:
             return Object.assign(newState, action.user.users, action.user.otherUsers);
         case REMOVE_FRIEND:
-            debugger
+            //debugger
             friendIdx = newState[action.friend.userId].friends.indexOf(action.friend.friendId);
             newState[action.friend.userId].friends.splice(friendIdx, 1);
 

@@ -29,7 +29,8 @@ def destroy
 
   if @friend
     @friend.destroy
-    render json: @friend, status: 200
+    #render json: @friend, status: 200
+    render :destroy, status: 200
   else
     flash.now[:errors] = ['Cannot find a friend']
     render json: ['Cannot find a friend'], status: 422

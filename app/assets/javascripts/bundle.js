@@ -374,7 +374,7 @@ var fetchUser = function fetchUser(userId) {
 var deleteFriend = function deleteFriend(friendId) {
   return function (dispatch) {
     return _util_friends_util__WEBPACK_IMPORTED_MODULE_1__["deleteFriend"](friendId).then(function (friend) {
-      return dispatch(removeFriend(friend));
+      return dispatch(removeFriend(friend.friend));
     });
   };
 };
@@ -3013,7 +3013,7 @@ var usersReducer = function usersReducer() {
       return Object.assign(newState, action.user.users, action.user.otherUsers);
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_FRIEND"]:
-      debugger;
+      //debugger
       friendIdx = newState[action.friend.userId].friends.indexOf(action.friend.friendId);
       newState[action.friend.userId].friends.splice(friendIdx, 1);
       userIdx = newState[action.friend.friendId].friends.indexOf(action.friend.userId);

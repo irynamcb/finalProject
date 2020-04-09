@@ -1,5 +1,5 @@
 import React from 'react';
-import Friend from './friend';
+import FriendContainer from './friend_container';
 import { faUserFriends} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -24,9 +24,10 @@ export default class Friends extends React.Component {
                     {
                         this.props.friends.map(friend => 
                             {if (friend !== undefined){
-                            return <Friend
+                            return <FriendContainer
                                 friend={friend}
                                 key={friend.id}
+                                userId={this.props.userId}
                             />
                             }
                         })}

@@ -87,7 +87,7 @@ export default class UserAbout extends React.Component {
                 </div> */}
 
                     <div className="user-details">
-                        <Friends friends={this.props.friends} />
+                        <Friends friends={this.props.friends} userId={this.props.user.id}/>
                     </div>
 
                 {/* <div className="user-details">

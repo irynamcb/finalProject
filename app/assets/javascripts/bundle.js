@@ -2274,14 +2274,13 @@ var Friend = /*#__PURE__*/function (_React$Component) {
       var _this$props$friend = this.props.friend,
           firstName = _this$props$friend.firstName,
           lastName = _this$props$friend.lastName,
-          id = _this$props$friend.id,
-          userId = _this$props$friend.userId; // debugger
+          id = _this$props$friend.id; // debugger
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "friend"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(id)
-      }, firstName, " ", lastName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, firstName, " ", lastName)), this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.deleteFriend(id);
         }
@@ -2344,7 +2343,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Friends; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _friend__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./friend */ "./frontend/components/user/friend.jsx");
+/* harmony import */ var _friend_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./friend_container */ "./frontend/components/user/friend_container.js");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -2382,6 +2381,8 @@ var Friends = /*#__PURE__*/function (_React$Component) {
   _createClass(Friends, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       // let f;
       // if (this.props.friends[0] !== undefined) {
       //     f = this.props.friends[0];
@@ -2400,9 +2401,10 @@ var Friends = /*#__PURE__*/function (_React$Component) {
         }
       }), "\xA0Friends"), this.props.friends.map(function (friend) {
         if (friend !== undefined) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
             friend: friend,
-            key: friend.id
+            key: friend.id,
+            userId: _this.props.userId
           });
         }
       }));
@@ -2537,7 +2539,8 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
       }, about !== null ? "About Info: ".concat(about) : " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friends__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        friends: this.props.friends
+        friends: this.props.friends,
+        userId: this.props.user.id
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

@@ -2388,7 +2388,7 @@ var Friends = /*#__PURE__*/function (_React$Component) {
       // } else {
       //     f = { id: 4, firstName: 'bar', lastName: 'foo' }
       // }
-      debugger;
+      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: ""
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {

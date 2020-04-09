@@ -16,7 +16,7 @@ export default class Friends extends React.Component {
         // } else {
         //     f = { id: 4, firstName: 'bar', lastName: 'foo' }
         // }
-    debugger
+    // debugger
         return (
         
             <div>

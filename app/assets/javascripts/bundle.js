@@ -559,7 +559,7 @@ var mSTP = function mSTP(state, ownProps) {
     return state.entities.comments[commentId];
   }); // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
 
-  if (post === undefined || Object.keys(state.entities.comments).length === 0) {
+  if (post === undefined) {
     return {};
   }
 
@@ -2390,7 +2390,7 @@ var Friends = /*#__PURE__*/function (_React$Component) {
       // }
       // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: ""
+        className: "friends-total"
       }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faUserFriends"],
         style: {

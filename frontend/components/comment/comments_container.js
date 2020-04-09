@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
 
     // const commentAuthors = comments.map(comment => state.entities.users[comment.authorId])
 
-    if (post === undefined || Object.keys(state.entities.comments).length === 0) {
+    if (post === undefined) {
         return {};
     }
     

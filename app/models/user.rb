@@ -76,7 +76,7 @@ class_name: :Friend
 
 has_many :user_friends,
 through: :friends,
-source: :user
+source: :other_friend
 
 has_many :user_friend_requests,
 through: :incoming_friend_requests,

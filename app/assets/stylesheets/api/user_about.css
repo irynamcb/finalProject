@@ -16,3 +16,8 @@
     font-size: 18px;
     text-align: center;
 }
+
+.friends-total {
+    display: flex;
+    min-height: 150px;
+}

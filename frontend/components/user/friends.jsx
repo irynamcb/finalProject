@@ -20,7 +20,7 @@ export default class Friends extends React.Component {
         return (
         
             <div>
-                <p className=""> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#FF1493'}} />&nbsp;Friends</p>
+                <p className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#FF1493'}} />&nbsp;Friends</p>
                     {
                         this.props.friends.map(friend => 
                             {if (friend !== undefined){

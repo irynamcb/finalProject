@@ -1,8 +1,8 @@
-export const sendRequest = request => (
+export const sendRequest = friendId => (
     $.ajax({
         url: `/api/friend_requests`,
         method: 'POST',
-        data: { request }
+        data: {friendId: friendId} 
     })
 );
 

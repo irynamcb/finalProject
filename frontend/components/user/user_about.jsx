@@ -5,6 +5,7 @@ import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
 import FriendsContainer from './friend_container';
 import Friends from './friends';
+import { sendRequest } from '../../util/friend_requests_util';
 
 export default class UserAbout extends React.Component {
 
@@ -30,6 +31,13 @@ export default class UserAbout extends React.Component {
         }
         // debugger
         const { firstName, lastName, location, createdAt, education, about, birthday, id } = this.props.user;
+
+        let showAddFriend = true;
+
+        if (this.props.currentUserId === id) {
+            showAddFriend = false;
+        }
+
         let cdate = new Date(createdAt);
         let joinedOn = new Intl.DateTimeFormat("en-US", {
             year: "numeric",
@@ -59,6 +67,11 @@ export default class UserAbout extends React.Component {
                         {firstName} {lastName}     
                     </li>
                     <br/>
+
+                    { (showAddFriend) ?
+                    <button onClick={() => this.props.sendRequest(id)}>Add Friend</button> : ""
+                    }
+
                     <li className="user-detail">
 
                         {(location !== null) ? `Lives in ${location}` : ` `}

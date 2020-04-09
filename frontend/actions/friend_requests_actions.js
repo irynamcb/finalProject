@@ -5,21 +5,21 @@ export const REMOVE_FRIEND_REQUEST = 'REMOVE_FRIEND_REQUEST';
 
 // regular actions
 
-export const sendFriendRequest = request => ({
+export const sendFriendRequest = data => ({
     type: SEND_FRIEND_REQUEST,
-    request
+    data
 });
 
-const removeFriendRequest = request => ({
+const removeFriendRequest = data => ({
     type: REMOVE_FRIEND_REQUEST,
-    request
+    data
 });
 
 // thunk actions
 
-export const sendRequest = request => dispatch => {
-    return FriendRequestAPIUril.sendRequest(request)
-        .then(user => dispatch(sendFriendRequest(request)))
+export const sendRequest = friendId => dispatch => {
+    return FriendRequestAPIUril.sendRequest(friendId)
+        .then(response => dispatch(sendFriendRequest(response)))
 }
 
 export const deleteRequest = requestId => dispatch => (

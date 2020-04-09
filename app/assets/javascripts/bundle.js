@@ -136,6 +136,57 @@ var deleteComment = function deleteComment(commentId) {
 
 /***/ }),
 
+/***/ "./frontend/actions/friend_requests_actions.js":
+/*!*****************************************************!*\
+  !*** ./frontend/actions/friend_requests_actions.js ***!
+  \*****************************************************/
+/*! exports provided: SEND_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST, sendFriendRequest, sendRequest, deleteRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SEND_FRIEND_REQUEST", function() { return SEND_FRIEND_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FRIEND_REQUEST", function() { return REMOVE_FRIEND_REQUEST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendFriendRequest", function() { return sendFriendRequest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendRequest", function() { return sendRequest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteRequest", function() { return deleteRequest; });
+/* harmony import */ var _util_friend_requests_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/friend_requests_util */ "./frontend/util/friend_requests_util.js");
+
+var SEND_FRIEND_REQUEST = 'SEND_FRIEND_REQUEST';
+var REMOVE_FRIEND_REQUEST = 'REMOVE_FRIEND_REQUEST'; // regular actions
+
+var sendFriendRequest = function sendFriendRequest(data) {
+  return {
+    type: SEND_FRIEND_REQUEST,
+    data: data
+  };
+};
+
+var removeFriendRequest = function removeFriendRequest(data) {
+  return {
+    type: REMOVE_FRIEND_REQUEST,
+    data: data
+  };
+}; // thunk actions
+
+
+var sendRequest = function sendRequest(friendId) {
+  return function (dispatch) {
+    return _util_friend_requests_util__WEBPACK_IMPORTED_MODULE_0__["sendRequest"](friendId).then(function (response) {
+      return dispatch(sendFriendRequest(response));
+    });
+  };
+};
+var deleteRequest = function deleteRequest(requestId) {
+  return function (dispatch) {
+    return _util_friend_requests_util__WEBPACK_IMPORTED_MODULE_0__["deleteRequest"](requestId).then(function (request) {
+      return dispatch(removeFriendRequest(request));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/like_actions.js":
 /*!******************************************!*\
   !*** ./frontend/actions/like_actions.js ***!
@@ -2437,6 +2488,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../post/create_post_form_container */ "./frontend/components/post/create_post_form_container.js");
 /* harmony import */ var _friend_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./friend_container */ "./frontend/components/user/friend_container.js");
 /* harmony import */ var _friends__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./friends */ "./frontend/components/user/friends.jsx");
+/* harmony import */ var _util_friend_requests_util__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../util/friend_requests_util */ "./frontend/util/friend_requests_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2454,6 +2506,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -2487,6 +2540,8 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       if (this.props.user === undefined) {
         return null;
       } // debugger
@@ -2501,6 +2556,12 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
           about = _this$props$user.about,
           birthday = _this$props$user.birthday,
           id = _this$props$user.id;
+      var showAddFriend = true;
+
+      if (this.props.currentUserId === id) {
+        showAddFriend = false;
+      }
+
       var cdate = new Date(createdAt);
       var joinedOn = new Intl.DateTimeFormat("en-US", {
         year: "numeric",
@@ -2526,7 +2587,11 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         className: "user-details"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-fullname"
-      }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this.props.sendRequest(id);
+        }
+      }, "Add Friend") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
       }, location !== null ? "Lives in ".concat(location) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
@@ -2580,7 +2645,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
-/* harmony import */ var _user_about__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user_about */ "./frontend/components/user/user_about.jsx");
+/* harmony import */ var _actions_friend_requests_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/friend_requests_actions */ "./frontend/actions/friend_requests_actions.js");
+/* harmony import */ var _user_about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user_about */ "./frontend/components/user/user_about.jsx");
+
 
 
 
@@ -2606,7 +2673,8 @@ var mSTP = function mSTP(state, ownProps) {
   return {
     user: user,
     posts: userPosts,
-    friends: userFriends
+    friends: userFriends,
+    currentUserId: state.session.id
   };
 };
 
@@ -2614,11 +2682,14 @@ var mDTP = function mDTP(dispatch) {
   return {
     fetchUser: function fetchUser(userId) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUser"])(userId));
+    },
+    sendRequest: function sendRequest(friendId) {
+      return dispatch(Object(_actions_friend_requests_actions__WEBPACK_IMPORTED_MODULE_3__["sendRequest"])(friendId));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_user_about__WEBPACK_IMPORTED_MODULE_3__["default"])));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_user_about__WEBPACK_IMPORTED_MODULE_4__["default"])));
 
 /***/ }),
 
@@ -3087,6 +3158,35 @@ var createComment = function createComment(comment) {
 var deleteComment = function deleteComment(commentId) {
   return $.ajax({
     url: "/api/comments/".concat(commentId),
+    method: 'DELETE'
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/friend_requests_util.js":
+/*!***********************************************!*\
+  !*** ./frontend/util/friend_requests_util.js ***!
+  \***********************************************/
+/*! exports provided: sendRequest, deleteRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendRequest", function() { return sendRequest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteRequest", function() { return deleteRequest; });
+var sendRequest = function sendRequest(friendId) {
+  return $.ajax({
+    url: "/api/friend_requests",
+    method: 'POST',
+    data: {
+      friendId: friendId
+    }
+  });
+};
+var deleteRequest = function deleteRequest(requestId) {
+  return $.ajax({
+    url: "/api/friend_requests/".concat(requestId),
     method: 'DELETE'
   });
 };

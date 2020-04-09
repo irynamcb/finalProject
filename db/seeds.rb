@@ -33,6 +33,13 @@ p9 = Post.create(author_id: u12.id, body: "See ya soon back in Seattle", parent_
 p10 = Post.create(author_id: u12.id, body: "Bff goals!", parent_id: u7.id)
 p11 = Post.create(author_id: u5.id, body: ".....", parent_id: u4.id)
 
+Comment.destroy_all
+c1 = Comment.create(author_id: u4.id, body: 'Yay!', post_id: p9.id)
+c2 = Comment.create(author_id: u1.id, body: ':)', post_id: p9.id)
+c3 = Comment.create(author_id: u2.id, body: '...', post_id: p9.id)
+c4 = Comment.create(author_id: u5.id, body: 'Zzzz', post_id: p9.id)
+c5 = Comment.create(author_id: u7.id, body: 'For sure', post_id: p9.id)
+
 Like.destroy_all
 l1 = Like.create(author_id: u6.id, likeable_id: p1.id, likeable_type: 'Post')
 l2 = Like.create(author_id: u6.id, likeable_id: p2.id, likeable_type: 'Post')

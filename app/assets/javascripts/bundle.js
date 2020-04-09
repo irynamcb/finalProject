@@ -2535,7 +2535,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchUser(Number(this.props.match.params.userId));
+      this.props.fetchUser(Number(this.props.match.params.userId)); // this.props.fetchUser(Number(this.props.currentUserId));
     }
   }, {
     key: "render",

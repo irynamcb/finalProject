@@ -23,6 +23,8 @@ export default class UserAbout extends React.Component {
 
     componentDidMount() {
         this.props.fetchUser(Number(this.props.match.params.userId));
+
+        // this.props.fetchUser(Number(this.props.currentUserId));
     }
 
     render () {

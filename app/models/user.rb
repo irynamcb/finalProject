@@ -52,7 +52,7 @@ has_many :liked_posts,
   # actual liked posts
 
 has_many :post_comment_authors,
-through: :posts,
+through: :posts_on_wall,
 source: :comment_authors
 
 

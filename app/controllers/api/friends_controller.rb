@@ -9,10 +9,10 @@ end
 
 def create 
 
-  @friend = Friend.new(friend_params)   
-  @friend_request = FriendRequest.find_by(user_id: friend_params[:user_id], friend_id: friend_params[:friend_id])
-  @opposite_friend = Friend.new(user_id: friend_params[:friend_id], friend_id: friend_params[:user_id])
-  @opposite_friend_request = FriendRequest.find_by(user_id: friend_params[:friend_id], friend_id: friend_params[:user_id])
+  @friend = Friend.new(user_id: current_user.id, friend_id: params[:id])   
+  @friend_request = FriendRequest.find_by(user_id: current_user.id, friend_id: params[:id])
+  @opposite_friend = Friend.new(user_id: params[:id], friend_id: current_user.id)
+  @opposite_friend_request = FriendRequest.find_by(user_id: params[:id], friend_id: current_user.id)
 
  begin 
   Friend.transaction do
@@ -32,7 +32,7 @@ end
 
 def destroy
 
-@friend = Friend.find_by(friend_id: params[:friend_id], user_id: current_user.id) 
+@friend = Friend.find_by(friend_id: params[:id], user_id: current_user.id) 
 
   if @friend
     @friend.destroy
@@ -42,11 +42,5 @@ def destroy
     render json: ['Cannot find a friend'], status: 422
   end
 end
-
-private
-def friend_params
-    params.require(:friend).permit(:user_id, :friend_id)
-  
-end   
 
 end

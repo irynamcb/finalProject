@@ -30,9 +30,9 @@ private
 
 def friend_request_params
   
-    params.require(:friend_request).permit(:friend_id)
+    # params.require(:friend_request).permit(:friend_id)
 
-    #  params.permit(:friend_id)
+     params.permit(:friend_id)
 end   
 
 end

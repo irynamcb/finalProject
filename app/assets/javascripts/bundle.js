@@ -173,7 +173,7 @@ var removeFriendRequest = function removeFriendRequest(data) {
 var sendRequest = function sendRequest(friendId) {
   return function (dispatch) {
     return _util_friend_requests_util__WEBPACK_IMPORTED_MODULE_0__["sendRequest"](friendId).then(function (response) {
-      return dispatch(sendFriendRequest(response));
+      return dispatch(sendFriendRequest(response.friendRequest));
     });
   };
 };
@@ -3104,6 +3104,10 @@ var usersReducer = function usersReducer() {
       return newState;
 
     case _actions_friend_requests_actions__WEBPACK_IMPORTED_MODULE_2__["SEND_FRIEND_REQUEST"]:
+      // debugger
+      newState[action.data.friendId].friendRequests.push(action.data.userId);
+      return newState;
+
     default:
       return state;
   }

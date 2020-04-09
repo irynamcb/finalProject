@@ -25,8 +25,9 @@ const usersReducer = (state = {}, action) => {
             newState[action.friend.friendId].friends.splice(userIdx, 1);
             return newState;
         case SEND_FRIEND_REQUEST:
-
-            
+            // debugger
+            newState[action.data.friendId].friendRequests.push(action.data.userId)
+            return newState;
         default:
             return state;
     }

@@ -19,7 +19,7 @@ const removeFriendRequest = data => ({
 
 export const sendRequest = friendId => dispatch => {
     return FriendRequestAPIUril.sendRequest(friendId)
-        .then(response => dispatch(sendFriendRequest(response)))
+        .then(response => dispatch(sendFriendRequest(response.friendRequest)))
 }
 
 export const deleteRequest = requestId => dispatch => (

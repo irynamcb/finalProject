@@ -24,3 +24,32 @@
     margin-bottom: 15px;
    
 }
+
+.delete-friend {
+
+  cursor: pointer;
+  background-color: #4267b2;
+  color: white;
+  border-color: #4267b2;
+  border: 1px solid;
+  border-radius: 3px;
+  box-sizing: content-box;
+  font-size: 10px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  justify-content: center;
+  padding: 2px;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  vertical-align: middle;
+  min-height: 3vh;
+  max-width: 9vw;
+  margin-right: 5px;
+
+}
+
+.delete-friend:hover {
+border-color: rgb(255,20,147);
+}

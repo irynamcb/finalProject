@@ -2335,7 +2335,7 @@ var Friend = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this.props.deleteFriend(id);
         },
-        className: ""
+        className: "delete-friend"
       }, "Delete Friend") : "");
     }
   }]);
@@ -2606,7 +2606,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         style: {
           width: '13px',
           height: '13px',
-          color: '#385898'
+          color: '#fff'
         }
       }), "\xA0Add Friend") : showFriendRequest ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sent"

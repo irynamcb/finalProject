@@ -75,7 +75,7 @@ export default class UserAbout extends React.Component {
                     </li>
 
                     { (showAddFriend) ?
-                            <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#385898'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 
+                            <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#fff'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 
                             <div className='sent'>Friend Request Sent</div> : ""
                     }
                     

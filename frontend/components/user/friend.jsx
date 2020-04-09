@@ -15,7 +15,7 @@ render () {
         <div className="friend">
             <p><Link to={`/users/${id}`}>{firstName} {lastName}</Link></p>
             { (this.props.userId === this.props.currentUserId) ?
-            <button onClick={() => this.props.deleteFriend(id)} className="">Delete Friend</button> : ""
+            <button onClick={() => this.props.deleteFriend(id)} className="delete-friend">Delete Friend</button> : ""
             }
         </div>
     )

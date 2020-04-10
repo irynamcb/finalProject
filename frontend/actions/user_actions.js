@@ -3,6 +3,7 @@ import * as FriendAPIUtil from '../util/friends_util';
 
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const REMOVE_FRIEND = 'REMOVE_FRIEND';
+export const ADD_FRIEND = 'ADD_FRIEND';
 
 // regular action
 export const receiveUser = user => ({
@@ -15,6 +16,11 @@ const removeFriend = friend => ({
     friend
 });
 
+const addFriend = friend => ({
+    type: ADD_FRIEND,
+    friend
+});
+
 // thunk action
 export const fetchUser = userId => dispatch => {
     return UserAPIUtil.fetchUser(userId)
@@ -24,4 +30,9 @@ export const fetchUser = userId => dispatch => {
 export const deleteFriend = friendId => dispatch => (
     FriendAPIUtil.deleteFriend(friendId)
         .then((friend) => dispatch(removeFriend(friend.friend)))
+);
+
+export const acceptFriend = friend => dispatch => (
+    FriendAPIUtil.acceptFriend(friend)
+        .then((friend) => dispatch(addFriend(friend.friend)))
 );

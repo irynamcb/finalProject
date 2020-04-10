@@ -383,22 +383,25 @@ var logout = function logout() {
 /*!******************************************!*\
   !*** ./frontend/actions/user_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_USER, REMOVE_FRIEND, receiveUser, fetchUser, deleteFriend */
+/*! exports provided: RECEIVE_USER, REMOVE_FRIEND, ADD_FRIEND, receiveUser, fetchUser, deleteFriend, acceptFriend */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER", function() { return RECEIVE_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FRIEND", function() { return REMOVE_FRIEND; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_FRIEND", function() { return ADD_FRIEND; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUser", function() { return receiveUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFriend", function() { return deleteFriend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "acceptFriend", function() { return acceptFriend; });
 /* harmony import */ var _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/user_api_util */ "./frontend/util/user_api_util.js");
 /* harmony import */ var _util_friends_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/friends_util */ "./frontend/util/friends_util.js");
 
 
 var RECEIVE_USER = 'RECEIVE_USER';
-var REMOVE_FRIEND = 'REMOVE_FRIEND'; // regular action
+var REMOVE_FRIEND = 'REMOVE_FRIEND';
+var ADD_FRIEND = 'ADD_FRIEND'; // regular action
 
 var receiveUser = function receiveUser(user) {
   return {
@@ -410,6 +413,13 @@ var receiveUser = function receiveUser(user) {
 var removeFriend = function removeFriend(friend) {
   return {
     type: REMOVE_FRIEND,
+    friend: friend
+  };
+};
+
+var addFriend = function addFriend(friend) {
+  return {
+    type: ADD_FRIEND,
     friend: friend
   };
 }; // thunk action
@@ -426,6 +436,13 @@ var deleteFriend = function deleteFriend(friendId) {
   return function (dispatch) {
     return _util_friends_util__WEBPACK_IMPORTED_MODULE_1__["deleteFriend"](friendId).then(function (friend) {
       return dispatch(removeFriend(friend.friend));
+    });
+  };
+};
+var acceptFriend = function acceptFriend(friend) {
+  return function (dispatch) {
+    return _util_friends_util__WEBPACK_IMPORTED_MODULE_1__["acceptFriend"](friend).then(function (friend) {
+      return dispatch(addFriend(friend.friend));
     });
   };
 };
@@ -2383,104 +2400,14 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/user/friend_request.jsx":
-/*!*****************************************************!*\
-  !*** ./frontend/components/user/friend_request.jsx ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FriendRequest; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var FriendRequest = /*#__PURE__*/function (_React$Component) {
-  _inherits(FriendRequest, _React$Component);
-
-  function FriendRequest(props) {
-    _classCallCheck(this, FriendRequest);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(FriendRequest).call(this, props));
-  }
-
-  _createClass(FriendRequest, [{
-    key: "render",
-    value: function render() {
-      debugger;
-      var _this$props$friend = this.props.friend,
-          firstName = _this$props$friend.firstName,
-          lastName = _this$props$friend.lastName,
-          id = _this$props$friend.id;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "friend"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/users/".concat(id)
-      }, firstName, " ", lastName)), this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "delete-friend"
-      }, "Confrim") : "", this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "delete-request"
-      }, "Delete Request") : "");
-    }
-  }]);
-
-  return FriendRequest;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-
-
-/***/ }),
-
 /***/ "./frontend/components/user/friend_request_container.js":
 /*!**************************************************************!*\
   !*** ./frontend/components/user/friend_request_container.js ***!
   \**************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _friend_request__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./friend_request */ "./frontend/components/user/friend_request.jsx");
-
-
- // import { deleteFriend } from '../../actions/user_actions';
-
-var mSTP = function mSTP(state, ownProps) {
-  return {
-    currentUserId: state.session.id
-  };
-};
-
-var mDTP = function mDTP(dispatch) {
-  return {// deleteFriend: friendId => dispatch(deleteFriend(friendId)),
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_friend_request__WEBPACK_IMPORTED_MODULE_2__["default"])));
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/irynamcbride/Desktop/finalProject/frontend/components/user/friend_request_container.js: Unexpected token (7:0)\n\n\u001b[0m \u001b[90m  5 | \u001b[39m\u001b[36mimport\u001b[39m {}\u001b[0m\n\u001b[0m \u001b[90m  6 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 | \u001b[39m\u001b[36mconst\u001b[39m mSTP \u001b[33m=\u001b[39m (state\u001b[33m,\u001b[39m ownProps) \u001b[33m=>\u001b[39m ({\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 | \u001b[39m    currentUserId\u001b[33m:\u001b[39m state\u001b[33m.\u001b[39msession\u001b[33m.\u001b[39mid\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  9 | \u001b[39m})\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m\u001b[0m\n    at Object.raise (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:7044:17)\n    at Object.unexpected (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:8422:16)\n    at Object.expectContextual (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:8388:41)\n    at Object.parseImport (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:12064:12)\n    at Object.parseStatementContent (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10822:27)\n    at Object.parseStatement (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10724:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11298:25)\n    at Object.parseBlockBody (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:11285:10)\n    at Object.parseTopLevel (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:10655:10)\n    at Object.parse (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:12264:10)\n    at parse (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/parser/lib/index.js:12315:38)\n    at parser (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/irynamcbride/Desktop/finalProject/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/Users/irynamcbride/Desktop/finalProject/node_modules/gensync/index.js:254:32)\n    at /Users/irynamcbride/Desktop/finalProject/node_modules/gensync/index.js:266:13\n    at async.call.result.err.err (/Users/irynamcbride/Desktop/finalProject/node_modules/gensync/index.js:216:11)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)");
 
 /***/ }),
 
@@ -2536,7 +2463,7 @@ var FriendRequests = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      debugger;
+      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fr"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2546,7 +2473,7 @@ var FriendRequests = /*#__PURE__*/function (_React$Component) {
         style: {
           width: '24px',
           height: '24px',
-          color: 'green'
+          color: '#3CB371'
         }
       }), "\xA0Friend Requests"), this.props.friendRequests.map(function (friend) {
         if (friend !== undefined) {

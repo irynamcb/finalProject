@@ -14,7 +14,7 @@ def create
     @friend_request.destroy if @friend_request 
     @opposite_friend_request.destroy if @opposite_friend_request
 
-    render json: ["Success"], status: 200
+    render :create, status: 200
 
   end
   rescue ActiveRecord::RecordInvalid => exception

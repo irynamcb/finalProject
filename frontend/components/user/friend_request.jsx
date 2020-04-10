@@ -16,10 +16,10 @@ export default class FriendRequest extends React.Component {
             <div className="friend">
                 <p><Link to={`/users/${id}`}>{firstName} {lastName}</Link></p>
                 {(this.props.userId === this.props.currentUserId) ?
-                    <button className="delete-friend">Confrim</button> : ""
+                    <button onClick={() => this.props.acceptFriend(this.props.friend)} className="delete-friend">Confrim</button> : ""
                 }
                 {(this.props.userId === this.props.currentUserId) ?
-                    <button className="delete-request">Delete Request</button> : ""
+                    <button onClick={() => this.props.deleteRequest(id)} className="delete-request">Delete Request</button> : ""
                 }
             </div>
         )

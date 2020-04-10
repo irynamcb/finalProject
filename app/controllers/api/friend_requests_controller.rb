@@ -22,7 +22,7 @@ def destroy
     render json: @friend_request, status: 200
   else
     flash.now[:errors] = ['Error']
-    render json: ['Error'], satus: 422
+    render :destroy, satus: 422
   end
 end
   

@@ -2446,6 +2446,8 @@ var FriendRequest = /*#__PURE__*/function (_React$Component) {
   _createClass(FriendRequest, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       debugger;
       var _this$props$friend = this.props.friend,
           firstName = _this$props$friend.firstName,
@@ -2456,8 +2458,14 @@ var FriendRequest = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(id)
       }, firstName, " ", lastName)), this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this.props.acceptFriend(_this.props.friend);
+        },
         className: "delete-friend"
       }, "Confrim") : "", this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this.props.deleteRequest(id);
+        },
         className: "delete-request"
       }, "Delete Request") : "");
     }

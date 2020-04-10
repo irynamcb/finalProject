@@ -1,7 +1,6 @@
 import React from 'react';
 import SignUpFormContainer from '../session_form/signup_form_container';
-import { faFileAlt, faStarHalf, faCaretSquareUp } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Redirect} from 'react-router-dom';
 
 
 export default class Splash extends React.Component {
@@ -41,11 +40,9 @@ export default class Splash extends React.Component {
 
     loggedInRender () {
 
-
-
         return(
             <div>
-                <h1></h1>
+                <Redirect to={`/users/${this.props.currentUserId}`} />
             </div>
         )
     }

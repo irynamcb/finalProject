@@ -11,8 +11,7 @@ export default class FriendRequests extends React.Component {
     render() {
 // debugger
         return (
-            
-            <div >
+        <div >
 
             { (this.props.userId === this.props.currentUserId) ?
               
@@ -31,7 +30,7 @@ export default class FriendRequests extends React.Component {
                     })
                 } </div> : ""
             }  
-            </div>
+        </div>
                 
         )
     }

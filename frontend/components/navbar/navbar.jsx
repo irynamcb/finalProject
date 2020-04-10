@@ -36,9 +36,6 @@ export default class Navbar extends React.Component {
             <div className="header-group">
                 <Link to="/" className="home">Friendsbook</Link>
                 <div className="header-name">{this.props.currentUser.firstName}</div>
-                {/* <div className="nav">
-                    <NavLink to="/" className="header-link">Friends</NavLink>
-                </div> */}
                 <div className="nav">
                     <button className="header-button" onClick={this.props.logout}>Log Out</button>
                 </div>

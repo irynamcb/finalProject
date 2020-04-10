@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
 import Friends from './friends';
-import FriendRequests from './friend_request_container';
+import FriendRequests from './friend_requests';
 import { sendRequest } from '../../util/friend_requests_util';
 
 export default class UserAbout extends React.Component {

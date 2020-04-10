@@ -6,14 +6,15 @@ import {sendRequest} from '../../actions/friend_requests_actions';
 import UserAbout from './user_about';
 
 const mSTP = (state, ownProps) => {
+    // debugger
     let userId = Number(ownProps.match.params.userId);
     let arrPosts = Object.values(state.entities.posts);
     let userPosts = arrPosts.filter(post => post.authorId === userId || post.parentId === userId).sort((a, b) => b.id - a.id);
     let user = state.entities.users[Number(ownProps.match.params.userId)];
     let userFriends = user.friends.map(friendId => state.entities.users[friendId]);
     let friendRequests = user.friendRequests.map(friendId => state.entities.users[friendId]);
-   
-    if (userFriends === undefined) {
+   debugger
+    if (userFriends === undefined || friendRequests === undefined) {
         return {};
     }
 

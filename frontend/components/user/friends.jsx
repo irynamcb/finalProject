@@ -10,12 +10,6 @@ export default class Friends extends React.Component {
 
     render() {
     
-        // let f;
-        // if (this.props.friends[0] !== undefined) {
-        //     f = this.props.friends[0];
-        // } else {
-        //     f = { id: 4, firstName: 'bar', lastName: 'foo' }
-        // }
     // debugger
         return (
         

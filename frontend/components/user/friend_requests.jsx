@@ -9,7 +9,7 @@ export default class FriendRequests extends React.Component {
     }
 
     render() {
-
+debugger
         return (
 
             <div className="fr">

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { faFacebookF, faClock} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export default class Navbar extends React.Component {
@@ -11,7 +13,7 @@ export default class Navbar extends React.Component {
     sessionLinks () {
         return (
         <nav className="login-signup">
-            <Link to="/" className="home">Friendsbook</Link>
+                <Link to="/" className="home">Friendsbook</Link>
             <div className="signup-button">
                 <Link to="/signup" className="signup-btn">Sign Up</Link>
             </div>
@@ -34,7 +36,7 @@ export default class Navbar extends React.Component {
         return (
             <div className="navbar">
             <div className="header-group">
-                <Link to="/" className="home">Friendsbook</Link>
+                    <Link to="/" className="home">Friendsbook</Link>
                     <div className="header-name"><Link to='/'>{this.props.currentUser.firstName}</Link></div>
                 <div className="nav">
                     <button className="header-button" onClick={this.props.logout}>Log Out</button>

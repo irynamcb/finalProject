@@ -15,18 +15,16 @@
 
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  flex-direction: column;
   position: relative;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 18px;
   border: 2px solid #e9ebee;
   min-width: 30vh;
-  min-height: 5vh;
+  min-height: 2vh;
   background-color: #f5f6f7;
   margin-top: 10px;
-  margin-bottom: 10px;
   padding: 5px;
-  /* overflow: hidden; */
-
 }
 
 .createcomment-container {
@@ -37,7 +35,6 @@
 .createcomment-form {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  position: relative;
   border-radius: 18px;
   border: 2px solid #e9ebee;
   background-color: #f5f6f7;
@@ -49,13 +46,12 @@
 .single-comment-info {
   display: flex;
   flex-direction: row;
-  position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   line-height: 14px;
   color: #4b4f56;
   text-align: left;
-  margin-bottom: 10px;
+  vertical-align: middle;
 }
 
 
@@ -80,7 +76,7 @@
     font-size: 14px;
     margin-left: 5px;
     align-self: center;
-    /* flex-grow: 1; */
+    position: relative;
 }
 
 .comments-total {
@@ -105,22 +101,13 @@
 
 .lk {
   font-size: 12px;
-  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .lkn {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
-    color: #8d949e;
-    font-size: 11px;
-    font-weight: normal;
-    padding: 2px 1px 2px 2px;
-    max-width: 30px;
-    max-height: 30px;
     position: absolute;
-    left: 2px;
-    top: 22px;
+    right: 12px;
+    top: 28px;
 }
 
 .delete-comment:hover, .lk:hover {

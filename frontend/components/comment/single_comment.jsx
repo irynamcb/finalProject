@@ -39,11 +39,12 @@ export default class SingleComment extends React.Component {
         }
 
         return (
+            <div>
             <div className="single-comment">
                 <div className="single-comment-info">
                     <p><Link to={`/users/${author.id}`}>{`${author.firstName} ${author.lastName}`}</Link></p>
                     <h2>{comment.body}</h2>
-                </div> 
+               
 
                 {  (likes.length !== 0) ?
                     <div className="lkn" >
@@ -51,13 +52,16 @@ export default class SingleComment extends React.Component {
                     </div>: ""
 
                 }
-                    <button onClick={() => this.handleClick(userLiked)} className="lk">Like</button>
+                </div> 
+                   
                 {
                     (comment.authorId === currentUserId) ?
                         <button onClick={() => deleteComment(comment.id)} className="delete-comment">Delete Comment</button>
                         : ""
                 }
             </div>
+                <button onClick={() => this.handleClick(userLiked)} className="lk">Like</button>
+        </div>
         )
     }
 };

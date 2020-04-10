@@ -32,6 +32,16 @@ const usersReducer = (state = {}, action) => {
             userIdx = newState[action.data.friendId].friendRequests.indexOf(action.data.userId);
             newState[action.data.friendId].friendRequests.splice(userIdx, 1);
             return newState;
+        case ADD_FRIEND:
+
+            // debugger
+            newState[action.friendId.userId].friends.push(action.friendId.friendId)
+            newState[action.friendId.friendId].friends.push(action.friendId.userId)
+
+            userIdx = newState[action.friendId.userId].friendRequests.indexOf(action.friendId.friendId);
+            newState[action.friendId.userId].friendRequests.splice(userIdx, 1);
+
+            return newState;
         default:
             return state;
     }

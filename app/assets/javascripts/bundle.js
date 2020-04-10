@@ -3355,6 +3355,14 @@ var usersReducer = function usersReducer() {
       newState[action.data.friendId].friendRequests.splice(userIdx, 1);
       return newState;
 
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["ADD_FRIEND"]:
+      // debugger
+      newState[action.friendId.userId].friends.push(action.friendId.friendId);
+      newState[action.friendId.friendId].friends.push(action.friendId.userId);
+      userIdx = newState[action.friendId.userId].friendRequests.indexOf(action.friendId.friendId);
+      newState[action.friendId.userId].friendRequests.splice(userIdx, 1);
+      return newState;
+
     default:
       return state;
   }

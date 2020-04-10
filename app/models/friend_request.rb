@@ -1,8 +1,8 @@
 class FriendRequest < ApplicationRecord
 
 validates :user_id, :friend_id, presence: true
-validate :not_self 
-# :not_friends
+validate :not_self, :not_friends
+
 
 belongs_to :user,
 primary_key: :id,
@@ -24,7 +24,7 @@ end
 
 def not_friends
 
-  if  Friend.find_by(user_id: current_user.id, friend_id: friend_id)
+   if  Friend.find_by(user_id: user_id, friend_id: friend_id)
 
     errors[:friend_id] << "This friendship already exists"
   end

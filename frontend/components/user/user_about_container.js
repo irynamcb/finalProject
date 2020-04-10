@@ -13,7 +13,7 @@ const mSTP = (state, ownProps) => {
     let user = state.entities.users[Number(ownProps.match.params.userId)];
     let userFriends = user.friends.map(friendId => state.entities.users[friendId]);
     let friendRequests = user.friendRequests.map(friendId => state.entities.users[friendId]);
-   debugger
+//    debugger
     if (userFriends === undefined || friendRequests === undefined) {
         return {};
     }

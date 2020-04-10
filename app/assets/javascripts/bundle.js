@@ -180,7 +180,7 @@ var sendRequest = function sendRequest(friendId) {
 var deleteRequest = function deleteRequest(requestId) {
   return function (dispatch) {
     return _util_friend_requests_util__WEBPACK_IMPORTED_MODULE_0__["deleteRequest"](requestId).then(function (request) {
-      return dispatch(removeFriendRequest(request));
+      return dispatch(removeFriendRequest(request.friendRequest));
     });
   };
 };
@@ -417,10 +417,10 @@ var removeFriend = function removeFriend(friend) {
   };
 };
 
-var addFriend = function addFriend(friend) {
+var addFriend = function addFriend(friendId) {
   return {
     type: ADD_FRIEND,
-    friend: friend
+    friendId: friendId
   };
 }; // thunk action
 
@@ -439,9 +439,9 @@ var deleteFriend = function deleteFriend(friendId) {
     });
   };
 };
-var acceptFriend = function acceptFriend(friend) {
+var acceptFriend = function acceptFriend(friendId) {
   return function (dispatch) {
-    return _util_friends_util__WEBPACK_IMPORTED_MODULE_1__["acceptFriend"](friend).then(function (friend) {
+    return _util_friends_util__WEBPACK_IMPORTED_MODULE_1__["acceptFriend"](friendId).then(function (friend) {
       return dispatch(addFriend(friend.friend));
     });
   };
@@ -2448,7 +2448,7 @@ var FriendRequest = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      debugger;
+      // 
       var _this$props$friend = this.props.friend,
           firstName = _this$props$friend.firstName,
           lastName = _this$props$friend.lastName,
@@ -2459,7 +2459,7 @@ var FriendRequest = /*#__PURE__*/function (_React$Component) {
         to: "/users/".concat(id)
       }, firstName, " ", lastName)), this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
-          return _this.props.acceptFriend(_this.props.friend);
+          return _this.props.acceptFriend(id);
         },
         className: "delete-friend"
       }, "Confrim") : "", this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -2506,8 +2506,8 @@ var mSTP = function mSTP(state, ownProps) {
 
 var mDTP = function mDTP(dispatch) {
   return {
-    acceptFriend: function acceptFriend(friend) {
-      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["acceptFriend"])(friend));
+    acceptFriend: function acceptFriend(friendId) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["acceptFriend"])(friendId));
     },
     deleteRequest: function deleteRequest(requestId) {
       return dispatch(Object(_actions_friend_requests_actions__WEBPACK_IMPORTED_MODULE_3__["deleteRequest"])(requestId));
@@ -2915,8 +2915,7 @@ var mSTP = function mSTP(state, ownProps) {
   });
   var friendRequests = user.friendRequests.map(function (friendId) {
     return state.entities.users[friendId];
-  });
-  debugger;
+  }); //    debugger
 
   if (userFriends === undefined || friendRequests === undefined) {
     return {};
@@ -3351,6 +3350,11 @@ var usersReducer = function usersReducer() {
       newState[action.data.friendId].friendRequests.push(action.data.userId);
       return newState;
 
+    case _actions_friend_requests_actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_FRIEND_REQUEST"]:
+      userIdx = newState[action.data.friendId].friendRequests.indexOf(action.data.userId);
+      newState[action.data.friendId].friendRequests.splice(userIdx, 1);
+      return newState;
+
     default:
       return state;
   }
@@ -3464,12 +3468,12 @@ var deleteRequest = function deleteRequest(requestId) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "acceptFriend", function() { return acceptFriend; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFriend", function() { return deleteFriend; });
-var acceptFriend = function acceptFriend(friend) {
+var acceptFriend = function acceptFriend(friendId) {
   return $.ajax({
     url: "/api/friends/",
     method: 'POST',
     data: {
-      friend: friend
+      id: friendId
     }
   });
 };

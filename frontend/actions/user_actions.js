@@ -16,9 +16,9 @@ const removeFriend = friend => ({
     friend
 });
 
-const addFriend = friend => ({
+const addFriend = friendId => ({
     type: ADD_FRIEND,
-    friend
+    friendId
 });
 
 // thunk action
@@ -32,7 +32,7 @@ export const deleteFriend = friendId => dispatch => (
         .then((friend) => dispatch(removeFriend(friend.friend)))
 );
 
-export const acceptFriend = friend => dispatch => (
-    FriendAPIUtil.acceptFriend(friend)
+export const acceptFriend = friendId => dispatch => (
+    FriendAPIUtil.acceptFriend(friendId)
         .then((friend) => dispatch(addFriend(friend.friend)))
 );

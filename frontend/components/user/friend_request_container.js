@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) => ({
 })
 
 const mDTP = dispatch => ({
-    acceptFriend: (friend) => dispatch(acceptFriend(friend)),
+    acceptFriend: (friendId) => dispatch(acceptFriend(friendId)),
     deleteRequest: (requestId) => dispatch(deleteRequest(requestId))
 })
 

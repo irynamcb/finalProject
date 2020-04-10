@@ -1,6 +1,6 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
-import { RECEIVE_USER, REMOVE_FRIEND } from "../actions/user_actions";
-import { SEND_FRIEND_REQUEST} from '../actions/friend_requests_actions';
+import { RECEIVE_USER, REMOVE_FRIEND, ADD_FRIEND } from "../actions/user_actions";
+import { SEND_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST} from '../actions/friend_requests_actions';
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -27,6 +27,10 @@ const usersReducer = (state = {}, action) => {
         case SEND_FRIEND_REQUEST:
             // debugger
             newState[action.data.friendId].friendRequests.push(action.data.userId)
+            return newState;
+        case REMOVE_FRIEND_REQUEST:
+            userIdx = newState[action.data.friendId].friendRequests.indexOf(action.data.userId);
+            newState[action.data.friendId].friendRequests.splice(userIdx, 1);
             return newState;
         default:
             return state;

@@ -8,7 +8,7 @@ export default class FriendRequest extends React.Component {
     }
 
     render() {
-        debugger
+        // 
         const { firstName, lastName, id } = this.props.friend
 
         
@@ -16,7 +16,7 @@ export default class FriendRequest extends React.Component {
             <div className="friend">
                 <p><Link to={`/users/${id}`}>{firstName} {lastName}</Link></p>
                 {(this.props.userId === this.props.currentUserId) ?
-                    <button onClick={() => this.props.acceptFriend(this.props.friend)} className="delete-friend">Confrim</button> : ""
+                    <button onClick={() => this.props.acceptFriend(id)} className="delete-friend">Confrim</button> : ""
                 }
                 {(this.props.userId === this.props.currentUserId) ?
                     <button onClick={() => this.props.deleteRequest(id)} className="delete-request">Delete Request</button> : ""

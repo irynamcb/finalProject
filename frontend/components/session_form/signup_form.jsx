@@ -132,6 +132,7 @@ class SignupForm extends React.Component {
                         <br />
                         <span className="info">By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</span>
                         <input className="signup-submit" type="submit" value={this.props.formType} />
+                        <br/>
                         <input className="signup-submit" type="submit" value="Demo User" onClick={() => this.demo()} />
                     </div>
                 </form>

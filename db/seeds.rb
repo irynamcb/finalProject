@@ -8,16 +8,21 @@
 User.destroy_all
 u1 = User.create(first_name: 'John', last_name: 'Smith', email: 'john_smith@gmail.com', gender: 'male', birthday: '01/01/1990', location: 'Seattle', education: 'UW', password: '1234567')
 u2 = User.create(first_name: 'Jack', last_name: 'Jones', email: 'jack_jones@gmail.com', gender: 'male', birthday: '02/02/1991', location: 'New York', password: '1234567')
-u3 = User.create(first_name: 'Jessica', last_name: 'Brown', email: 'jess_brown@gmail.com', gender: 'female', birthday: '03/03/1992', location: 'San Francisco', password: '1234567', education: 'WWU', about: 'Hey, it is Jessica!')
+u3 = User.create(first_name: 'Jessica', last_name: 'Smith', email: 'jess_brown@gmail.com', gender: 'female', birthday: '03/03/1992', location: 'San Francisco', password: '1234567', education: 'WWU', about: 'Hey, it is Jessica!')
 u4 = User.create(first_name: 'Erik', last_name: 'Elliott', email: 'erik_e@gmail.com', gender: 'male', birthday: '04/03/1992', location: 'San Francisco', password: '123456', education: 'University of California, Berkeley', about: 'I am Erik!')
-u5 = User.create(first_name: 'Try', last_name: 'Khov', email: 'try@gmail.com', gender: 'male', birthday: '05/03/1992', location: 'San Francisco', password: '123456', education: 'App Academy', about: 'Heyyyyy!')
+u5 = User.create(first_name: 'Chrisrtian', last_name: 'Johnson', email: 'try@gmail.com', gender: 'male', birthday: '05/03/1992', location: 'San Francisco', password: '123456', education: 'App Academy', about: 'Heyyyyy!')
 u6 = User.create(first_name: 'Sara', last_name: 'S', email: 'sara@gmail.com', gender: 'female', birthday: '05/03/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
 u7 = User.create(first_name: 'Brian', last_name: 'Collins', email: 'brian@gmail.com', gender: 'male', birthday: '06/03/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
-u8 = User.create(first_name: 'Steven', last_name: 'Davies', email: 'steven@gmail.com', gender: 'male', birthday: '05/03/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
-u9 = User.create(first_name: 'Hayden', last_name: 'Linder', email: 'hayden@gmail.com', gender: 'male', birthday: '05/03/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
+u8 = User.create(first_name: 'Mary', last_name: 'Jackson', email: 'steven@gmail.com', gender: 'male', birthday: '05/03/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
+u9 = User.create(first_name: 'Curtis', last_name: 'Jackson', email: 'hayden@gmail.com', gender: 'male', birthday: '05/03/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
 u10 = User.create(first_name: 'Ilya', last_name: 'D', email: 'ilya@gmail.com', gender: 'male', birthday: '05/03/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
 u11 = User.create(first_name: 'Tarik', last_name: 'G', email: 'tarik@gmail.com', gender: 'male', birthday: '05/03/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
 u12 = User.create(first_name: 'Iryna', last_name: 'McBride', email: 'iryna@gmail.com', gender: 'female', birthday: '12/05/1990', location: 'San Francisco', password: '123456', education: 'App Academy', about: ':*!')
+u13 = User.create(first_name: 'Kate', last_name: 'Marshall', email: 'kate@gmail.com', gender: 'female', birthday: '12/06/1989', location: 'New York', password: '123456', education: 'App Academy', about: ':*!')
+u14 = User.create(first_name: 'Kiari', last_name: 'Cephus', email: 'kiari@gmail.com', gender: 'male', birthday: '01/05/1990', location: 'Atlanta', password: '123456', education: 'App Academy', about: ':*!')
+u15 = User.create(first_name: 'Future', last_name: 'Hendrix', email: 'future@gmail.com', gender: 'male', birthday: '03/05/1992', location: 'Atlanta', password: '123456', education: 'App Academy', about: ':*!')
+
+
 
 
 Post.destroy_all
@@ -52,6 +57,12 @@ l8 = Like.create(author_id: u10.id, likeable_id: p5.id, likeable_type: 'Post')
 l9 = Like.create(author_id: u9.id, likeable_id: p1.id, likeable_type: 'Post')
 l10 = Like.create(author_id: u8.id, likeable_id: p1.id, likeable_type: 'Post')
 l11 = Like.create(author_id: u7.id, likeable_id: p2.id, likeable_type: 'Post')
+
+
+FriendRequest.destroy_all
+r1 = FriendRequest.create(user_id: u13.id, friend_id: u7.id)
+r2 = FriendRequest.create(user_id: u14.id, friend_id: u7.id)
+r3 = FriendRequest.create(user_id: u15.id, friend_id: u7.id)
 
 
 Friend.destroy_all

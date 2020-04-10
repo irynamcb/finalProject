@@ -3,8 +3,8 @@ import { faClock, faHome, faMapMarkerAlt, faBaby, faUserPlus, faGlobeAmericas } 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
-import FriendsContainer from './friend_container';
 import Friends from './friends';
+import FriendRequests from './friend_request_container';
 import { sendRequest } from '../../util/friend_requests_util';
 
 export default class UserAbout extends React.Component {
@@ -113,8 +113,8 @@ export default class UserAbout extends React.Component {
                         <Friends friends={this.props.friends} userId={this.props.user.id}/>
                     </div>
 
-                <div className="user-details">
-                    <FriendRequests friendRequests={this.props.user.friendRequests} />
+                <div className="user-friends-all">
+                    <FriendRequests friendRequests={this.props.friendRequests} userId={this.props.user.id}/>
                 </div>
 
                 </div>

@@ -80,7 +80,7 @@ source: :other_friend
 
 has_many :user_friend_requests,
 through: :incoming_friend_requests,
-source: :friend
+source: :user
 
 after_initialize :ensure_session_token
 

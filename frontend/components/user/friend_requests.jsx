@@ -3,7 +3,7 @@ import FriendRequestContainer from './friend_request_container';
 import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default class Friends extends React.Component {
+export default class FriendRequests extends React.Component {
     constructor(props) {
         super(props);
     }

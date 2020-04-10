@@ -2566,7 +2566,9 @@ var FriendRequests = /*#__PURE__*/function (_React$Component) {
           height: '24px',
           color: '#3CB371'
         }
-      }), "\xA0Friend Requests"), this.props.friendRequests.map(function (friend) {
+      }), "\xA0Friend Requests", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "friend-requests-number"
+      }, this.props.friendRequests.length)), this.props.friendRequests.map(function (friend) {
         if (friend !== undefined) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend_request_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
             friend: friend,

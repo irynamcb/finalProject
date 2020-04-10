@@ -16,7 +16,11 @@ export default class FriendRequests extends React.Component {
             { (this.props.userId === this.props.currentUserId) ?
               
             <div className="fr">
-                <div className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#3CB371' }} />&nbsp;Friend Requests</div>
+                <div className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#3CB371' }} />&nbsp;Friend Requests 
+                <span className="friend-requests-number">
+                    {this.props.friendRequests.length}
+                </span>
+                </div>
                 {
                     this.props.friendRequests.map(friend => {
                         if (friend !== undefined) {

@@ -102,3 +102,13 @@
   min-height: 5vh;
 
 }
+
+.friend-requests-number {
+  background-color: #fa3e3e;
+  border-radius: 2px;
+  color: #fff;
+  padding: 1px 3px;
+  margin-left: 5px;
+  font-weight: 700;
+  font-size: 12px;
+}

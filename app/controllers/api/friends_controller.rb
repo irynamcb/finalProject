@@ -26,14 +26,19 @@ end
 def destroy
 
 @friend = Friend.find_by(friend_id: params[:id], user_id: current_user.id) 
+@opposite_friend = Friend.find_by(friend_id: current_user.id, user_id: params[:id])
 
-  if @friend
-    @friend.destroy
-    render :destroy, status: 200
-  else
-    flash.now[:errors] = ['Cannot find a friend']
-    render json: ['Cannot find a friend'], status: 422
-  end
+  begin
+    Friend.transaction do 
+      @friend.destroy
+      @opposite_friend.destroy
+      render :destroy, status: 200
+    end
+    rescue ActiveRecord::RecordInvalid => exception
+      flash.now[:errors] = ['Cannot find a friend']
+      render json: ['Cannot find a friend'], status: 422
+    end
 end
 
 end
+

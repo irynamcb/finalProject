@@ -31,6 +31,7 @@ const usersReducer = (state = {}, action) => {
         case REMOVE_FRIEND_REQUEST:
             userIdx = newState[action.data.friendId].friendRequests.indexOf(action.data.userId);
             newState[action.data.friendId].friendRequests.splice(userIdx, 1);
+            
             return newState;
         case ADD_FRIEND:
 

@@ -22,12 +22,12 @@ def not_self
 
 end
 
-# def not_friends
+def not_friends
 
-#   if  Friend.find_by(user_id: current_user.id, friend_id: friend_id)
+  if  Friend.find_by(user_id: current_user.id, friend_id: friend_id)
 
-#     errors[:friend_id] << "This friendship already exists"
-#   end
-# end
+    errors[:friend_id] << "This friendship already exists"
+  end
+end
 
 end

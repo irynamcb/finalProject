@@ -11,7 +11,6 @@ export default class FriendRequest extends React.Component {
         // 
         const { firstName, lastName, id } = this.props.friend
 
-        
         return (
             <div className="friend">
                 <p><Link to={`/users/${id}`}>{firstName} {lastName}</Link></p>

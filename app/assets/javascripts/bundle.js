@@ -1113,16 +1113,8 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         to: "/",
         className: "home"
       }, "Friendsbook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/users/".concat(this.props.currentUser.id),
         className: "header-name"
-      }, this.props.currentUser.firstName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        to: "/",
-        className: "header-link"
-      }, "Friends")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header-button",

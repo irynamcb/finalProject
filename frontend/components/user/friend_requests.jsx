@@ -13,7 +13,7 @@ debugger
         return (
 
             <div className="fr">
-                <div className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#FF1493' }} />&nbsp;Friend Requests</div>
+                <div className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: 'green' }} />&nbsp;Friend Requests</div>
                 {
                     this.props.friendRequests.map(friend => {
                         if (friend !== undefined) {

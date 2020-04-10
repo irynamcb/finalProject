@@ -2441,7 +2441,7 @@ var FriendRequest = /*#__PURE__*/function (_React$Component) {
       }, firstName, " ", lastName)), this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-friend"
       }, "Confrim") : "", this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "delete-friend"
+        className: "delete-request"
       }, "Delete Request") : "");
     }
   }]);
@@ -2546,7 +2546,7 @@ var FriendRequests = /*#__PURE__*/function (_React$Component) {
         style: {
           width: '24px',
           height: '24px',
-          color: '#FF1493'
+          color: 'green'
         }
       }), "\xA0Friend Requests"), this.props.friendRequests.map(function (friend) {
         if (friend !== undefined) {

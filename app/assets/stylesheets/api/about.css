@@ -1,17 +1,10 @@
-html, body {
-    height: 100%;
-}
-
-#root, #main-div {
-    height: 100%
-}
 
 .born-on {
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  min-height: 165px;
-  min-width: 516px;
+  min-height: 25vh;
+  min-width: 40vw;
   letter-spacing: normal;
   background-color: #fff;
   color: #1d2129;
@@ -107,7 +100,7 @@ html, body {
   border-radius: 3px;
   color: #1c1e21;
   margin: 15px;
-  min-width: 20vw;
-
+  min-width: 22vw;
+  min-height: 5vh;
 
 }

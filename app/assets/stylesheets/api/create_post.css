@@ -4,8 +4,8 @@
   font-size: 12px;
   border: 1px solid #e9ebee;
   position: relative;
-  min-width: 516px;
-  min-height: 165px;
+  min-width: 40vw;
+  min-height: 25vh;
   background-color: #fff;
   margin-bottom: 10px;
 }

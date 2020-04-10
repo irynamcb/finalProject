@@ -1,6 +1,6 @@
 import React from 'react';
 import FriendRequestContainer from './friend_request_container';
-import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class FriendRequests extends React.Component {
@@ -16,7 +16,7 @@ export default class FriendRequests extends React.Component {
             { (this.props.userId === this.props.currentUserId) ?
               
             <div className="fr">
-                <div className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#3CB371' }} />&nbsp;Friend Requests 
+                <div className="friends-total"> <FontAwesomeIcon icon={faUserPlus} style={{ width: '24px', height: '24px', color: '#3CB371' }} />&nbsp;Friend Requests 
                 <span className="friend-requests-number">
                     {this.props.friendRequests.length}
                 </span>

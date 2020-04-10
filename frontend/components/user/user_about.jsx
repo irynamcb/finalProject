@@ -84,7 +84,7 @@ export default class UserAbout extends React.Component {
 
                     <li className="user-detail">
 
-                        {(location !== null) ? `Lives in ${location}` : ` `}
+                            {(location !== null) ? `Lives in ${location}` : ` `}
                     
                     </li>
                     
@@ -113,9 +113,10 @@ export default class UserAbout extends React.Component {
                         <Friends friends={this.props.friends} userId={this.props.user.id}/>
                     </div>
 
-                {/* <div className="user-details">
-                    <FriendsContainer friends={this.props.user.friendRequests} />
-                </div> */}
+                <div className="user-details">
+                    <FriendRequests friendRequests={this.props.user.friendRequests} />
+                </div>
+
                 </div>
                 
                 <div className="user-about-info">

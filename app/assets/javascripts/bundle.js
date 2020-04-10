@@ -2634,6 +2634,10 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friends__WEBPACK_IMPORTED_MODULE_6__["default"], {
         friends: this.props.friends,
         userId: this.props.user.id
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-details"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FriendRequests, {
+        friendRequests: this.props.user.friendRequests
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

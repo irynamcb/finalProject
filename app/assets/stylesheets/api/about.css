@@ -57,7 +57,8 @@
   vertical-align: middle;
   min-height: 5vh;
   max-width: 8vw;
-  margin: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
 
 }
 
@@ -111,4 +112,12 @@
   margin-left: 5px;
   font-weight: 700;
   font-size: 12px;
+}
+
+.friends-number {
+  border-radius: 2px;
+  color: #90949c;
+  margin-left: 5px;
+  font-weight: 700;
+  font-size: 16px;
 }

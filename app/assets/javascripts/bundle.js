@@ -1114,7 +1114,9 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         className: "home"
       }, "Friendsbook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header-name"
-      }, this.props.currentUser.firstName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
+      }, this.props.currentUser.firstName)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header-button",
@@ -2652,7 +2654,9 @@ var Friends = /*#__PURE__*/function (_React$Component) {
           height: '24px',
           color: '#FF1493'
         }
-      }), "\xA0Friends\xA0:\xA0", this.props.friends.length), this.props.friends.map(function (friend) {
+      }), "\xA0Friends\xA0:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "friends-number"
+      }, this.props.friends.length)), this.props.friends.map(function (friend) {
         if (friend !== undefined) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
             friend: friend,

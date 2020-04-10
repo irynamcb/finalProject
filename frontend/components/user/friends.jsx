@@ -14,7 +14,11 @@ export default class Friends extends React.Component {
         return (
         
             <div className="fr"> 
-                <div className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#FF1493'}} />&nbsp;Friends&nbsp;:&nbsp;{this.props.friends.length}</div>
+                <div className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#FF1493'}} />&nbsp;Friends&nbsp;:
+                <span className="friends-number">
+                {this.props.friends.length}
+                </span>
+                </div>
                     {
                         this.props.friends.map(friend => 
                             {if (friend !== undefined){

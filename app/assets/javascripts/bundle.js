@@ -2572,7 +2572,7 @@ var FriendRequests = /*#__PURE__*/function (_React$Component) {
       var _this = this;
 
       // debugger
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fr"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "friends-total"
@@ -2591,7 +2591,7 @@ var FriendRequests = /*#__PURE__*/function (_React$Component) {
             userId: _this.props.userId
           });
         }
-      }));
+      }), " ") : "");
     }
   }]);
 
@@ -2852,7 +2852,8 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         className: "user-friends-all"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend_requests__WEBPACK_IMPORTED_MODULE_6__["default"], {
         friendRequests: this.props.friendRequests,
-        userId: this.props.user.id
+        userId: this.props.user.id,
+        currentUserId: this.props.currentUserId
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

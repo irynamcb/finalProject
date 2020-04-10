@@ -11,9 +11,14 @@ export default class FriendRequests extends React.Component {
     render() {
 // debugger
         return (
+            
+            <div >
 
+            { (this.props.userId === this.props.currentUserId) ?
+              
             <div className="fr">
                 <div className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#3CB371' }} />&nbsp;Friend Requests</div>
+                
                 {
                     this.props.friendRequests.map(friend => {
                         if (friend !== undefined) {
@@ -23,8 +28,11 @@ export default class FriendRequests extends React.Component {
                                 userId={this.props.userId}
                             />
                         }
-                    })}
+                    })
+                } </div> : ""
+            }  
             </div>
+                
         )
     }
 };

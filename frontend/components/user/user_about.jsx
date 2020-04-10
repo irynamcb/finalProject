@@ -105,16 +105,13 @@ export default class UserAbout extends React.Component {
                     </li>
                 </div>
               
-                {/* <div className="user-details">
-                    <FriendsContainer friends={this.props.friends} />
-                </div> */}
 
                     <div className="user-friends-all">
                         <Friends friends={this.props.friends} userId={this.props.user.id}/>
                     </div>
 
                 <div className="user-friends-all">
-                    <FriendRequests friendRequests={this.props.friendRequests} userId={this.props.user.id}/>
+                        <FriendRequests friendRequests={this.props.friendRequests} userId={this.props.user.id} currentUserId={this.props.currentUserId}/>
                 </div>
 
                 </div>

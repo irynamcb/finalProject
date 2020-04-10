@@ -8,7 +8,6 @@ export default class FriendRequest extends React.Component {
     }
 
     render() {
-        // 
         const { firstName, lastName, id } = this.props.friend
 
         return (

@@ -48,8 +48,6 @@ export default class Navbar extends React.Component {
             </div>
         )
     }
-
-
     render() {
     
         if (this.props.currentUser) {
@@ -59,7 +57,5 @@ export default class Navbar extends React.Component {
         } else {
             return this.sessionLinksLogin();
         }
-       
     }
- 
 };

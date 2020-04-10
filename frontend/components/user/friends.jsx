@@ -21,8 +21,7 @@ export default class Friends extends React.Component {
                             return <FriendContainer
                                 friend={friend}
                                 key={friend.id}
-                                userId={this.props.userId}
-                            />
+                                userId={this.props.userId}/>
                             }
                         })}
             </div>

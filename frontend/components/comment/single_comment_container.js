@@ -3,7 +3,6 @@ import SingleComment from './single_comment';
 import { createLike, deleteLike } from '../../actions/like_actions';
 
 const mSTP = (state, ownProps) => {
-    // debugger
     const commentLikes = Object.values(state.entities.likes).filter(like => like.likeableId === ownProps.comment.id && like.likeableType === "Comment");
     
     return {

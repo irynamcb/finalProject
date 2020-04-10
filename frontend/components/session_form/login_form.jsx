@@ -63,8 +63,8 @@ class LoginForm extends React.Component {
                             {this.renderErrors()}
                         </div>
                     : ""}
-                    <div className="login-form">
-                        <br />
+                    {/* <div className="login-form">
+                        <br /> */}
                         <label>
               <input type="text"
                                 value={this.state.email}
@@ -73,7 +73,6 @@ class LoginForm extends React.Component {
                                 className="login-input"
                             />
                         </label>
-                        <br />
                         <label>
               <input type="password"
                                 value={this.state.password}
@@ -82,13 +81,12 @@ class LoginForm extends React.Component {
                                 className="login-input"
                             />
                         </label>
-                        <br />
                         <input className="login-submit" type="submit" value={this.props.formType} />
                         <br/>
                         <input className="create-account" type="submit" value="Create New Account" onClick={() => this.signUp()}/>
                         <input className="create-account" type="submit" value="Demo User" onClick={() => this.demo()} />
                         <br/>
-                    </div>
+                    {/* </div> */}
                 </form>
             </div>
         );

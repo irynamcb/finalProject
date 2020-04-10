@@ -9,8 +9,7 @@ export default class Friend extends React.Component {
 
 render () {
     const {firstName, lastName, id} = this.props.friend
-    
-    // debugger
+
     return (
         <div className="friend">
             <p><Link to={`/users/${id}`}>{firstName} {lastName}</Link></p>

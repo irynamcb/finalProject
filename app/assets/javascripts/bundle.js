@@ -571,8 +571,7 @@ var Comments = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.comments === undefined) {
         return null;
-      } // debugger
-
+      }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-comments"
@@ -875,15 +874,13 @@ var SingleComment = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      // debugger
       var _this$props2 = this.props,
           author = _this$props2.author,
           comment = _this$props2.comment,
           likes = _this$props2.likes,
           currentUserId = _this$props2.currentUserId,
           deleteComment = _this$props2.deleteComment;
-      var userLiked = false; // debugger
-
+      var userLiked = false;
       likes.forEach(function (like) {
         if (like.authorId === currentUserId) {
           userLiked = true;
@@ -947,7 +944,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  // debugger
   var commentLikes = Object.values(state.entities.likes).filter(function (like) {
     return like.likeableId === ownProps.comment.id && like.likeableType === "Comment";
   });
@@ -1666,7 +1662,6 @@ var PostList = /*#__PURE__*/function (_React$Component) {
   _createClass(PostList, [{
     key: "render",
     value: function render() {
-      // debugger
       if (this.props.posts.length === 0) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "No posts yet...");
       }
@@ -1827,21 +1822,19 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         className: "kb"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Log Into Friendsbook")), this.props.errors.length > 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-errors"
-      }, this.renderErrors()) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.renderErrors()) : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
         onChange: this.update('email'),
         placeholder: "Email",
         className: "login-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
         onChange: this.update('password'),
         placeholder: "Password",
         className: "login-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-submit",
         type: "submit",
         value: this.props.formType
@@ -1859,7 +1852,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick() {
           return _this3.demo();
         }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
     }
   }]);
 
@@ -2343,8 +2336,7 @@ var Friend = /*#__PURE__*/function (_React$Component) {
       var _this$props$friend = this.props.friend,
           firstName = _this$props$friend.firstName,
           lastName = _this$props$friend.lastName,
-          id = _this$props$friend.id; // debugger
-
+          id = _this$props$friend.id;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "friend"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -2449,7 +2441,6 @@ var FriendRequest = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // 
       var _this$props$friend = this.props.friend,
           firstName = _this$props$friend.firstName,
           lastName = _this$props$friend.lastName,
@@ -2572,7 +2563,6 @@ var FriendRequests = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.userId === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fr"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2706,7 +2696,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../post/create_post_form_container */ "./frontend/components/post/create_post_form_container.js");
 /* harmony import */ var _friends__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./friends */ "./frontend/components/user/friends.jsx");
 /* harmony import */ var _friend_requests__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./friend_requests */ "./frontend/components/user/friend_requests.jsx");
-/* harmony import */ var _util_friend_requests_util__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../util/friend_requests_util */ "./frontend/util/friend_requests_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2724,7 +2713,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -2762,8 +2750,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.user === undefined) {
         return null;
-      } // debugger
-
+      }
 
       var _this$props$user = this.props.user,
           firstName = _this$props$user.firstName,

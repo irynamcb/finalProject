@@ -12,7 +12,6 @@ export default class Comments extends React.Component {
         if (this.props.comments === undefined) {
             return null;
         }
-        // debugger
         return (
             <div className="user-comments">
                 <ul>

@@ -23,11 +23,11 @@ export default class SingleComment extends React.Component {
     }
 
     render() {
-// debugger
+
         const { author, comment, likes, currentUserId, deleteComment } = this.props;
 
         let userLiked = false;
-        // debugger
+  
         likes.forEach(like => {
             if (like.authorId === currentUserId) {
                 userLiked = true;
@@ -52,7 +52,6 @@ export default class SingleComment extends React.Component {
 
                 }
                     <button onClick={() => this.handleClick(userLiked)} className="lk">Like</button>
-
                 {
                     (comment.authorId === currentUserId) ?
                         <button onClick={() => deleteComment(comment.id)} className="delete-comment">Delete Comment</button>

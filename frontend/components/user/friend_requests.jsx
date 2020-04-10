@@ -9,7 +9,7 @@ export default class FriendRequests extends React.Component {
     }
 
     render() {
-// debugger
+
         return (
         <div >
 
@@ -17,7 +17,6 @@ export default class FriendRequests extends React.Component {
               
             <div className="fr">
                 <div className="friends-total"> <FontAwesomeIcon icon={faUserFriends} style={{ width: '24px', height: '24px', color: '#3CB371' }} />&nbsp;Friend Requests</div>
-                
                 {
                     this.props.friendRequests.map(friend => {
                         if (friend !== undefined) {
@@ -30,8 +29,7 @@ export default class FriendRequests extends React.Component {
                     })
                 } </div> : ""
             }  
-        </div>
-                
+        </div>      
         )
     }
 };

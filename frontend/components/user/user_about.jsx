@@ -5,7 +5,6 @@ import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
 import Friends from './friends';
 import FriendRequests from './friend_requests';
-import { sendRequest } from '../../util/friend_requests_util';
 
 export default class UserAbout extends React.Component {
 
@@ -19,7 +18,6 @@ export default class UserAbout extends React.Component {
         }
     }
 
-
     componentDidMount() {
         this.props.fetchUser(Number(this.props.match.params.userId));
 
@@ -30,7 +28,6 @@ export default class UserAbout extends React.Component {
         if (this.props.user === undefined) {
             return null;
         }
-        // debugger
         const { firstName, lastName, location, createdAt, education, about, birthday, id } = this.props.user;
 
         let showAddFriend = true;
@@ -81,11 +78,8 @@ export default class UserAbout extends React.Component {
                             <div className='sent'>Friend Request Sent</div> : ""
                     }
                     
-
                     <li className="user-detail">
-
-                            {(location !== null) ? `Lives in ${location}` : ` `}
-                    
+                        {(location !== null) ? `Lives in ${location}` : ` `}
                     </li>
                     
                     <li className="user-detail">
@@ -106,21 +100,21 @@ export default class UserAbout extends React.Component {
                 </div>
               
 
-                    <div className="user-friends-all">
-                        <Friends friends={this.props.friends} userId={this.props.user.id}/>
-                    </div>
+                <div className="user-friends-all">
+                    <Friends friends={this.props.friends} userId={this.props.user.id}/>
+                </div>
 
                 <div className="user-friends-all">
-                        <FriendRequests friendRequests={this.props.friendRequests} userId={this.props.user.id} currentUserId={this.props.currentUserId}/>
+                    <FriendRequests friendRequests={this.props.friendRequests} userId={this.props.user.id} currentUserId={this.props.currentUserId}/>
                 </div>
 
-                </div>
+            </div>
                 
                 <div className="user-about-info">
 
-                    <div className="user-create-post">
-                        <CreatePostContainer parentId={id} />
-                    </div>
+                <div className="user-create-post">
+                    <CreatePostContainer parentId={id} />
+                </div>
                 <div className="user-post">
                     <PostList posts={this.props.posts}/>
                 </div>

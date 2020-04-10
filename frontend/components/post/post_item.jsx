@@ -104,7 +104,6 @@ export default class PostItem extends React.Component {
                         <div className="share">
                         <FontAwesomeIcon icon={faShare} style={iconStyleGray} />&nbsp;Share
                         </div>
-                    
                     </div>    
                 </div>
 

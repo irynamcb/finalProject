@@ -2650,7 +2650,7 @@ var Friends = /*#__PURE__*/function (_React$Component) {
           height: '24px',
           color: '#FF1493'
         }
-      }), "\xA0Friends"), this.props.friends.map(function (friend) {
+      }), "\xA0Friends\xA0:\xA0", this.props.friends.length), this.props.friends.map(function (friend) {
         if (friend !== undefined) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_friend_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
             friend: friend,

@@ -3,7 +3,7 @@
   
     position: sticky;
     height: 10vh;
-    background-color: #e9ebee;
+    background-color: #fff;
     position: sticky;
     
 }
@@ -11,7 +11,7 @@
 .copyright a{
     font-size: 11px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+    color: #737373;
     margin-top: 5px;
     margin-left: 235px;
 }

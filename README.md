@@ -1,4 +1,4 @@
-# Friendbook
+# Friendsbook
 
 ## List of Technologies:
 

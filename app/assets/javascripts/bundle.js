@@ -3340,7 +3340,6 @@ var usersReducer = function usersReducer() {
       return Object.assign(newState, action.user.users, action.user.otherUsers);
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_FRIEND"]:
-      //debugger
       friendIdx = newState[action.friend.userId].friends.indexOf(action.friend.friendId);
       newState[action.friend.userId].friends.splice(friendIdx, 1);
       userIdx = newState[action.friend.friendId].friends.indexOf(action.friend.userId);
@@ -3348,7 +3347,6 @@ var usersReducer = function usersReducer() {
       return newState;
 
     case _actions_friend_requests_actions__WEBPACK_IMPORTED_MODULE_2__["SEND_FRIEND_REQUEST"]:
-      // debugger
       newState[action.data.friendId].friendRequests.push(action.data.userId);
       return newState;
 
@@ -3358,7 +3356,6 @@ var usersReducer = function usersReducer() {
       return newState;
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["ADD_FRIEND"]:
-      // debugger
       newState[action.friendId.userId].friends.push(action.friendId.friendId);
       newState[action.friendId.friendId].friends.push(action.friendId.userId);
       userIdx = newState[action.friendId.userId].friendRequests.indexOf(action.friendId.friendId);

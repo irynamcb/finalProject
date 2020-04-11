@@ -1079,32 +1079,40 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
   _createClass(Navbar, [{
     key: "sessionLinks",
     value: function sessionLinks() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "login-signup"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         className: "home"
       }, "Friendsbook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup",
         className: "signup-btn"
-      }, "Sign Up")));
+      }, "Sign Up")))));
     }
   }, {
     key: "sessionLinksLogin",
     value: function sessionLinksLogin() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "login-signup"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         className: "home"
       }, "Friendsbook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-button"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/login",
         className: "signup-btn"
-      }, "Log In")));
+      }, "Log In")))));
     }
   }, {
     key: "personalGreeting",
@@ -1117,6 +1125,8 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         to: "/",
         className: "home"
       }, "Friendsbook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header-name"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
@@ -1125,7 +1135,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header-button",
         onClick: this.props.logout
-      }, "Log Out"))));
+      }, "Log Out")))));
     }
   }, {
     key: "render",

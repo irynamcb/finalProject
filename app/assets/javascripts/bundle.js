@@ -1247,10 +1247,12 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       body: "",
       author_id: props.author_id,
-      parent_id: props.parent_id
+      parent_id: props.parent_id,
+      photoFile: null
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.clearBody = _this.clearBody.bind(_assertThisInitialized(_this));
+    _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1275,6 +1277,13 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       this.props.action(this.state).then(function () {
         return _this2.clearBody();
+      });
+    }
+  }, {
+    key: "handleFile",
+    value: function handleFile(e) {
+      this.setState({
+        photoFile: e.currentTarget.files[0]
       });
     }
   }, {
@@ -1323,6 +1332,9 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
         placeholder: "What's on your mind?",
         value: this.state.body,
         onChange: this.update('body')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        onChange: this.handleFile
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "createpost-btn"

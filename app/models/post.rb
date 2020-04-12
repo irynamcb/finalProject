@@ -35,8 +35,8 @@ has_many :comment_likes,
 through: :comments,
 source: :likes
 
-
 has_one_attached :photo
+
 
 def post_too_long
     if body.length > 150

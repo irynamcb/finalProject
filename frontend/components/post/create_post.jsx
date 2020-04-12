@@ -10,10 +10,12 @@ export default class CreatePost extends React.Component {
             body: "",
             author_id: props.author_id,
             parent_id: props.parent_id,
+            photoFile: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearBody = this.clearBody.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
 
     componentDidMount(){
@@ -29,6 +31,10 @@ export default class CreatePost extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state).then(() => this.clearBody());
+    }
+
+    handleFile(e) {
+        this.setState({photoFile: e.currentTarget.files[0]})
     }
 
     clearBody(){
@@ -69,6 +75,8 @@ export default class CreatePost extends React.Component {
                             onChange={this.update('body')
                             }
                         />
+                    <input type="file" 
+                    onChange={this.handleFile}/>
                 </div>
             </div>
                 <button type='submit' className="createpost-btn">Post</button>           

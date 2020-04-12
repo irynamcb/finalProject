@@ -1,4 +1,5 @@
 import React from 'react';
+import AutosizeInput from 'react-input-autosize';
 
 
 export default class CreateComment extends React.Component {
@@ -36,7 +37,7 @@ export default class CreateComment extends React.Component {
                     <div className="createpost-main">
                      
                         <div className="createcomment-body">
-                            <input
+                            <AutosizeInput
                                 type="text"
                                 placeholder="Write a comment..."
                                 value={this.state.body}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle} from "@fortawesome/free-solid-svg-icons";
+import AutosizeInput from 'react-input-autosize';
 
 export default class CreatePost extends React.Component {
     constructor(props){
@@ -83,7 +84,7 @@ export default class CreatePost extends React.Component {
                     <FontAwesomeIcon icon={faUserCircle} style={iconStyle}/>
                 </div>
                 <div className="createpost-body">
-                    <input
+                    <AutosizeInput
                             type="text"
                             placeholder="What's on your mind?"
                             value={this.state.body}

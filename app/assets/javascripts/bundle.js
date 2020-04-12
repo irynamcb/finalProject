@@ -1275,21 +1275,33 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      e.preventDefault(); // const formData = new FormData();
-      // formData.append('post[body]', this.state.body);
-      // if (this.state.photoFile) {
-      //     formData.append('post[photo]', this.state.photoFile);
-      // }
-      // $.ajax({
+      e.preventDefault();
+      var formData = new FormData();
+      formData.append('post[body]', this.state.body);
+      formData.append('post[authorId]', this.state.author_id);
+      formData.append('post[parentId]', this.state.parent_id);
+
+      if (this.state.photoFile) {
+        formData.append('post[photo]', this.state.photoFile);
+      } // $.ajax({
       //     url: '/api/posts',
       //     method: 'POST',
       //     data: formData,
       //     contentType: false,
       //     processData: false
       // }).then(() => this.clearBody());
-      // ????
+      // let formData = {
+      //     body: this.state.body,
+      //     author_id: this.state.author_id,
+      //     parent_id: this.state.parent_id,
+      // }
+      // if (this.state.photoFile) {
+      //     formData.photo = this.state.photoFile
+      // }
+      // debugger
 
-      this.props.action(this.state).then(function () {
+
+      this.props.action(formData).then(function () {
         return _this2.clearBody();
       });
     }
@@ -1316,7 +1328,9 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
     key: "clearBody",
     value: function clearBody() {
       this.setState({
-        body: ""
+        body: "",
+        photoFile: null,
+        photoUrl: null
       });
     }
   }, {
@@ -1338,7 +1352,9 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
         padding: '16px'
       };
       var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.state.photoUrl
+        src: this.state.photoUrl,
+        width: "50%",
+        height: "50%"
       }) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createpost-container"
@@ -1561,7 +1577,10 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           return deletePost(post.id);
         },
         className: "delete-post"
-      }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: post.photoUrl,
+        width: "50%"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-likes"
       }, likes.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "like-btn"
@@ -3579,9 +3598,9 @@ var createPost = function createPost(post) {
   return $.ajax({
     url: "/api/posts/",
     method: 'POST',
-    data: {
-      post: post
-    }
+    data: post,
+    contentType: false,
+    processData: false
   });
 };
 var deletePost = function deletePost(postId) {

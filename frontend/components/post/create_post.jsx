@@ -31,11 +31,13 @@ export default class CreatePost extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // const formData = new FormData();
-        // formData.append('post[body]', this.state.body);
-        // if (this.state.photoFile) {
-        //     formData.append('post[photo]', this.state.photoFile);
-        // }
+        const formData = new FormData();
+        formData.append('post[body]', this.state.body);
+        formData.append('post[authorId]', this.state.author_id);
+        formData.append('post[parentId]', this.state.parent_id);
+        if (this.state.photoFile) {
+            formData.append('post[photo]', this.state.photoFile);
+        }
         // $.ajax({
         //     url: '/api/posts',
         //     method: 'POST',
@@ -43,8 +45,20 @@ export default class CreatePost extends React.Component {
         //     contentType: false,
         //     processData: false
         // }).then(() => this.clearBody());
-        // ????
-        this.props.action(this.state).then(() => this.clearBody());
+        
+        // let formData = {
+        //     body: this.state.body,
+        //     author_id: this.state.author_id,
+        //     parent_id: this.state.parent_id,
+            
+        // }
+        
+        // if (this.state.photoFile) {
+        //     formData.photo = this.state.photoFile
+        // }
+        
+        // debugger
+        this.props.action(formData).then(() => this.clearBody());
     }
 
     handleFile(e) {
@@ -60,7 +74,7 @@ export default class CreatePost extends React.Component {
     }
 
     clearBody(){
-        this.setState({body: ""});
+        this.setState({body: "", photoFile: null, photoUrl: null});
     }
 
     update(field) {
@@ -77,7 +91,7 @@ export default class CreatePost extends React.Component {
         }
 
 
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} width="50%" height="50%"/> : null;
     return (
     <div className="createpost-container">
         <div className="createpost-title">
@@ -99,7 +113,7 @@ export default class CreatePost extends React.Component {
                             onChange={this.update('body')
                             }
                         />
-                    <input type="file" 
+                    <input type="file"
                     onChange={this.handleFile}/>
                 </div>
             </div>

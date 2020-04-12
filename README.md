@@ -9,6 +9,7 @@
 * Back-end:
   - Ruby on Rails
   - PostgreSQL
+  - AWS
   
 ## Example:
 
@@ -74,7 +75,7 @@ switch (action.type) {
 
 ## Future Features:
 
-* Users can post videos on each other walls
+* Users can post videos on each others walls
 * Users can search for other users on Friendsbook
 
 ## Creator:

@@ -2867,7 +2867,11 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         }
       }), "\xA0Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-fullname"
-      }, firstName, " ", lastName), showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.user.avatarUrl
+      })), showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.sendRequest(id);
         },

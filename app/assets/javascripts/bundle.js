@@ -1345,9 +1345,7 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
       }) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createpost-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "createpost-title"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "createpost-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1566,7 +1564,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "delete-post"
       }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: post.photoUrl,
-        width: "50%"
+        width: "100%"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-likes"
       }, likes.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

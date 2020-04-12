@@ -77,12 +77,6 @@ export default class CreatePost extends React.Component {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} width="50%" height="50%"/> : null;
     return (
     <div className="createpost-container">
-        <div className="createpost-title">
-            <h3></h3>
-            <h3></h3>
-            <h3></h3>
-            <h3></h3>
-        </div>
         <form onSubmit={this.handleSubmit} className="createpost-form">
             <div className="createpost-main">
                 <div className="createpost-avatar">

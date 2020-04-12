@@ -4,8 +4,8 @@
   font-size: 12px;
   border: 2px solid #e9ebee;
   position: relative;
-  max-width: 44vw;
-  min-height: 25vh;
+  max-width: 42vw;
+  min-height: 20vh;
   background-color: #fff;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -79,12 +79,13 @@
   right: 10px;
   top: 5px;
   font-size: 12px;
+  font-weight: 700;
 
 }
 
 .delete-post:hover {
-color: #385898;
-font-weight: 700;
+  color: #385898;
+
 }
 
 .comments-likes {

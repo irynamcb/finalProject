@@ -70,8 +70,12 @@ export default class UserAbout extends React.Component {
                             <FontAwesomeIcon icon={faGlobeAmericas} style={{ width: '24px', height: '24px', color: '#3578E5' }} />&nbsp;Intro
                     </div>
                     <li className="user-fullname">
-                        {firstName} {lastName}     
+                        {firstName} {lastName}   
                     </li>
+
+                    <div id="wrapper">
+                        <img src={this.props.user.avatarUrl} />
+                    </div>
 
                     { (showAddFriend) ?
                             <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#fff'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 

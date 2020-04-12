@@ -82,6 +82,8 @@ has_many :user_friend_requests,
 through: :incoming_friend_requests,
 source: :user
 
+has_one_attached :avatar
+
 after_initialize :ensure_session_token
 
 

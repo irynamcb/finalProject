@@ -96,6 +96,7 @@
   right: 10px;
   top: 5px;
   font-size: 12px;
+  font-weight: 700;
 
 }
 
@@ -110,7 +111,11 @@
     top: 28px;
 }
 
-.delete-comment:hover, .lk:hover {
+.delete-comment:hover {
+  color: #385898;
+}
+
+.lk:hover {
   color: #385898;
   font-weight: 700;
 }

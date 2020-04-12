@@ -1,29 +1,30 @@
+
 .createpost-container {
   font-family: Arial, Helvetica, sans-serif;
   display: block;
   font-size: 12px;
   border: 1px solid #e9ebee;
-  position: relative;
-  min-width: 40vw;
-  min-height: 25vh;
   background-color: #fff;
   margin-bottom: 10px;
+  display: flex;
+  /* max-width: 42vw;
+  min-height: 20vh; */
+  flex-direction: column;
 }
 
 .createpost-btn {
   font-size: 12px;
-  line-height: 22px;
   background-color: #4267b2;
   border-color: #4267b2;
   color: #fff;
   box-sizing: border-box;
-  height: 28px;
+  height: 4vh;
   width: 100%;
   border: 1px solid;
   border-radius: 2px;
   font-weight: bold;
   text-align: center;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 
 .createpost-btn:hover {
@@ -32,36 +33,20 @@
 
 .createpost-body {
   font-family: Arial, Helvetica, sans-serif;
-  max-height: 100px;
-  min-height: 71px;
+  min-height: 8vh;
+  width: 100%;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: normal;
-  line-height: 18px;
-  padding-right: 48px;
   border-bottom: 1px solid #e9ebee;
   border-top: 1px solid #e9ebee;
+  display: flex;
+  flex-direction: column;
 }
 
 .createpost-body input {
   font-size: 16px;
   padding-top: 24px;
-}
-
-.createpost-title {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 14px;
-  cursor: pointer;
-  color: #4b4f56;
-  text-align: left;
-  border-bottom: 1px solid #dddfe2;
-  border-radius: 2px 2px 0 0;
-  background-color: #f5f6f7;
 }
 
 .createpost-title h3 {
@@ -81,7 +66,7 @@
 }
 
 .createpost-post {
-  display: block;
+  display: flex;
 }
 
 .createpost-main {

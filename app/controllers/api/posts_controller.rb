@@ -68,8 +68,7 @@ end
 
 private
 def post_params
-    params.require(:post).permit(:body, :author_id, :parent_id)
-    # params.permit(:body, :author_id, :parent_id)
+    params.require(:post).permit(:body, :author_id, :parent_id, :photo)
 end   
 
 end

@@ -59,6 +59,6 @@ def destroy
 end
 
 def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :gender, :birthday, :about, :education, :location)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :gender, :birthday, :about, :education, :location, :avatar)
 end
 end

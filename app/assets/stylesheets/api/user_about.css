@@ -79,3 +79,16 @@ border-color: rgb(255,20,147);
   max-width: 9vw;
   margin-right: 5px;
 }
+
+#wrapper {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+}
+
+#wrapper img {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

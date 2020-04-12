@@ -1275,31 +1275,16 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
+      debugger;
       e.preventDefault();
       var formData = new FormData();
       formData.append('post[body]', this.state.body);
-      formData.append('post[authorId]', this.state.author_id);
-      formData.append('post[parentId]', this.state.parent_id);
+      formData.append('post[author_id]', this.state.author_id);
+      formData.append('post[parent_id]', this.state.parent_id);
 
       if (this.state.photoFile) {
         formData.append('post[photo]', this.state.photoFile);
-      } // $.ajax({
-      //     url: '/api/posts',
-      //     method: 'POST',
-      //     data: formData,
-      //     contentType: false,
-      //     processData: false
-      // }).then(() => this.clearBody());
-      // let formData = {
-      //     body: this.state.body,
-      //     author_id: this.state.author_id,
-      //     parent_id: this.state.parent_id,
-      // }
-      // if (this.state.photoFile) {
-      //     formData.photo = this.state.photoFile
-      // }
-      // debugger
-
+      }
 
       this.props.action(formData).then(function () {
         return _this2.clearBody();
@@ -1310,7 +1295,9 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
     value: function handleFile(e) {
       var _this3 = this;
 
+      e.preventDefault();
       var file = e.currentTarget.files[0];
+      e.currentTarget.value = null;
       var fileReader = new FileReader();
 
       fileReader.onloadend = function () {

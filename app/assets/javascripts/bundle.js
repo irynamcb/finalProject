@@ -1248,7 +1248,8 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
       body: "",
       author_id: props.author_id,
       parent_id: props.parent_id,
-      photoFile: null
+      photoFile: null,
+      photoUrl: null
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.clearBody = _this.clearBody.bind(_assertThisInitialized(_this));
@@ -1274,7 +1275,20 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      e.preventDefault();
+      e.preventDefault(); // const formData = new FormData();
+      // formData.append('post[body]', this.state.body);
+      // if (this.state.photoFile) {
+      //     formData.append('post[photo]', this.state.photoFile);
+      // }
+      // $.ajax({
+      //     url: '/api/posts',
+      //     method: 'POST',
+      //     data: formData,
+      //     contentType: false,
+      //     processData: false
+      // }).then(() => this.clearBody());
+      // ????
+
       this.props.action(this.state).then(function () {
         return _this2.clearBody();
       });
@@ -1282,9 +1296,21 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleFile",
     value: function handleFile(e) {
-      this.setState({
-        photoFile: e.currentTarget.files[0]
-      });
+      var _this3 = this;
+
+      var file = e.currentTarget.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onloadend = function () {
+        _this3.setState({
+          photoFile: file,
+          photoUrl: fileReader.result
+        });
+      };
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
     }
   }, {
     key: "clearBody",
@@ -1296,10 +1322,10 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "update",
     value: function update(field) {
-      var _this3 = this;
+      var _this4 = this;
 
       return function (e) {
-        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
+        return _this4.setState(_defineProperty({}, field, e.currentTarget.value));
       };
     }
   }, {
@@ -1311,6 +1337,9 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
         color: '#666',
         padding: '16px'
       };
+      var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.state.photoUrl
+      }) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createpost-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1335,7 +1364,7 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         onChange: this.handleFile
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "createpost-btn"
       }, "Post")));

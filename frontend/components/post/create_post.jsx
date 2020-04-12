@@ -10,7 +10,8 @@ export default class CreatePost extends React.Component {
             body: "",
             author_id: props.author_id,
             parent_id: props.parent_id,
-            photoFile: null
+            photoFile: null,
+            photoUrl: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,11 +31,32 @@ export default class CreatePost extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        // const formData = new FormData();
+        // formData.append('post[body]', this.state.body);
+        // if (this.state.photoFile) {
+        //     formData.append('post[photo]', this.state.photoFile);
+        // }
+        // $.ajax({
+        //     url: '/api/posts',
+        //     method: 'POST',
+        //     data: formData,
+        //     contentType: false,
+        //     processData: false
+        // }).then(() => this.clearBody());
+        // ????
         this.props.action(this.state).then(() => this.clearBody());
     }
 
     handleFile(e) {
-        this.setState({photoFile: e.currentTarget.files[0]})
+
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ photoFile: file, photoUrl: fileReader.result });
+        };
+    if (file) {
+       fileReader.readAsDataURL(file);
+    }
     }
 
     clearBody(){
@@ -54,6 +76,8 @@ export default class CreatePost extends React.Component {
             padding: '16px'
         }
 
+
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
     <div className="createpost-container">
         <div className="createpost-title">
@@ -79,6 +103,7 @@ export default class CreatePost extends React.Component {
                     onChange={this.handleFile}/>
                 </div>
             </div>
+                {preview}
                 <button type='submit' className="createpost-btn">Post</button>           
         </form>
     </div>

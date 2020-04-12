@@ -1,3 +1,7 @@
 json.extract! post, :id, :author_id, :body, :parent_id
-json.photoUrl url_for(post.photo)
+
+if post.photo.attached?
+    json.photoUrl url_for(post.photo)
+end
+
 json.comments post.comments.map(&:id)

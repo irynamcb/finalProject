@@ -91,17 +91,17 @@
 	}
 	.custom-file-input input {
 		visibility: hidden;
-		width: 100px;
+		width: 120px;
 	}
 	.custom-file-input:before {
 		content: 'Add Photo';
 		display: block;
-		background: -webkit-linear-gradient( -180deg, #ffdc73, #febf01);
-		background: -o-linear-gradient( -180deg, #ffdc73, #febf01);
-		background: -moz-linear-gradient( -180deg, #ffdc73, #febf01);
-		background: linear-gradient( -180deg, #ffdc73, #febf01);
-		border: 3px solid #4b4f56;
-		border-radius: 10px;
+		background: -webkit-linear-gradient( -180deg, #DADDE1, #f5f6f7);
+		background: -o-linear-gradient( -180deg, #DADDE1, #f5f6f7);
+		background: -moz-linear-gradient( -180deg, #DADDE1, #f5f6f7);
+		background: linear-gradient( -180deg, #DADDE1, #f5f6f7);
+		border: 3px solid #f5f6f7;
+		border-radius: 18px;
 		padding: 5px 0px;
 		outline: none;
 		white-space: nowrap;
@@ -118,8 +118,8 @@
     
 	}
 	.custom-file-input:hover:before {
-		border-color: #febf01;
+		border-color: #e9ebee;
 	}
 		.custom-file-input:active:before {
-		background: #febf01;
+		background: #BEC3C9;
 	}

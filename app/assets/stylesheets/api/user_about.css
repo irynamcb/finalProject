@@ -58,7 +58,7 @@ border-color: rgb(255,20,147);
 }
 
 .delete-request {
-    cursor: pointer;
+  cursor: pointer;
   background-color: rgb(245, 246, 247);
   color: rgb(75, 79, 86);
   border-color: rgb(204, 208, 213);

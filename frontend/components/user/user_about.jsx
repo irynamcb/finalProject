@@ -70,13 +70,15 @@ export default class UserAbout extends React.Component {
                     <div className='friends-total'>
                             <FontAwesomeIcon icon={faGlobeAmericas} style={{ width: '24px', height: '24px', color: '#3578E5' }} />&nbsp;Intro
                     </div>
-                    <li className="user-fullname">
-                        {firstName} {lastName}   
-                    </li>
 
-                    <div id="wrapper">
-                        <AvatarContainer user={this.props.user}/>
-                    </div> 
+                    <div className="user-avatar">
+                        <li className="user-fullname">
+                            {firstName} {lastName}
+                        </li>
+                        <li id="wrapper">
+                            <AvatarContainer user={this.props.user}/>
+                        </li> 
+                    </div>
 
                     { (showAddFriend) ?
                             <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#fff'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 

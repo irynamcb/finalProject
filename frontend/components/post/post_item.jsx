@@ -66,8 +66,13 @@ export default class PostItem extends React.Component {
             
             <div className="single-post">
                 <div className="single-post-info">
-                    <p><Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link><FontAwesomeIcon icon={faCaretRight} style={iconStyleGray}/><Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link></p>
-                    <br/>
+
+                {
+                    (author.id === parent.id) ? <p><Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link>Posted:</p> : 
+                        
+                    <p><Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link><FontAwesomeIcon icon={faCaretRight} style={iconStyleGray} /><Link to={`/users/${parent.id}`}>{parent.firstName} {parent.lastName}</Link></p>
+                }
+                <br/>
                     {
                         (author.id === currentUserId) ?
                             <button onClick={() => deletePost(post.id)} className="delete-post">Delete Post</button>

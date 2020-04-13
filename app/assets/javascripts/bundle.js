@@ -1577,7 +1577,9 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "single-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-post-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, author.id === parent.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/users/".concat(author.id)
+      }, author.firstName, " ", author.lastName), "Posted:") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(author.id)
       }, author.firstName, " ", author.lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faCaretRight"],
@@ -2461,10 +2463,13 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faUserCircle"],
         style: iconStyle
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: ""
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "my-file",
+        className: "custom-avatar-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
+        id: "my-file",
+        className: "custom-file-input",
         onChange: this.handleFile
       })), preview);
     }
@@ -3040,13 +3045,15 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
           height: '24px',
           color: '#3578E5'
         }
-      }), "\xA0Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }), "\xA0Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-avatar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-fullname"
-      }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_avatar_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
         user: this.props.user
-      })), showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))), showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.sendRequest(id);
         },

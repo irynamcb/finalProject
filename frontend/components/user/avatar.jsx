@@ -48,10 +48,12 @@ export default class Avatar extends React.Component {
         const preview = this.props.user.avatarUrl ? <img src={this.props.user.avatarUrl} /> : <FontAwesomeIcon icon={faUserCircle} style={iconStyle} />;
         return (
             <div>
-                    <div className="">
+                <label htmlFor="my-file" className="custom-avatar-input">
                             <input type="file"
-                                onChange={this.handleFile} />
-                        </div>
+                            id="my-file"
+                            className="custom-file-input"
+                            onChange={this.handleFile} />  
+                </label>
                     {preview}
             </div>
         );

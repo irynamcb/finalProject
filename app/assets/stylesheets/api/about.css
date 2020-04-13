@@ -20,8 +20,8 @@
   display: block;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  min-height: 30px;
-  min-width: 100px;
+  /* min-height: 30px;
+  min-width: 100px; */
   letter-spacing: normal;
   color: #385898;
   text-align: left;

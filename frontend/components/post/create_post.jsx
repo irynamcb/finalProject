@@ -98,9 +98,11 @@ export default class CreatePost extends React.Component {
                             className="custom-file-input"
                             onChange={this.handleFile} />
                     </label>
-
+                  
             </div>
+            <div>
                 {preview}
+            </div>
                 <button type='submit' className="createpost-btn">Post</button>           
         </form>
     </div>

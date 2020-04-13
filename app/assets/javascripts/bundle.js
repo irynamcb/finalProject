@@ -1396,7 +1396,7 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
         id: "m",
         className: "custom-file-input",
         onChange: this.handleFile
-      }))), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, preview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "createpost-btn"
       }, "Post")));

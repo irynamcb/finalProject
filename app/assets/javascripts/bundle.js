@@ -1386,7 +1386,7 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
         value: this.state.body,
         onChange: this.update('body')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "my-file",
+        htmlFor: "my-file",
         className: "custom-file-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
@@ -2412,35 +2412,28 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Avatar);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Avatar).call(this, props));
-    _this.state = {
-      photoFile: null
-    };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.clearBody = _this.clearBody.bind(_assertThisInitialized(_this));
     _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Avatar, [{
     key: "handleSubmit",
-    value: function handleSubmit() {
-      var _this2 = this;
-
+    value: function handleSubmit(photoFile) {
       // debugger
       var user = this.props.user;
 
-      if (this.state.photoFile) {
-        user.avatar = this.state.photoFile;
+      if (photoFile) {
+        user.avatar = photoFile;
+        user.avatarUrl = null;
       }
 
-      this.props.updateUser(user).then(function () {
-        return _this2.clearBody();
-      });
+      this.props.updateUser(user);
     }
   }, {
     key: "handleFile",
     value: function handleFile(e) {
-      var _this3 = this;
+      var _this2 = this;
 
       e.preventDefault();
       var file = e.currentTarget.files[0];
@@ -2448,19 +2441,12 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
       var fileReader = new FileReader();
 
       fileReader.onloadend = function () {
-        _this3.handleSubmit();
+        _this2.handleSubmit(file);
       };
 
       if (file) {
         fileReader.readAsDataURL(file);
       }
-    }
-  }, {
-    key: "clearBody",
-    value: function clearBody() {
-      this.setState({
-        photoFile: null
-      });
     }
   }, {
     key: "render",
@@ -3922,12 +3908,18 @@ var fetchUser = function fetchUser(userId) {
   });
 };
 var updateUser = function updateUser(user) {
+  var formData = new FormData();
+
+  for (var key in user) {
+    formData.append("user[".concat(key, "]"), user[key]);
+  }
+
   return $.ajax({
     url: "api/users/".concat(user.id),
     method: 'PATCH',
-    data: {
-      user: user
-    }
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 

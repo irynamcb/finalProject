@@ -93,7 +93,7 @@ export default class CreatePost extends React.Component {
                         />
                 </div>
 
-                    <label for="my-file" className="custom-file-input">
+                    <label htmlFor="my-file" className="custom-file-input">
                         <input type="file"
                             id="my-file"
                             className="custom-file-input"

@@ -7,24 +7,20 @@ export default class Avatar extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            photoFile: null,
-        };
-
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearBody = this.clearBody.bind(this);
         this.handleFile = this.handleFile.bind(this);
     }
 
-    handleSubmit() {
+    handleSubmit(photoFile) {
         // debugger
   
         let {user} = this.props;
 
-        if (this.state.photoFile) {
-            user.avatar = this.state.photoFile
+        if (photoFile) {
+            user.avatar = photoFile
+            user.avatarUrl = null;
         }
-        this.props.updateUser(user).then(() => this.clearBody());
+        this.props.updateUser(user)
     }
 
     handleFile(e) {
@@ -34,15 +30,11 @@ export default class Avatar extends React.Component {
         e.currentTarget.value = null;
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            this.handleSubmit();
+            this.handleSubmit(file);
         };
         if (file) {
             fileReader.readAsDataURL(file);
         }
-    }
-
-    clearBody() {
-        this.setState({ photoFile: null });
     }
 
     render() {

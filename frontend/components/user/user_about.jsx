@@ -20,9 +20,9 @@ export default class UserAbout extends React.Component {
     }
 
     componentDidMount() {
+
         this.props.fetchUser(Number(this.props.match.params.userId));
 
-        // this.props.fetchUser(Number(this.props.currentUserId));
     }
 
     render () {
@@ -39,7 +39,7 @@ export default class UserAbout extends React.Component {
             showAddFriend = false;
         } 
 
-        if (this.props.currentUserId === id || this.props.user.friends.includes(this.props.currentUserId)) {
+        if (this.props.currentUserId === id || this.props.user.friends.includes(this.props.currentUserId) || this.props.currentUser.friendRequests.includes(this.props.user.id)) {
             showAddFriend = false;
         }
 

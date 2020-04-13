@@ -29,7 +29,8 @@ const mSTP = (state, ownProps) => {
     posts: userPosts,
     friends: userFriends,
     friendRequests: friendRequests,
-    currentUserId: state.session.id
+    currentUserId: state.session.id,
+    currentUser: state.entities.users[state.session.id]
     };
 };
 

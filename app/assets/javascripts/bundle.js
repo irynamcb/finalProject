@@ -2976,7 +2976,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchUser(Number(this.props.match.params.userId)); // this.props.fetchUser(Number(this.props.currentUserId));
+      this.props.fetchUser(Number(this.props.match.params.userId));
     }
   }, {
     key: "render",
@@ -3004,7 +3004,7 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         showAddFriend = false;
       }
 
-      if (this.props.currentUserId === id || this.props.user.friends.includes(this.props.currentUserId)) {
+      if (this.props.currentUserId === id || this.props.user.friends.includes(this.props.currentUserId) || this.props.currentUser.friendRequests.includes(this.props.user.id)) {
         showAddFriend = false;
       }
 
@@ -3159,7 +3159,8 @@ var mSTP = function mSTP(state, ownProps) {
     posts: userPosts,
     friends: userFriends,
     friendRequests: friendRequests,
-    currentUserId: state.session.id
+    currentUserId: state.session.id,
+    currentUser: state.entities.users[state.session.id]
   };
 };
 

@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
-import { RECEIVE_USER, REMOVE_FRIEND, ADD_FRIEND } from "../actions/user_actions";
+import { RECEIVE_USER, REMOVE_FRIEND, ADD_FRIEND, UPDATE_USER } from "../actions/user_actions";
 import { SEND_FRIEND_REQUEST, REMOVE_FRIEND_REQUEST} from '../actions/friend_requests_actions';
 
 const usersReducer = (state = {}, action) => {
@@ -15,6 +15,8 @@ const usersReducer = (state = {}, action) => {
             newState[userId] = action.currentUser.users[userId];
             return Object.assign(newState, action.currentUser.otherUsers);
         case RECEIVE_USER:
+            return Object.assign(newState, action.user.users, action.user.otherUsers);
+        case UPDATE_USER:
             return Object.assign(newState, action.user.users, action.user.otherUsers);
         case REMOVE_FRIEND:
             friendIdx = newState[action.friend.userId].friends.indexOf(action.friend.friendId);

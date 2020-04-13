@@ -445,7 +445,7 @@ var fetchUser = function fetchUser(userId) {
 var updateUser = function updateUser(user) {
   return function (dispatch) {
     return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["updateUser"](user).then(function (user) {
-      return dispatch(updateSingleUser);
+      return dispatch(updateSingleUser(user));
     });
   };
 };
@@ -2423,20 +2423,24 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Avatar, [{
     key: "handleSubmit",
-    value: function handleSubmit(e) {
+    value: function handleSubmit() {
+      var _this2 = this;
+
       // debugger
-      e.preventDefault();
-      var formData = new FormData();
+      var user = this.props.user;
 
       if (this.state.photoFile) {
-        formData.append('user[avatar]', this.state.photoFile);
-      } //    .then(() => this.clearBody());
+        user.avatar = this.state.photoFile;
+      }
 
+      this.props.updateUser(user).then(function () {
+        return _this2.clearBody();
+      });
     }
   }, {
     key: "handleFile",
     value: function handleFile(e) {
-      var _this2 = this;
+      var _this3 = this;
 
       e.preventDefault();
       var file = e.currentTarget.files[0];
@@ -2444,10 +2448,7 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
       var fileReader = new FileReader();
 
       fileReader.onloadend = function () {
-        _this2.setState({
-          photoFile: file,
-          avatarUrl: fileReader.result
-        });
+        _this3.handleSubmit();
       };
 
       if (file) {
@@ -2458,8 +2459,7 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
     key: "clearBody",
     value: function clearBody() {
       this.setState({
-        photoFile: null,
-        avatarUrl: null
+        photoFile: null
       });
     }
   }, {
@@ -2477,9 +2477,7 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faUserCircle"],
         style: iconStyle
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
@@ -2507,6 +2505,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _avatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./avatar */ "./frontend/components/user/avatar.jsx");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+
 
 
 
@@ -2518,7 +2518,15 @@ var mSTP = function mSTP(state, ownProps) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP)(_avatar__WEBPACK_IMPORTED_MODULE_2__["default"])));
+var mDTP = function mDTP(dispatch) {
+  return {
+    updateUser: function updateUser(user) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["updateUser"])(user));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_avatar__WEBPACK_IMPORTED_MODULE_2__["default"])));
 
 /***/ }),
 
@@ -3571,6 +3579,9 @@ var usersReducer = function usersReducer() {
       return Object.assign(newState, action.currentUser.otherUsers);
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
+      return Object.assign(newState, action.user.users, action.user.otherUsers);
+
+    case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["UPDATE_USER"]:
       return Object.assign(newState, action.user.users, action.user.otherUsers);
 
     case _actions_user_actions__WEBPACK_IMPORTED_MODULE_1__["REMOVE_FRIEND"]:

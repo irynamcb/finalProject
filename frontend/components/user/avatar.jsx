@@ -16,14 +16,15 @@ export default class Avatar extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     }
 
-    handleSubmit(e) {
+    handleSubmit() {
         // debugger
-        e.preventDefault();
-        const formData = new FormData();
+  
+        let {user} = this.props;
+
         if (this.state.photoFile) {
-            formData.append('user[avatar]', this.state.photoFile);
+            user.avatar = this.state.photoFile
         }
-    //    .then(() => this.clearBody());
+        this.props.updateUser(user).then(() => this.clearBody());
     }
 
     handleFile(e) {
@@ -33,7 +34,7 @@ export default class Avatar extends React.Component {
         e.currentTarget.value = null;
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-            this.setState({ photoFile: file, avatarUrl: fileReader.result });
+            this.handleSubmit();
         };
         if (file) {
             fileReader.readAsDataURL(file);
@@ -41,7 +42,7 @@ export default class Avatar extends React.Component {
     }
 
     clearBody() {
-        this.setState({ photoFile: null, avatarUrl: null });
+        this.setState({ photoFile: null });
     }
 
     render() {
@@ -55,7 +56,7 @@ export default class Avatar extends React.Component {
 
         const preview = this.props.user.avatarUrl ? <img src={this.props.user.avatarUrl} /> : <FontAwesomeIcon icon={faUserCircle} style={iconStyle} />;
         return (
-            <div onClick={this.handleSubmit}>
+            <div>
                     <div className="">
                             <input type="file"
                                 onChange={this.handleFile} />

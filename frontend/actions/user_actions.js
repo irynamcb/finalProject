@@ -35,7 +35,7 @@ export const fetchUser = userId => dispatch => {
 
 export const updateUser = user => dispatch => {
     return UserAPIUtil.updateUser(user)
-    .then (user => dispatch(updateSingleUser))
+    .then (user => dispatch(updateSingleUser(user)))
 }
 
 export const deleteFriend = friendId => dispatch => (

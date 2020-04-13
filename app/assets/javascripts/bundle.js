@@ -3060,7 +3060,9 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         }
       }), "\xA0Add Friend") : showFriendRequest ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sent"
-      }, "Friend Request Sent") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Friend Request Sent") : "", !showAddFriend && this.props.currentUser.friendRequests.includes(this.props.user.id) ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sent"
+      }, "This user has sent you a friend request") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"
       }, location !== null ? "Lives in ".concat(location) : " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "user-detail"

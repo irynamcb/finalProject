@@ -83,6 +83,12 @@ export default class UserAbout extends React.Component {
                             <div className='sent'>Friend Request Sent</div> : ""
                     }
                     
+                    {
+                        (!showAddFriend && this.props.currentUser.friendRequests.includes(this.props.user.id)) ? 
+                        <div className='sent'>This user has sent you a friend request</div> : ""
+
+                    }
+                    
                     <li className="user-detail">
                         {(location !== null) ? `Lives in ${location}` : ` `}
                     </li>

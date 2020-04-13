@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
 
-validates :body, presence: true
 validate :post_too_long
+validates :body, presence: true, if: :body_or_photo?
 
 belongs_to :author,
   primary_key: :id,
@@ -42,6 +42,12 @@ def post_too_long
     if body.length > 150
       errors[:body] << "too long"
     end
+end
+
+def body_or_photo?
+
+!photo.attached?
+
 end
 
 end

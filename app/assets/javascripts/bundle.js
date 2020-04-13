@@ -1385,11 +1385,11 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
         value: this.state.body,
         onChange: this.update('body')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "my-file",
+        htmlFor: "m",
         className: "custom-file-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
-        id: "my-file",
+        id: "m",
         className: "custom-file-input",
         onChange: this.handleFile
       }))), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -2464,11 +2464,11 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
         style: iconStyle
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "my-file",
+        htmlFor: "a",
         className: "custom-avatar-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
-        id: "my-file",
+        id: "a",
         className: "custom-file-input",
         onChange: this.handleFile
       })), preview);

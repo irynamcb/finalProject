@@ -12,7 +12,6 @@ export default class Avatar extends React.Component {
     }
 
     handleSubmit(photoFile) {
-        // debugger
   
         let {user} = this.props;
 

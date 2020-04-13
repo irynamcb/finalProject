@@ -1298,7 +1298,6 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      // debugger
       e.preventDefault();
       var formData = new FormData();
       formData.append('post[body]', this.state.body);
@@ -2420,7 +2419,6 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
   _createClass(Avatar, [{
     key: "handleSubmit",
     value: function handleSubmit(photoFile) {
-      // debugger
       var user = this.props.user;
 
       if (photoFile) {
@@ -3139,7 +3137,12 @@ var mSTP = function mSTP(state, ownProps) {
   }).sort(function (a, b) {
     return b.id - a.id;
   });
-  var user = state.entities.users[Number(ownProps.match.params.userId)];
+  var user = state.entities.users[Number(ownProps.match.params.userId)]; // debugger
+
+  if (user === undefined) {
+    return {};
+  }
+
   var userFriends = user.friends.map(function (friendId) {
     return state.entities.users[friendId];
   });

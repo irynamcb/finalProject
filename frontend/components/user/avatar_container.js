@@ -4,10 +4,9 @@ import Avatar from './avatar';
 import { updateUser } from '../../actions/user_actions';
 
 
-
 const mSTP = (state, ownProps) => {
+    
     let user = state.entities.users[Number(ownProps.match.params.userId)];
-
     return {
         user: user
     }

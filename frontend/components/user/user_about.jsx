@@ -78,10 +78,6 @@ export default class UserAbout extends React.Component {
                         <AvatarContainer user={this.props.user}/>
                     </div> 
 
-                    {/* <div id="wrapper">
-                        <img src={this.props.user.avatarUrl} />
-                    </div> */}
-
                     { (showAddFriend) ?
                             <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#fff'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 
                             <div className='sent'>Friend Request Sent</div> : ""

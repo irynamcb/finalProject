@@ -31,7 +31,6 @@ export default class CreatePost extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         const formData = new FormData();
         formData.append('post[body]', this.state.body);

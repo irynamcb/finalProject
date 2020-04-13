@@ -1148,6 +1148,10 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, "Friendsbook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "wrapper-navbar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.currentUser.avatarUrl
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header-name"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
@@ -1362,8 +1366,8 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
       };
       var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.state.photoUrl,
-        width: "50%",
-        height: "50%"
+        width: "20%",
+        height: "20%"
       }) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createpost-container"
@@ -1373,10 +1377,10 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createpost-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "createpost-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
-        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faUserCircle"],
-        style: iconStyle
+        className: "createpost-avatar",
+        id: "wrapper"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.author.avatarUrl
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createpost-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_input_autosize__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1429,6 +1433,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     formType: 'Create Post',
     author_id: state.session.id,
+    author: state.entities.users[state.session.id],
     parent_id: Number(ownProps.parentId)
   };
 };
@@ -1593,7 +1598,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "delete-post"
       }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: post.photoUrl,
-        width: "100%"
+        width: "99%"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comments-likes"
       }, likes.length !== 0 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

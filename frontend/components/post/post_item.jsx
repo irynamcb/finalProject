@@ -80,7 +80,7 @@ export default class PostItem extends React.Component {
                     }
 
                     <h2>{post.body}</h2>
-                    <div><img src={post.photoUrl} width="100%" /></div>
+                    <div><img src={post.photoUrl} width="99%" /></div>
                 
 
                     <div className="comments-likes">

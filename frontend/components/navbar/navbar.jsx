@@ -46,6 +46,7 @@ export default class Navbar extends React.Component {
             <div className="header-group">
                     <Link to="/" className="home">Friendsbook</Link>
                     <div className="nav-content">
+                    <div id="wrapper-navbar"><img src={this.props.currentUser.avatarUrl} /></div>
                     <div className="header-name"><Link to='/'>{this.props.currentUser.firstName}</Link></div>
                 <div className="nav">
                     <button className="header-button" onClick={this.props.logout}>Log Out</button>

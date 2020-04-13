@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     formType: 'Create Post',
     author_id: state.session.id,
+    author: state.entities.users[state.session.id],
     parent_id: Number(ownProps.parentId),
 }};
 

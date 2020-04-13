@@ -31,7 +31,7 @@ export default class CreatePost extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
         const formData = new FormData();
         formData.append('post[body]', this.state.body);
@@ -91,9 +91,15 @@ export default class CreatePost extends React.Component {
                             onChange={this.update('body')
                             }
                         />
-                    <input type="file"
-                    onChange={this.handleFile}/>
                 </div>
+
+                    <label for="my-file" className="custom-file-input">
+                        <input type="file"
+                            id="my-file"
+                            className="custom-file-input"
+                            onChange={this.handleFile} />
+                    </label>
+
             </div>
                 {preview}
                 <button type='submit' className="createpost-btn">Post</button>           

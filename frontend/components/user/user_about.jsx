@@ -5,6 +5,7 @@ import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
 import Friends from './friends';
 import FriendRequests from './friend_requests';
+import Avatar from './avatar';
 
 export default class UserAbout extends React.Component {
 
@@ -74,8 +75,12 @@ export default class UserAbout extends React.Component {
                     </li>
 
                     <div id="wrapper">
-                        <img src={this.props.user.avatarUrl} />
+                        <Avatar/>
                     </div>
+
+                    {/* <div id="wrapper">
+                        <img src={this.props.user.avatarUrl} />
+                    </div> */}
 
                     { (showAddFriend) ?
                             <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#fff'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 

@@ -5,7 +5,7 @@ import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
 import Friends from './friends';
 import FriendRequests from './friend_requests';
-import Avatar from './avatar';
+import AvatarContainer from './avatar_container';
 
 export default class UserAbout extends React.Component {
 
@@ -75,8 +75,8 @@ export default class UserAbout extends React.Component {
                     </li>
 
                     <div id="wrapper">
-                        <Avatar/>
-                    </div>
+                        <AvatarContainer user={this.props.user}/>
+                    </div> 
 
                     {/* <div id="wrapper">
                         <img src={this.props.user.avatarUrl} />

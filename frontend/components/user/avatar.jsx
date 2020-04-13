@@ -9,7 +9,6 @@ export default class Avatar extends React.Component {
 
         this.state = {
             photoFile: null,
-            avatarUrl: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,7 +53,7 @@ export default class Avatar extends React.Component {
             padding: '16px'
         }
 
-        const preview = this.state.avatarUrl ? <img src={this.state.avatarUrl} /> : <FontAwesomeIcon icon={faUserCircle} style={iconStyle} />;
+        const preview = this.props.user.avatarUrl ? <img src={this.props.user.avatarUrl} /> : <FontAwesomeIcon icon={faUserCircle} style={iconStyle} />;
         return (
             <div onClick={this.handleSubmit}>
                     <div className="">

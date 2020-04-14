@@ -41,20 +41,19 @@ export default class Avatar extends React.Component {
         let iconStyle = {
             width: '46px',
             height: '46px',
-            color: '#666',
-            padding: '16px'
+            color: '#666'
         }
 
-        const preview = this.props.user.avatarUrl ? <img src={this.props.user.avatarUrl} /> : <FontAwesomeIcon icon={faUserCircle} style={iconStyle} />;
+        const preview = this.props.user.avatarUrl ? <img src={this.props.user.avatarUrl} /> : <FontAwesomeIcon icon={faUserCircle} style={iconStyle}/>;
         return (
-            <div>
+            <div className="avatar">
                 <label htmlFor="a" className="custom-avatar-input">
                             <input type="file"
                             id="a"
-                            className="custom-file-input"
+                            className="custom-avatar-input"
                             onChange={this.handleFile} />  
                 </label>
-                    {preview}
+                <div>{preview}</div>
             </div>
         );
     }

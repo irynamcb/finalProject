@@ -68,16 +68,13 @@ export default class UserAbout extends React.Component {
             <div className="about-block">
                 <div className="user-details">
                     <div className='friends-total'>
-                            <FontAwesomeIcon icon={faGlobeAmericas} style={{ width: '24px', height: '24px', color: '#3578E5' }} />&nbsp;Intro
+                            <FontAwesomeIcon icon={faGlobeAmericas} style={{ width: '24px', height: '24px', color: '#3578E5'}} />&nbsp;Intro
                     </div>
-
+                    <li style={{fontWeight: '700'}}>{firstName} {lastName}</li>  
                     <div className="user-avatar">
-                        <li className="user-fullname">
-                            {firstName} {lastName}
-                        </li>
-                        <li id="wrapper">
-                            <AvatarContainer user={this.props.user}/>
-                        </li> 
+                        <div id="wrapper">
+                            <AvatarContainer user={this.props.user} />
+                        </div> 
                     </div>
 
                     { (showAddFriend) ?

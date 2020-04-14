@@ -1,19 +1,28 @@
+#main-div, #root {
+  width: 100vw;
+}
+
+
 .user-about {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 100%;
-    height: 100%;
+    align-self: center;
+    /* width: 100%;
+    height: 100%; */
+    min-height: 50vh;
+    min-width: 70vw;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e9ebee;
 }
 
 .user-avatar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  margin: 5px;
   vertical-align: middle;
+  margin: 5px;
 }
 
 .about-block {
@@ -90,54 +99,19 @@ border-color: rgb(255,20,147);
 
 #wrapper {
     text-align: center;
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
 }
 
 #wrapper img {
   vertical-align: middle;
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   margin: 5px;
 }
 
-.custom-avatar-input {
-		display: inline-block;
-		position: relative;
-    color: #4b4f56;
-	}
-	.custom-avatar-input input {
-		visibility: hidden;
-		width: 120px;
-	}
-	.custom-avatar-input:before {
-		content: 'Change Photo';
-		display: block;
-		background: -webkit-linear-gradient( -180deg, #DADDE1, #f5f6f7);
-		background: -o-linear-gradient( -180deg, #DADDE1, #f5f6f7);
-		background: -moz-linear-gradient( -180deg, #DADDE1, #f5f6f7);
-		background: linear-gradient( -180deg, #DADDE1, #f5f6f7);
-		border: 3px solid #f5f6f7;
-		border-radius: 18px;
-		padding: 5px 0px;
-		outline: none;
-		white-space: nowrap;
-		cursor: pointer;
-		text-shadow: 1px 1px rgba(255,255,255,0.7);
-		font-weight: bold;
-		text-align: center;
-		font-size: 10pt;
-		position: absolute;
-		left: 0;
-    right: 0;
-    margin-top: 10px;
-    margin-right: 5px;
-    
-	}
-	.custom-avatar-input:hover:before {
-		border-color: #e9ebee;
-	}
-		.custom-avatar-input:active:before {
-		background: #BEC3C9;
-	}
+.avatar {
+  display: flex;
+  flex-direction: row;
+}

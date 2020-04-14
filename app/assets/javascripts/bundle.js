@@ -1358,12 +1358,6 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var iconStyle = {
-        width: '46px',
-        height: '46px',
-        color: '#666',
-        padding: '16px'
-      };
       var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.state.photoUrl,
         width: "20%",
@@ -1629,12 +1623,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faComment"],
         style: iconStyleGray
-      }), "\xA0Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "share"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
-        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faShare"],
-        style: iconStyleGray
-      }), "\xA0Share"))), this.state.showComments ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comments_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), "\xA0Comment"))), this.state.showComments ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comments_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         postId: post.id
       })) : "");
     }
@@ -2459,8 +2448,7 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
       var iconStyle = {
         width: '46px',
         height: '46px',
-        color: '#666',
-        padding: '16px'
+        color: '#666'
       };
       var preview = this.props.user.avatarUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.user.avatarUrl
@@ -2468,15 +2456,17 @@ var Avatar = /*#__PURE__*/function (_React$Component) {
         icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faUserCircle"],
         style: iconStyle
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "avatar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "a",
         className: "custom-avatar-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         id: "a",
-        className: "custom-file-input",
+        className: "custom-avatar-input",
         onChange: this.handleFile
-      })), preview);
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, preview));
     }
   }]);
 
@@ -3050,11 +3040,13 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
           height: '24px',
           color: '#3578E5'
         }
-      }), "\xA0Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), "\xA0Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        style: {
+          fontWeight: '700'
+        }
+      }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-avatar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "user-fullname"
-      }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_avatar_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
         user: this.props.user

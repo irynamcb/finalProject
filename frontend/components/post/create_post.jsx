@@ -66,14 +66,6 @@ export default class CreatePost extends React.Component {
 
     render() {
 
-        let iconStyle = {
-            width: '46px',
-            height: '46px',
-            color: '#666',
-            padding: '16px'
-        }
-
-
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} width="20%" height="20%"/> : null;
     return (
     <div className="createpost-container">

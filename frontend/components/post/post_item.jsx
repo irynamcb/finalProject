@@ -108,9 +108,9 @@ export default class PostItem extends React.Component {
                         <div className="comment" onClick={this.showComments} >
                         <FontAwesomeIcon icon={faComment} style={iconStyleGray} />&nbsp;Comment
                         </div>
-                        <div className="share">
+                        {/* <div className="share">
                         <FontAwesomeIcon icon={faShare} style={iconStyleGray} />&nbsp;Share
-                        </div>
+                        </div> */}
                     </div>    
                 </div>
 

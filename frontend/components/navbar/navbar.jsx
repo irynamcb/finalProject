@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { faFacebookF, faClock} from "@fortawesome/free-solid-svg-icons";
+import { faFacebookF, faClock, faUserCircle} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -41,6 +41,7 @@ export default class Navbar extends React.Component {
     }
        
     personalGreeting() {
+        
         return (
             <div className="navbar">
             <div className="header-group">

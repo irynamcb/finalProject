@@ -81,7 +81,6 @@ export default class PostItem extends React.Component {
 
                     <h2>{post.body}</h2>
                     <div><img src={post.photoUrl} width="99%" /></div>
-                
 
                     <div className="comments-likes">
                     { 
@@ -97,7 +96,6 @@ export default class PostItem extends React.Component {
                                 {comments.length} {commentText}
                             </div> : ""
                     }
-
                     </div>
 
                     <div className="likes-main">

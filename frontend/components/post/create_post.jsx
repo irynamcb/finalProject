@@ -21,7 +21,7 @@ export default class CreatePost extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
+   
     }
 
     componentWillUpdate(prevProps){

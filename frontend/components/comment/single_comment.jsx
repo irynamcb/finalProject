@@ -35,7 +35,7 @@ export default class SingleComment extends React.Component {
         });
 
         if (author === undefined) {
-            // debugger
+           
         }
 
         return (

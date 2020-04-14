@@ -7,7 +7,7 @@ const mSTP = (state, ownProps) => {
     const postLikes = Object.values(state.entities.likes).filter(like => like.likeableId === ownProps.post.id && like.likeableType === "Post");
 
     const postComments = ownProps.post.comments.map(commentId => state.entities.comments[commentId])
-// debugger
+
     return {
         parent: state.entities.users[ownProps.post.parentId],
         author: state.entities.users[ownProps.post.authorId],

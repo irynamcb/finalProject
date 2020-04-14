@@ -907,8 +907,7 @@ var SingleComment = /*#__PURE__*/function (_React$Component) {
         }
       });
 
-      if (author === undefined) {// debugger
-      }
+      if (author === undefined) {}
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-comment"
@@ -1286,8 +1285,7 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
 
   _createClass(CreatePost, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// debugger
-    }
+    value: function componentDidMount() {}
   }, {
     key: "componentWillUpdate",
     value: function componentWillUpdate(prevProps) {
@@ -1661,8 +1659,7 @@ var mSTP = function mSTP(state, ownProps) {
   });
   var postComments = ownProps.post.comments.map(function (commentId) {
     return state.entities.comments[commentId];
-  }); // debugger
-
+  });
   return {
     parent: state.entities.users[ownProps.post.parentId],
     author: state.entities.users[ownProps.post.authorId],
@@ -1889,7 +1886,6 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -2877,7 +2873,6 @@ var Friends = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fr"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3135,7 +3130,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  // debugger
   var userId = Number(ownProps.match.params.userId);
   var arrPosts = Object.values(state.entities.posts);
   var userPosts = arrPosts.filter(function (post) {
@@ -3143,7 +3137,7 @@ var mSTP = function mSTP(state, ownProps) {
   }).sort(function (a, b) {
     return b.id - a.id;
   });
-  var user = state.entities.users[Number(ownProps.match.params.userId)]; // debugger
+  var user = state.entities.users[Number(ownProps.match.params.userId)];
 
   if (user === undefined) {
     return {};
@@ -3154,7 +3148,7 @@ var mSTP = function mSTP(state, ownProps) {
   });
   var friendRequests = user.friendRequests.map(function (friendId) {
     return state.entities.users[friendId];
-  }); //    debugger
+  });
 
   if (userFriends === undefined || friendRequests === undefined) {
     return {};

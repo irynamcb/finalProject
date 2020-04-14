@@ -1,5 +1,5 @@
 #main-div, #root {
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 
@@ -8,10 +8,11 @@
     justify-content: center;
     flex-direction: row;
     align-self: center;
-    min-height: 50vh;
-    min-width: 70vw;
+    /* min-height: 50vh;
+    min-width: 70vw; */
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e9ebee;
+    padding: 20px 0;
 }
 
 .user-avatar {

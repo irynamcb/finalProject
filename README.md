@@ -2,6 +2,8 @@
 
 Friendsbook is a social networking website where users can post comments, share photographs and post links to news or other interesting content on the web, chat live, and watch short-form video. 
 
+See it live: https://fcbkclone.herokuapp.com/#/
+
 ![](app/assets/images/1.png)
 
 ## List of Technologies:

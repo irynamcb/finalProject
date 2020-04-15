@@ -103,4 +103,4 @@ switch (action.type) {
 
 ## Creator:
 
-[Iryna McBride](https://github.com/irynamcb)
+[Iryna McBride](https://www.linkedin.com/in/iryna-mcbride/)

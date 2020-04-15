@@ -1,5 +1,9 @@
 # Friendsbook
 
+Friendsbook is a social networking website where users can post comments, share photographs and post links to news or other interesting content on the web, chat live, and watch short-form video. 
+
+![](app/assets/images/1.png)
+
 ## List of Technologies:
 
 * Front-end:
@@ -12,6 +16,10 @@
   - AWS
   
 ## Example:
+
+### Adding/Deleting friends: 
+
+<img src="app/assets/images/2.png" width=35% height=35% />
 
 Friends controller:
 
@@ -72,6 +80,21 @@ switch (action.type) {
             return state;
     }
 ```
+
+### On Friendsbook users can do the following:
+
+* Leave posts on each others walls
+* Post pictures
+* Delete posts
+* Like and unlike posts
+* Leave comments on posts
+* Like and unlike comments
+* Delete comments
+* Each user can upload an avatar
+
+<img src="app/assets/images/3.png" width=60% height=60% />
+
+<img src="app/assets/images/4.png" width=60% height=60% />
 
 ## Future Features:
 

@@ -3039,13 +3039,13 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         style: {
           fontWeight: '700'
         }
-      }, firstName, " ", lastName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, firstName, " ", lastName), id === this.props.currentUserId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-avatar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_avatar_container__WEBPACK_IMPORTED_MODULE_7__["default"], {
         user: this.props.user
-      }))), showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }))) : "", showAddFriend ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this.props.sendRequest(id);
         },

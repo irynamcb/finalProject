@@ -1,5 +1,5 @@
 import React from 'react';
-import { faClock, faHome, faMapMarkerAlt, faBaby, faUserPlus, faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
+import { faBaby, faUserPlus, faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostList from "../post/posts";
 import CreatePostContainer from '../post/create_post_form_container';
@@ -70,12 +70,15 @@ export default class UserAbout extends React.Component {
                     <div className='friends-total'>
                             <FontAwesomeIcon icon={faGlobeAmericas} style={{ width: '24px', height: '24px', color: '#3578E5'}} />&nbsp;Intro
                     </div>
-                    <li style={{fontWeight: '700'}}>{firstName} {lastName}</li>  
-                    <div className="user-avatar">
-                        <div id="wrapper">
-                            <AvatarContainer user={this.props.user} />
-                        </div> 
-                    </div>
+                    <li style={{fontWeight: '700'}}>{firstName} {lastName}</li>
+
+                    { (id === this.props.currentUserId) ?
+                            <div className="user-avatar">
+                                <div id="wrapper">
+                                    <AvatarContainer user={this.props.user} />
+                                </div>
+                            </div> : ""
+                    }
 
                     { (showAddFriend) ?
                             <button onClick={() => this.props.sendRequest(id)} className="add-friend"><FontAwesomeIcon icon={faUserPlus} style={{ width: '13px', height: '13px', color: '#fff'}} />&nbsp;Add Friend</button> : (showFriendRequest) ? 
@@ -108,7 +111,6 @@ export default class UserAbout extends React.Component {
                         {(about !== null) ? `About Info: ${about}` : ` `}
                     </li>
                 </div>
-              
 
                 <div className="user-friends-all">
                     <Friends friends={this.props.friends} userId={this.props.user.id}/>

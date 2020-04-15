@@ -83,7 +83,7 @@ switch (action.type) {
 
 ### On Friendsbook users can do the following:
 
-* Leave posts on each others walls
+* Leave posts on each other's walls
 * Post pictures
 * Delete posts
 * Like and unlike posts
@@ -98,7 +98,7 @@ switch (action.type) {
 
 ## Future Features:
 
-* Users can post videos on each others walls
+* Users can post videos on each other's walls
 * Users can search for other users on Friendsbook
 
 ## Creator:

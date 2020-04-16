@@ -5,7 +5,7 @@ class Api::SearchController < ApplicationController
 
         @users = User.where("first_name ILIKE ? ", "%#{params[:search_key]}%").or(User.where("last_name ILIKE ? ", "%#{params[:search_key]}%"))
         # @users = User.where("first_name LIKE ? ", "Br%"
-         if @users
+        if @users
             render :index
         else 
             flash.now[:errors] = ['Cant find anything']

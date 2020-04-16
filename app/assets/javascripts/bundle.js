@@ -307,7 +307,7 @@ var fetchPost = function fetchPost(postId) {
 /*!********************************************!*\
   !*** ./frontend/actions/search_actions.js ***!
   \********************************************/
-/*! exports provided: SEARCH_USER, CLEAR_SEARCH_LIST, searchUser, clearSearList, search */
+/*! exports provided: SEARCH_USER, CLEAR_SEARCH_LIST, searchUser, clearSearList, search, clear */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -317,6 +317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchUser", function() { return searchUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearSearList", function() { return clearSearList; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "search", function() { return search; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clear", function() { return clear; });
 /* harmony import */ var _util_search_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/search_api_util */ "./frontend/util/search_api_util.js");
 
 var SEARCH_USER = 'SEARCH_USER';
@@ -328,10 +329,9 @@ var searchUser = function searchUser(user) {
     user: user
   };
 };
-var clearSearList = function clearSearList(data) {
+var clearSearList = function clearSearList() {
   return {
-    type: CLEAR_SEARCH_LIST,
-    data: data
+    type: CLEAR_SEARCH_LIST
   };
 }; // thunk actions
 
@@ -340,6 +340,11 @@ var search = function search(key) {
     return _util_search_api_util__WEBPACK_IMPORTED_MODULE_0__["search"](key).then(function (user) {
       return dispatch(searchUser(user));
     });
+  };
+};
+var clear = function clear() {
+  return function (dispatch) {
+    return dispatch(clearSearList());
   };
 };
 
@@ -1889,7 +1894,8 @@ var Search = /*#__PURE__*/function (_React$Component) {
       if (e.currentTarget.value !== "") {
         // debugger
         this.props.search(e.currentTarget.value);
-      } else {// to clear the list
+      } else {
+        this.props.clear();
       }
     }
   }, {
@@ -1948,6 +1954,9 @@ var mDTP = function mDTP(dispatch) {
   return {
     search: function search(key) {
       return dispatch(Object(_actions_search_actions__WEBPACK_IMPORTED_MODULE_3__["search"])(key));
+    },
+    clear: function clear() {
+      return dispatch(Object(_actions_search_actions__WEBPACK_IMPORTED_MODULE_3__["clear"])());
     }
   };
 };
@@ -3724,7 +3733,7 @@ var searchReducer = function searchReducer() {
       return action.user.search;
 
     case _actions_search_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_SEARCH_LIST"]:
-      return newState;
+      return {};
 
     default:
       return state;

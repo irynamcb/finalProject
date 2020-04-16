@@ -9,13 +9,16 @@ export const searchUser = user => ({
     user
 });
 
-export const clearSearList = data => ({
-    type: CLEAR_SEARCH_LIST,
-    data
+export const clearSearList = () => ({
+    type: CLEAR_SEARCH_LIST  
 });
 
 // thunk actions
 export const search = (key) => dispatch => {
     return SearchAPIUtil.search(key)
         .then(user => dispatch(searchUser(user)))
+}
+
+export const clear = () => dispatch => {
+    return dispatch(clearSearList())
 }

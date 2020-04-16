@@ -14,9 +14,9 @@ export default class Search extends React.Component {
 
         if (e.currentTarget.value !== "") {
             // debugger
-            this.props.search(e.currentTarget.value)
+            this.props.search(e.currentTarget.value);
         } else {
-            // to clear the list
+            this.props.clear();
         }
     }
 

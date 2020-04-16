@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { faFacebookF, faClock, faUserCircle} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SearchContainer from '../search/search_container';
 
 
 export default class Navbar extends React.Component {
@@ -52,6 +53,7 @@ export default class Navbar extends React.Component {
                 <div className="nav">
                     <button className="header-button" onClick={this.props.logout}>Log Out</button>
                 </div>
+                <SearchContainer />
                 </div>
             </div>
             </div>

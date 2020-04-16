@@ -24,7 +24,11 @@ export default class Search extends React.Component {
                     className=""
                     />
                     <div>
-                        
+                        {
+                        this.props.users.map(user => 
+                        <li>{user.firstName}{user.lastName}</li>
+                        )
+                        }
                     </div>
             </div>
         )

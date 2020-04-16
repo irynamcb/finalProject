@@ -6,8 +6,8 @@ import Search from './search';
 
 
 const mSTP = (state, ownProps) => {
-
-    let users = Object.values(this.state.search);
+// debugger
+    let users = Object.values(state.entities.search);
     return {
         users: users
     }

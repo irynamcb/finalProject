@@ -22,19 +22,17 @@ export default class Search extends React.Component {
 
         return (
             <div >
-              
                     <input type="text"
                     onChange={this.handleChange}
                     placeholder="Search"
                     className=""
                     />
-                    <div>
-                        {
-                        this.props.users.map(user => 
-                        <li key={user.id}>{user.firstName}</li>
-                        )
-                        }
-                    </div>
+                {
+                    this.props.users.map(user =>
+                        <SearchItem
+                            user={user}
+                            key={user.id} />)
+                }
             </div>
         )
     }

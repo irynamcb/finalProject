@@ -1179,7 +1179,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         className: "home"
-      }, "Friendsbook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Friendsbook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "wrapper-navbar"
@@ -1194,7 +1194,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header-button",
         onClick: this.props.logout
-      }, "Log Out")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_4__["default"], null))));
+      }, "Log Out")))));
     }
   }, {
     key: "render",
@@ -1890,11 +1890,12 @@ var Search = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleChange,
         placeholder: "Search",
         className: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.users.map(function (user) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }), this.props.users.map(function (user) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SearchItem, {
+          user: user,
           key: user.id
-        }, user.firstName);
-      })));
+        });
+      }));
     }
   }]);
 
@@ -1927,7 +1928,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  // debugger
   var users = Object.values(state.entities.search);
   return {
     users: users

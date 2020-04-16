@@ -7,9 +7,9 @@ import Search from './search';
 
 const mSTP = (state, ownProps) => {
 
-
+    let users = Object.values(this.state.search);
     return {
-        
+        users: users
     }
 }
 

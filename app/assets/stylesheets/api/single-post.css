@@ -4,8 +4,8 @@
   font-size: 12px;
   border: 2px solid #e9ebee;
   position: relative;
-  max-width: 42vw;
-  min-height: 20vh;
+  max-width: 40vw;
+  min-height: 18vh;
   background-color: #fff;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -53,9 +53,9 @@
   justify-content: space-evenly;
   border-top: 1px solid #dddfe2;
   border-bottom: 1px solid #dddfe2;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  min-height: 52px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 50px;
 
 }
 
@@ -110,7 +110,7 @@
 
 .like, .comment, .share {
   cursor: pointer;
-  margin: 10px;
+  margin: 5px;
   padding: 10px;
   width: 85px;
   height: 16px;

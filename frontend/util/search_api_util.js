@@ -1,6 +1,9 @@
-export const search = () => (
+export const search = (key) => (
     $.ajax({
         url: `api/search`,
-        method: 'GET'
+        method: 'GET',
+        data: {
+            search_key: key
+        }
     })
 )

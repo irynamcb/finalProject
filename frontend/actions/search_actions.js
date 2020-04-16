@@ -11,7 +11,7 @@ export const searchUser = user => ({
 
 // thunk actions
 
-export const searchUser = (key) => dispatch => {
+export const search = (key) => dispatch => {
     return SearchAPIUtil.search(key)
         .then(user => dispatch(searchUser(user)))
 }

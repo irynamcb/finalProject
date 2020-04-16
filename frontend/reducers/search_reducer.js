@@ -1,4 +1,4 @@
-import { SEARCH_USER } from "../actions/search_actions";
+import { SEARCH_USER, CLEAR_SEARCH_LIST } from "../actions/search_actions";
 
 const searchReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -12,6 +12,8 @@ const searchReducer = (state = {}, action) => {
             return state;
         }
             return action.user.search;
+        case CLEAR_SEARCH_LIST:
+            return newState;
         default:
             return state;
     }

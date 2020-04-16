@@ -9,6 +9,7 @@ export default class SearchItem extends React.Component {
 
     render() {
         
+        const {firstName, lastName, id} = this.props.user
 
         return (
             <div className="">

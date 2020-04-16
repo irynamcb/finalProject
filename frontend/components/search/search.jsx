@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import SearchItem from './search_item';
 
 export default class Search extends React.Component {
 
@@ -15,6 +15,8 @@ export default class Search extends React.Component {
         if (e.currentTarget.value !== "") {
             // debugger
             this.props.search(e.currentTarget.value)
+        } else {
+            // to clear the list
         }
     }
 
@@ -29,9 +31,9 @@ export default class Search extends React.Component {
                     />
                 {
                     this.props.users.map(user =>
-                        <SearchItem
-                            user={user}
-                            key={user.id} />)
+                    <SearchItem
+                        user={user}
+                        key={user.id} />)
                 }
             </div>
         )

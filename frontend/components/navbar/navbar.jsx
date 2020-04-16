@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { faFacebookF, faClock, faUserCircle} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SearchContainer from '../search/search_container';
 
 
 export default class Navbar extends React.Component {
@@ -46,6 +47,7 @@ export default class Navbar extends React.Component {
             <div className="navbar">
             <div className="header-group">
                     <Link to="/" className="home">Friendsbook</Link>
+                    <SearchContainer />
                     <div className="nav-content">
                     <div id="wrapper-navbar"><img src={this.props.currentUser.avatarUrl} /></div>
                     <div className="header-name"><Link to='/'>{this.props.currentUser.firstName}</Link></div>

@@ -11,7 +11,7 @@ namespace :api, defaults: {format: :json} do
   resources :comments, only: [:show, :create, :update, :destroy]
   resources :friend_requests
   resources :friends
-
+  resources :search, only: [:index] 
 
 end
 

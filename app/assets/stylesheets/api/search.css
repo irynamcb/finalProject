@@ -6,14 +6,21 @@
     padding-left: 5px;
     height: 4vh;
     display: block;
+    z-index: 1 !important; 
+    
 }
 
 .search-item {
     background-color: #fff;
+    display: block;
+    z-index: 2;
 }
 
 .search-item li {
     list-style: none;
     font-weight: 400;
-
+    min-height: 4vh;
+    position: relative;
+   
 }
+

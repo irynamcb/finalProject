@@ -1874,8 +1874,13 @@ var Search = /*#__PURE__*/function (_React$Component) {
   _createClass(Search, [{
     key: "handleChange",
     value: function handleChange(e) {
+      // debugger
       e.preventDefault();
-      this.props.search(e.currentTarget.value);
+
+      if (e.currentTarget.value !== "") {
+        // debugger
+        this.props.search(e.currentTarget.value);
+      }
     }
   }, {
     key: "render",
@@ -1886,7 +1891,9 @@ var Search = /*#__PURE__*/function (_React$Component) {
         placeholder: "Search",
         className: ""
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.users.map(function (user) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, user.firstName, user.lastName);
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: user.id
+        }, user.firstName);
       })));
     }
   }]);
@@ -3634,8 +3641,12 @@ var searchReducer = function searchReducer() {
   var newState = Object.assign({}, state);
 
   switch (action.type) {
-    case _actions_search_actions__WEBPACK_IMPORTED_MODULE_0__["SEARCH_USER"]: //   
-    // return newState;
+    case _actions_search_actions__WEBPACK_IMPORTED_MODULE_0__["SEARCH_USER"]:
+      if (Object.keys(action.user).length === 0) {
+        return state;
+      }
+
+      return action.user.search;
 
     default:
       return state;

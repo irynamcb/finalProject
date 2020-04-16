@@ -9,8 +9,13 @@ export default class Search extends React.Component {
     }
 
     handleChange(e) {
+        // debugger
         e.preventDefault();
-        this.props.search(e.currentTarget.value)
+
+        if (e.currentTarget.value !== "") {
+            // debugger
+            this.props.search(e.currentTarget.value)
+        }
     }
 
     render() {
@@ -26,7 +31,7 @@ export default class Search extends React.Component {
                     <div>
                         {
                         this.props.users.map(user => 
-                        <li>{user.firstName}{user.lastName}</li>
+                        <li key={user.id}>{user.firstName}</li>
                         )
                         }
                     </div>

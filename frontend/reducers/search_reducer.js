@@ -7,8 +7,11 @@ const searchReducer = (state = {}, action) => {
 
     switch (action.type) {
         case SEARCH_USER:
-        //   
-            // return newState;
+     
+        if (Object.keys(action.user).length === 0)  {
+            return state;
+        }
+            return action.user.search;
         default:
             return state;
     }

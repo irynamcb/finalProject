@@ -1888,11 +1888,9 @@ var Search = /*#__PURE__*/function (_React$Component) {
   _createClass(Search, [{
     key: "handleChange",
     value: function handleChange(e) {
-      // debugger
       e.preventDefault();
 
       if (e.currentTarget.value !== "") {
-        // debugger
         this.props.search(e.currentTarget.value);
       } else {
         this.props.clear();

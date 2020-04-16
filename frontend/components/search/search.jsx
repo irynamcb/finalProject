@@ -9,11 +9,8 @@ export default class Search extends React.Component {
     }
 
     handleChange(e) {
-        // debugger
         e.preventDefault();
-
         if (e.currentTarget.value !== "") {
-            // debugger
             this.props.search(e.currentTarget.value);
         } else {
             this.props.clear();

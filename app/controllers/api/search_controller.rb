@@ -1,12 +1,12 @@
 class Api::SearchController < ApplicationController
 
 
-    def search
+    def index
 
-        # @users = User.where("first_name LIKE ? ", "%#{params[:search_key]}%")
-        @users = User.where("first_name LIKE ? ", "Br%")
+        @users = User.where("first_name ILIKE ? ", "%#{params[:search_key]}%")
+        # @users = User.where("first_name LIKE ? ", "Br%")
          if @users
-            render :search
+            render :index
         else 
             flash.now[:errors] = ['Cant find anything']
             render json: ['Cant find anything'], status: :not_found

@@ -12,7 +12,7 @@ export default class SearchItem extends React.Component {
         const {firstName, lastName, id} = this.props.user
 
         return (
-            <div className="">
+            <div className="search-item">
                 <li><Link to={`/users/${id}`}>{firstName} {lastName}</Link></li>
             </div>
         )

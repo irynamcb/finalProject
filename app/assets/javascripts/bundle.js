@@ -1903,7 +1903,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
         type: "text",
         onChange: this.handleChange,
         placeholder: "Search",
-        className: ""
+        className: "search-bar"
       }), this.props.users.map(function (user) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           user: user,
@@ -2014,7 +2014,7 @@ var SearchItem = /*#__PURE__*/function (_React$Component) {
           lastName = _this$props$user.lastName,
           id = _this$props$user.id;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: ""
+        className: "search-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(id)
       }, firstName, " ", lastName)));

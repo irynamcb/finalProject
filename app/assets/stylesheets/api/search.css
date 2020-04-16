@@ -1,0 +1,20 @@
+.search-bar {
+    background-color: #fff;
+    width: 20vw;
+    font-size: 14px;
+    border-radius: 3px;
+    padding-left: 5px;
+    height: 4vh;
+}
+
+.search-item {
+    background-color: #fff;
+}
+
+.search-item li {
+    list-style: none;
+}
+
+.search-item li:hover {
+    color: #4267b2;
+}

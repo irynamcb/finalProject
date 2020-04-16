@@ -24,7 +24,7 @@ export default class Search extends React.Component {
                     <input type="text"
                     onChange={this.handleChange}
                     placeholder="Search"
-                    className=""
+                    className="search-bar"
                     />
                 {
                     this.props.users.map(user =>

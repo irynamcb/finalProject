@@ -9,10 +9,13 @@
 
 .search-item {
     background-color: #fff;
+    z-index: 1000; 
 }
 
 .search-item li {
     list-style: none;
+    font-weight: 400;
+
 }
 
 .search-item li:hover {

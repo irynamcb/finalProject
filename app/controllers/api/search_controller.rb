@@ -4,7 +4,7 @@ class Api::SearchController < ApplicationController
     def index
 
         @users = User.where("first_name ILIKE ? ", "%#{params[:search_key]}%").or(User.where("last_name ILIKE ? ", "%#{params[:search_key]}%"))
-        # @users = User.where("first_name LIKE ? ", "Br%"
+       
         if @users
             render :index
         else 

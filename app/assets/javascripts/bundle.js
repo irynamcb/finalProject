@@ -810,6 +810,7 @@ var CreateComment = /*#__PURE__*/function (_React$Component) {
         type: "text",
         placeholder: "Write a comment...",
         value: this.state.body,
+        autoFocus: true,
         onChange: this.update('body')
       })))));
     }

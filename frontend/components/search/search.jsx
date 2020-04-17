@@ -28,7 +28,7 @@ export default class Search extends React.Component {
     }
 
     handleBlur() {
-        this.sleep(100).then(this.clearSearch);
+        this.sleep(200).then(this.clearSearch);
     }
 
     // hacky

@@ -36,6 +36,7 @@ export default class Search extends React.Component {
                     onChange={this.handleChange}
                     placeholder="Search"
                     className="search-bar"
+                    onBlur={this.clearSearch}
                     />
                     <div className="search-results">
                 {
@@ -43,7 +44,7 @@ export default class Search extends React.Component {
                     <SearchItem
                         user={user}
                         key={user.id} 
-                        clearSearch={this.clearSearch}/>)
+                        clearSearch={this.clearSearch} />)
                 }
                     </div>
             </div>

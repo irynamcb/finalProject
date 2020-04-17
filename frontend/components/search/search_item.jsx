@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 export default class SearchItem extends React.Component {
 
@@ -14,7 +14,7 @@ export default class SearchItem extends React.Component {
         return (
             <div className="search-item">
                 
-                <li onClick={this.props.clearSearch}><Link to={`/users/${id}`}>{firstName} {lastName}</Link></li>
+                <li><Link to={`/users/${id}`} onClick={this.props.clearSearch} >{firstName} {lastName}</Link></li>
 
             </div>
         )

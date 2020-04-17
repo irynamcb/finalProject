@@ -7,6 +7,7 @@ export default class Search extends React.Component {
         super(props);
         this.handleChange = this.handleChange.bind(this);
         this.clearSearch = this.clearSearch.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
         this.state = {searchKey: ""};
         
     }
@@ -26,6 +27,14 @@ export default class Search extends React.Component {
         this.props.clear();
     }
 
+    handleBlur() {
+        this.sleep(100).then(this.clearSearch);
+    }
+
+    // hacky
+    sleep (milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
 
     render() {
 
@@ -36,7 +45,7 @@ export default class Search extends React.Component {
                     onChange={this.handleChange}
                     placeholder="Search"
                     className="search-bar"
-                    onBlur={this.clearSearch}
+                    onBlur={this.handleBlur}
                     />
                     <div className="search-results">
                 {

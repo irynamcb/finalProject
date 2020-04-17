@@ -1884,6 +1884,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Search).call(this, props));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.clearSearch = _this.clearSearch.bind(_assertThisInitialized(_this));
+    _this.handleBlur = _this.handleBlur.bind(_assertThisInitialized(_this));
     _this.state = {
       searchKey: ""
     };
@@ -1913,6 +1914,19 @@ var Search = /*#__PURE__*/function (_React$Component) {
       this.props.clear();
     }
   }, {
+    key: "handleBlur",
+    value: function handleBlur() {
+      this.sleep(100).then(this.clearSearch);
+    } // hacky
+
+  }, {
+    key: "sleep",
+    value: function sleep(milliseconds) {
+      return new Promise(function (resolve) {
+        return setTimeout(resolve, milliseconds);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -1925,7 +1939,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
         onChange: this.handleChange,
         placeholder: "Search",
         className: "search-bar",
-        onBlur: this.clearSearch
+        onBlur: this.handleBlur
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-results"
       }, this.props.users.map(function (user) {
@@ -2040,10 +2054,9 @@ var SearchItem = /*#__PURE__*/function (_React$Component) {
           id = _this$props$user.id;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/users/".concat(id),
         onClick: this.props.clearSearch
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/users/".concat(id)
       }, firstName, " ", lastName)));
     }
   }]);

@@ -1916,7 +1916,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleBlur",
     value: function handleBlur() {
-      this.sleep(200).then(this.clearSearch);
+      this.sleep(150).then(this.clearSearch);
     } // hacky
 
   }, {

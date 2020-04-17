@@ -101,7 +101,7 @@ switch (action.type) {
 ## Future Features:
 
 * Users can post videos on each other's walls
-* Users can search for other users on Friendsbook
+* Users can edit existing posts and comments
 
 ## Creator:
 

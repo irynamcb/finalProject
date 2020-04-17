@@ -66,7 +66,7 @@ export default class PostItem extends React.Component {
             
             <div className="single-post">
                 <div className="single-post-info">
-
+                <div className="post-line">
                 {
                     (author.id === parent.id) ? <p><Link to={`/users/${author.id}`}>{author.firstName} {author.lastName}</Link>Posted:</p> : 
                         
@@ -78,7 +78,7 @@ export default class PostItem extends React.Component {
                             <button onClick={() => deletePost(post.id)} className="delete-post">Delete Post</button>
                             : ""
                     }
-
+                </div>
                     <h2>{post.body}</h2>
                     <div><img src={post.photoUrl} width="99%" /></div>
 

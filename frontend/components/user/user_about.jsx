@@ -124,9 +124,9 @@ export default class UserAbout extends React.Component {
                 
                 <div className="user-about-info">
 
-                <div className="user-create-post">
+                {/* <div className="user-create-post"> */}
                     <CreatePostContainer parentId={id} />
-                </div>
+                {/* </div> */}
                 <div className="user-post">
                     <PostList posts={this.props.posts}/>
                 </div>

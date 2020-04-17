@@ -13,7 +13,9 @@ export default class SearchItem extends React.Component {
 
         return (
             <div className="search-item">
+                
                 <li><Link to={`/users/${id}`}>{firstName} {lastName}</Link></li>
+
             </div>
         )
     }

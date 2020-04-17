@@ -20,18 +20,20 @@ export default class Search extends React.Component {
     render() {
 
         return (
-            <div >
+            <div className="search">
                     <input type="text"
                     onChange={this.handleChange}
                     placeholder="Search"
                     className="search-bar"
                     />
+                    <div className="search-results">
                 {
                     this.props.users.map(user =>
                     <SearchItem
                         user={user}
                         key={user.id} />)
                 }
+                    </div>
             </div>
         )
     }

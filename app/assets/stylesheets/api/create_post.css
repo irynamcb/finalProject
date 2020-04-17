@@ -1,21 +1,6 @@
-.user-create-post {
- 
-}
-
 
 .createpost-container {
-  font-family: Arial, Helvetica, sans-serif;
-  display: block;
-  font-size: 12px;
-  border: 1px solid #e9ebee;
-  background-color: #fff;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 44vw;
-  max-width: 40vw;
-  min-height: 18vh;
-  /* position: relative; */
+  
 }
 
 .createpost-btn {
@@ -30,8 +15,6 @@
   border-radius: 2px;
   font-weight: bold;
   text-align: center;
-  /* position: absolute; */
-  /* bottom: 0; */
   margin-top: 42px;
   margin-bottom: 2px;
 }
@@ -67,8 +50,16 @@
 }
 
 .createpost-form {
-  display: flex;
+  display: block;
   flex-direction: column;
+  max-width: 42vw;
+  min-height: 18vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  border: 2px solid #e9ebee;
+  background-color: #fff;
+  margin-bottom: 10px;
+
 }
 
 .createpost-avatar, .createpost-body {

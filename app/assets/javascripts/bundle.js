@@ -649,11 +649,9 @@ var Comments = /*#__PURE__*/function (_React$Component) {
           currentUserId: _this.props.currentUserId,
           deleteComment: _this.props.deleteComment
         });
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-create-post"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_comment_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_comment_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         postId: this.props.postId
-      })));
+      }));
     }
   }]);
 
@@ -1411,10 +1409,10 @@ var CreatePost = /*#__PURE__*/function (_React$Component) {
         height: "20%"
       }) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "createpost-container"
+        className: "createpost-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
-        className: "createpost-form"
+        className: ""
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "createpost-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1623,6 +1621,8 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
         className: "single-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "single-post-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-line"
       }, author.id === parent.id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(author.id)
       }, author.firstName, " ", author.lastName), "Posted:") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1637,7 +1637,7 @@ var PostItem = /*#__PURE__*/function (_React$Component) {
           return deletePost(post.id);
         },
         className: "delete-post"
-      }, "Delete Post") : "", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, "Delete Post") : ""), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: post.photoUrl,
         width: "99%"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1899,17 +1899,21 @@ var Search = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         onChange: this.handleChange,
         placeholder: "Search",
         className: "search-bar"
-      }), this.props.users.map(function (user) {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-results"
+      }, this.props.users.map(function (user) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           user: user,
           key: user.id
         });
-      }));
+      })));
     }
   }]);
 
@@ -3323,11 +3327,9 @@ var UserAbout = /*#__PURE__*/function (_React$Component) {
         currentUserId: this.props.currentUserId
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-about-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-create-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_create_post_form_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         parentId: id
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-post"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_posts__WEBPACK_IMPORTED_MODULE_3__["default"], {
         posts: this.props.posts

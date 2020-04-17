@@ -27,9 +27,9 @@ export default class Comments extends React.Component {
                             />)
                     }
                 </ul>
-                <div className="user-create-post">
+                {/* <div className="user-create-post"> */}
                     <CreateCommentContainer  postId={this.props.postId}/>
-                </div>
+                {/* </div> */}
             </div>
         )
     }

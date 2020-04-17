@@ -1882,6 +1882,10 @@ var Search = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Search).call(this, props));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.clearSearch = _this.clearSearch.bind(_assertThisInitialized(_this));
+    _this.state = {
+      searchKey: ""
+    };
     return _this;
   }
 
@@ -1889,6 +1893,9 @@ var Search = /*#__PURE__*/function (_React$Component) {
     key: "handleChange",
     value: function handleChange(e) {
       e.preventDefault();
+      this.setState({
+        searchKey: e.currentTarget.value
+      });
 
       if (e.currentTarget.value !== "") {
         this.props.search(e.currentTarget.value);
@@ -1897,12 +1904,23 @@ var Search = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "clearSearch",
+    value: function clearSearch() {
+      this.setState({
+        searchKey: ""
+      });
+      this.props.clear();
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
+        value: this.state.searchKey,
         onChange: this.handleChange,
         placeholder: "Search",
         className: "search-bar"
@@ -1911,7 +1929,8 @@ var Search = /*#__PURE__*/function (_React$Component) {
       }, this.props.users.map(function (user) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           user: user,
-          key: user.id
+          key: user.id,
+          clearSearch: _this2.clearSearch
         });
       })));
     }
@@ -1990,9 +2009,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -2005,12 +2024,21 @@ var SearchItem = /*#__PURE__*/function (_React$Component) {
   _inherits(SearchItem, _React$Component);
 
   function SearchItem(props) {
+    var _this;
+
     _classCallCheck(this, SearchItem);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SearchItem).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchItem).call(this, props));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(SearchItem, [{
+    key: "handleClick",
+    value: function handleClick() {
+      this.props.clearSearch();
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props$user = this.props.user,
@@ -2019,7 +2047,9 @@ var SearchItem = /*#__PURE__*/function (_React$Component) {
           id = _this$props$user.id;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-item"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        onClick: this.props.clearSearch
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/users/".concat(id)
       }, firstName, " ", lastName)));
     }

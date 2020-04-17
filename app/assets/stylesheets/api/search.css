@@ -7,22 +7,21 @@
     height: 4vh;
     display: block;
     color: #1d2129;
-    
 }
 
 .search {
-position: relative;
+    position: relative;
 }
 
 .search-results {
-position: absolute;
-width: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
 }
 
 .search-item {
-    background-color: #fff;
+    background-color: #fff;    
 }
-
 
 .search-item:hover {
     background-color: #e9ebee;
@@ -32,8 +31,9 @@ width: 100%;
     list-style: none;
     font-weight: 400;
     min-height: 4vh;
-    display: block;
-    align-items: center;
     border-radius: 3px;
+    display: flex;
+    align-items: center;
+      
 }
 

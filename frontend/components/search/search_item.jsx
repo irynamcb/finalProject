@@ -5,6 +5,11 @@ export default class SearchItem extends React.Component {
 
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.props.clearSearch();
     }
 
     render() {
@@ -14,7 +19,7 @@ export default class SearchItem extends React.Component {
         return (
             <div className="search-item">
                 
-                <li><Link to={`/users/${id}`}>{firstName} {lastName}</Link></li>
+                <li onClick={this.props.clearSearch}><Link to={`/users/${id}`}>{firstName} {lastName}</Link></li>
 
             </div>
         )

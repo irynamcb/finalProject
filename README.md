@@ -4,7 +4,7 @@ Friendsbook is a social networking website where users can post comments, share 
 
 See it live: https://fcbkclone.herokuapp.com/#/
 
-![](app/assets/images/1.png)
+<img src="app/assets/images/1.png" width=80% height=80% />
 
 ## List of Technologies:
 
@@ -137,7 +137,9 @@ On blur search result are being cleared:
     }
 ```
 
-<img src="app/assets/images/5.png" width=60% height=60% />
+### Users can leave posts on each other's walls as well as on their own, comment on posts, like posts and comments and post pictures:
+
+<img src="app/assets/images/5.png" width=80% height=80% />
 
 ## Future Features:
 

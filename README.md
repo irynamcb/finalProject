@@ -1,6 +1,6 @@
 # Friendsbook
 
-Friendsbook is a social networking website where users can post comments, share photographs and post links to news or other interesting content on the web, chat live, and watch short-form video. 
+Friendsbook is a social networking website where users can post comments, share photographs and post links to news or other interesting content on the web and watch short-form video. 
 
 See it live: https://fcbkclone.herokuapp.com/#/
 
@@ -20,6 +20,8 @@ See it live: https://fcbkclone.herokuapp.com/#/
 ## Example:
 
 ### Adding/Deleting friends: 
+
+You add friends by visiting their page and making a friend request. They then have an option of rejecting or accepting a request. If the request is accepted, then the two of you become friends. 
 
 <img src="app/assets/images/2.png" width=35% height=35% />
 

@@ -21,7 +21,7 @@ See it live: https://fcbkclone.herokuapp.com/#/
 
 ### Adding/Deleting friends: 
 
-You add friends by visiting their page and making a friend request. They then have an option of rejecting or accepting a request. If the request is accepted, then the two of you become friends. 
+You add friends by visiting their page and making a friend request. They then have an option of rejecting or accepting a request. If the request is accepted, then the two of you become friends. To remove a friends, just click 'Delete' button next to the friend's name.
 
 <img src="app/assets/images/2.png" width=35% height=35% />
 
@@ -51,7 +51,7 @@ def create
   end
 end
 ```
-Users Reducer:
+Users reducer:
 
 ```ruby
 switch (action.type) {
@@ -85,20 +85,59 @@ switch (action.type) {
     }
 ```
 
-### On Friendsbook users can do the following:
+### Find people through Search:
 
-* Leave posts on each other's walls
-* Post pictures
-* Delete posts
-* Like and unlike posts
-* Leave comments on posts
-* Like and unlike comments
-* Delete comments
-* Each user can upload an avatar
+In the navbar there is an autocomplete search box, that displays all the names that have a partial match to your search term.
 
-<img src="app/assets/images/3.png" width=60% height=60% />
+<img src="app/assets/images/6.png" width=60% height=60% />
 
-<img src="app/assets/images/4.png" width=60% height=60% />
+Search controller:
+
+```ruby
+ def index
+
+        @users = User.where("first_name ILIKE ? ", "%#{params[:search_key]}%").or(User.where("last_name ILIKE ? ", "%#{params[:search_key]}%"))
+       
+        if @users
+            render :index
+        else 
+            flash.now[:errors] = ['Cant find anything']
+            render json: ['Cant find anything'], status: :not_found
+        end
+
+    end
+    
+end
+```
+On blur search result are being cleared:
+
+```javascript
+   render() {
+
+        return (
+            <div className="search">
+                    <input type="text"
+                    value={this.state.searchKey}
+                    onChange={this.handleChange}
+                    placeholder="Search"
+                    className="search-bar"
+                    onBlur={this.handleBlur}
+                    />
+                    <div className="search-results">
+                {
+                    this.props.users.map(user =>
+                    <SearchItem
+                        user={user}
+                        key={user.id} 
+                        clearSearch={this.clearSearch} />)
+                }
+                    </div>
+            </div>
+        )
+    }
+```
+
+<img src="app/assets/images/5.png" width=60% height=60% />
 
 ## Future Features:
 
